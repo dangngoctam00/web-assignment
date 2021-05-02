@@ -7,172 +7,451 @@
             <p class="product_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form            
         </div>
 
-        <div class="new_books owl-carousel" id="carousel-1">
-            <div class="book">
-                <div class="item">
-                    <img src="/assets/images/1.jpg" alt="" class="book_image">
-                    <div class="product_content content_center">
-                        <h4><a href="single-product.html">Lando</a></h4>
-                        <ul class="price d-flex">
-                            <li>$35.00</li>
-                            <li class="old_price">$50.00</li>
-                        </ul>																						
+
+        <!-- Book Tag -->
+        <div class="book_tag">
+            <div class="product_nav nav justify-content-center" role="tablist">
+                <a class="nav-item nav-link active" data-toggle="tab" href="#all" role="tab">ALL</a>
+                <a class="nav-item nav-link" data-toggle="tab" href="#biographic" role="tab">BIOGRAPHIC</a>
+                <a class="nav-item nav-link" data-toggle="tab" href="#adventure" role="tab">ADVENTURE</a>
+                <a class="nav-item nav-link" data-toggle="tab" href="#children" role="tab">CHILDREN</a>
+                <a class="nav-item nav-link" data-toggle="tab" href="#cook" role="tab">COOK</a>
+            </div>
+        </div>
+
+        <div class="tab_container tab-content">
+            <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="home-tab">
+                <div class="new_books owl-carousel">
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/1.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Lando</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/2.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Lando</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/3.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Lando</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/4.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Lando</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/5.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Lando</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/6.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Lando</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/7.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Lando</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/8.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Lando</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/9.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Lando</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/10.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Lando</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/11.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Lando</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/12.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Lando</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+            </div>
+
+            <!-- Biographic tag  -->
+
+            <div class="tab-pane fade" id="biographic" role="tabpanel" aria-labelledby="home-tab">
+                <div class="new_books owl-carousel">
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/1.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Biograpic</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/2.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Biograpic</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/3.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Biograpic</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/4.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Biograpic</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/5.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Biograpic</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/6.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Biograpic</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/7.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Biograpic</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/8.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Biograpic</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/9.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Biograpic</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/10.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Biograpic</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/11.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Biograpic</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/12.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Biograpic</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$100.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="item">
-                    <img src="/assets/images/2.jpg" alt="" class="book_image">
-                    <div class="product_content content_center">
-                        <h4><a href="single-product.html">Lando</a></h4>
-                        <ul class="price d-flex">
-                            <li>$35.00</li>
-                            <li class="old_price">$50.00</li>
-                        </ul>																						
+            </div> 
+            
+            
+            <!-- Adventure tag -->
+
+            <div class="tab-pane fade" id="adventure" role="tabpanel" aria-labelledby="home-tab">
+                <div class="new_books owl-carousel">
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/1.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Adventure</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/2.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Adventure</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/3.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Adventure</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/4.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Adventure</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/5.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Adventure</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/6.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Adventure</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/7.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Adventure</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/8.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Adventure</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/9.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Adventure</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/10.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Adventure</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="book">
+                        <div class="item">
+                            <img src="/assets/images/11.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Adventure</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$50.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/images/12.jpg" alt="" class="book_image">
+                            <div class="product_content content_center">
+                                <h4><a href="single-product.html">Adventure</a></h4>
+                                <ul class="price d-flex">
+                                    <li>$35.00</li>
+                                    <li class="old_price">$100.00</li>
+                                </ul>																						
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="book">
-                <div class="item">
-                    <img src="/assets/images/3.jpg" alt="" class="book_image">
-                    <div class="product_content content_center">
-                        <h4><a href="single-product.html">Lando</a></h4>
-                        <ul class="price d-flex">
-                            <li>$35.00</li>
-                            <li class="old_price">$50.00</li>
-                        </ul>																						
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="/assets/images/4.jpg" alt="" class="book_image">
-                    <div class="product_content content_center">
-                        <h4><a href="single-product.html">Lando</a></h4>
-                        <ul class="price d-flex">
-                            <li>$35.00</li>
-                            <li class="old_price">$50.00</li>
-                        </ul>																						
-                    </div>
-                </div>
-            </div>
-
-            <div class="book">
-                <div class="item">
-                    <img src="/assets/images/5.jpg" alt="" class="book_image">
-                    <div class="product_content content_center">
-                        <h4><a href="single-product.html">Lando</a></h4>
-                        <ul class="price d-flex">
-                            <li>$35.00</li>
-                            <li class="old_price">$50.00</li>
-                        </ul>																						
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="/assets/images/6.jpg" alt="" class="book_image">
-                    <div class="product_content content_center">
-                        <h4><a href="single-product.html">Lando</a></h4>
-                        <ul class="price d-flex">
-                            <li>$35.00</li>
-                            <li class="old_price">$50.00</li>
-                        </ul>																						
-                    </div>
-                </div>
-            </div>
-
-            <div class="book">
-                <div class="item">
-                    <img src="/assets/images/7.jpg" alt="" class="book_image">
-                    <div class="product_content content_center">
-                        <h4><a href="single-product.html">Lando</a></h4>
-                        <ul class="price d-flex">
-                            <li>$35.00</li>
-                            <li class="old_price">$50.00</li>
-                        </ul>																						
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="/assets/images/8.jpg" alt="" class="book_image">
-                    <div class="product_content content_center">
-                        <h4><a href="single-product.html">Lando</a></h4>
-                        <ul class="price d-flex">
-                            <li>$35.00</li>
-                            <li class="old_price">$50.00</li>
-                        </ul>																						
-                    </div>
-                </div>
-            </div>
-
-            <div class="book">
-                <div class="item">
-                    <img src="/assets/images/9.jpg" alt="" class="book_image">
-                    <div class="product_content content_center">
-                        <h4><a href="single-product.html">Lando</a></h4>
-                        <ul class="price d-flex">
-                            <li>$35.00</li>
-                            <li class="old_price">$50.00</li>
-                        </ul>																						
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="/assets/images/10.jpg" alt="" class="book_image">
-                    <div class="product_content content_center">
-                        <h4><a href="single-product.html">Lando</a></h4>
-                        <ul class="price d-flex">
-                            <li>$35.00</li>
-                            <li class="old_price">$50.00</li>
-                        </ul>																						
-                    </div>
-                </div>
-            </div>
-
-            <div class="book">
-                <div class="item">
-                    <img src="/assets/images/11.jpg" alt="" class="book_image">
-                    <div class="product_content content_center">
-                        <h4><a href="single-product.html">Lando</a></h4>
-                        <ul class="price d-flex">
-                            <li>$35.00</li>
-                            <li class="old_price">$50.00</li>
-                        </ul>																						
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="/assets/images/12.jpg" alt="" class="book_image">
-                    <div class="product_content content_center">
-                        <h4><a href="single-product.html">Lando</a></h4>
-                        <ul class="price d-flex">
-                            <li>$35.00</li>
-                            <li class="old_price">$50.00</li>
-                        </ul>																						
-                    </div>
-                </div>
-            </div>
-
+            <!-- End Adventure tag -->
         </div>
     </div>
 </section>
-
-<script>
-    $(document).ready(function(){
-        $("#carousel-1").owlCarousel({
-            loop: true,
-            items: 4,
-            responsiveClass:true,
-            nav: false,
-            responsive: {
-                0 : {
-                    items: 1
-                },
-                // breakpoint from 480 up
-                576 : {
-                    items: 2
-                },
-                // breakpoint from 768 up
-                768 : {
-                    items: 3
-                },
-                992: {
-                    items: 4
-                }
-            }
-        });
-    });
-</script>

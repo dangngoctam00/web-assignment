@@ -22,5 +22,7 @@
 
     <?php include('./all_products.php'); ?>
 
+    <?php include('./best_seller.php'); ?>
+
 </body>
 </html>
