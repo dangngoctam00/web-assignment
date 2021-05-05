@@ -1,10 +1,5 @@
-<link rel="stylesheet" href="/assets/css/home_page/header.css">
-<!-- 
-<div id="home" class="white">
-    <div class="fullscreen bg-img">
-
-    </div>
-</div> -->
+<link rel="stylesheet" href="../../assets/css/home_page/header.css">
+<link rel="stylesheet" href="../../assets/css/home_page/styles_home_page.css">
 
 <div id="carouselExampleSlidesOnly" class="carousel slide">
   <div class="carousel-inner">

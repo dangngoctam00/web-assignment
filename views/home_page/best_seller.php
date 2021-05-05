@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/assets/css/home_page/best_seller.css">
+<link rel="stylesheet" href="../../assets/css/home_page/best_seller.css">
 
 <section class="best_seller">
     <div class="container">
