@@ -1,0 +1,35 @@
+.new_product {
+    padding-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title_new_product .color_theme {
+    color: #ce7852;
+    
+}
+
+.title_new_product {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.new_product .container .product_text {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+/* .new_books {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.book .book_image {
+    display: block;
+    width: 100%;
+    max-width: 270px;
+} */

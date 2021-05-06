@@ -11,8 +11,18 @@
 <body>
     
     <?php include("../layouts/header.php"); ?>  
+
+    <?php include("./header.php"); ?>
     
     <?php include('../layouts/include/script.php'); ?>
+
+    <?php include('./new_product.php'); ?>
+
+    <?php include('./subscribe.php'); ?>
+
+    <?php include('./all_products.php'); ?>
+
+    <?php include('./best_seller.php'); ?>
 
 </body>
 </html>
