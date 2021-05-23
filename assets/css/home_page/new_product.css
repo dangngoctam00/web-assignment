@@ -21,6 +21,10 @@
     margin-bottom: 2rem;
 }
 
+.book_thumb:hover {
+    cursor: pointer;
+}
+
 
 /* .new_books {
     display: flex;

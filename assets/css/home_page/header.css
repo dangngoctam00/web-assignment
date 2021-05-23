@@ -64,7 +64,7 @@
 }
 
 .content_box a.shopbtn::after {
-    background: rgba(0, 0, 0, 0) url(/assets/images/arrow.png) repeat scroll 100% 50%;
+    background: rgba(0, 0, 0, 0) url('../../images/home_page/arrow.png') repeat scroll 100% 50%;
     content: "";
     display: inline-block;
     height: 11px;

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Girassol&family=Montserrat:wght@300&family=Mulish:ital,wght@0,200;0,500;0,600;1,600&family=Play&family=Raleway:wght@100&family=Zen+Dots&display=swap');
+
+.product-page-banner {
+    width: 100%;
+    height: 50%;
+    color: white;
+    background-image: url('../../images/product_page/bg.jpeg');
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 100px;
+}
+
+.title {
+    font-family: 'Zen Dots', cursive;
+}
+
+.title {
+    text-align: center;
+    padding-top: 10.5%;
+    padding-bottom: 12.5%;
+    color: white;
+    font-size: 40px;
+}
+
+.product-page {
+    font-family: 'Poppins', sans-serif;
+}
+
+.color-orange {
+    color: #CE7852;
+}
+
+.product-page .sidebar .category li {
+    line-height: 45px;
+    text-transform: capitalize;
+    border-bottom: 1px dashed #E1E1E1;
+
+}
+
+.product-page .sidebar .category li a {
+    color: #333;
+}
+
+.product-page .sidebar .category li a:hover {
+    color: #CE7852;
+}
+
+.product-page .sidebar .ads .text {
+    text-align: center;
+    /* top: 120px; */
+    bottom: 30px;
+    left: 0;
+    right: 0;
+}
+
+.product-page .paginationlist li {
+    display: inline-block;
+
+}
+
+.product-page .paginationlist li a {
+    color: #333;
+    padding: 0 13px;
+    border-bottom: 2px solid transparent;
+}
+
+.product-page .paginationlist li a:hover {
+    border-color: #333;
+}
+
+.product-page .product-list img {
+    transition: transform 0.3s ease;
+}
+
+.product-page .product-list img:hover {
+    transform: scale(1.05);
+}
+
+.product-page ul { 
+    list-style-type: none !important; 
+}
+
+
+/* header .collapse.navbar-collapse ul a, 
+.cart .header_sidebar_right a, 
+.navbar-toggler-icon {
+    color: #fff !important;
+} */
+
+header {
+    background-color: #fff;    
+}

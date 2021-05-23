@@ -10,7 +10,7 @@
         <div class="new_books owl-carousel">
             <div class="book">
                 <div class="book_thumb">
-                    <img src="../../assets/images/1.jpg" alt="" class="book_image">
+                    <a href="../detail_book_page/"><img src="../../assets/images/home_page/1.jpg" alt="" class="book_image"></a>
                 </div>
                 <div class="book_content">
                     <div class="product_content content_center">
@@ -42,7 +42,7 @@
 
             <div class="book">
                 <div class="book_thumb">
-                    <img src="../../assets/images/2.jpg" alt="" class="book_image">
+                    <a href="../detail_book_page/"><img src="../../assets/images/home_page/7.jpg" alt="" class="book_image"></a>
                 </div>
                 <div class="book_content">
                     <div class="product_content content_center">
@@ -74,7 +74,7 @@
 
             <div class="book">
                 <div class="book_thumb">
-                    <img src="../../assets/images/3.jpg" alt="" class="book_image">
+                    <a href="../detail_book_page/"><img src="../../assets/images/home_page/8.jpg" alt="" class="book_image"></a>
                 </div>
                 <div class="book_content">
                     <div class="product_content content_center">
@@ -106,7 +106,7 @@
 
             <div class="book">
                 <div class="book_thumb">
-                    <img src="../../assets/images/4.jpg" alt="" class="book_image">
+                    <a><img src="../../assets/images/home_page/9.jpg" alt="" class="book_image"></a>
                 </div>
                 <div class="book_content">
                     <div class="product_content content_center">
@@ -138,7 +138,7 @@
 
             <div class="book">
                 <div class="book_thumb">
-                    <img src="../../assets/images/5.jpg" alt="" class="book_image">
+                    <a><img src="../../assets/images/home_page/5.jpg" alt="" class="book_image"></a>
                 </div>
                 <div class="book_content">
                     <div class="product_content content_center">
@@ -174,7 +174,6 @@
 </section>
 
 <script src="../../assets/owl_carousel/dist/owl.carousel.min.js"></script>
-<script src="../../assets/js/home_page/data-scroll.js"></script>
 <script>
     $(document).ready(function(){
         $(".owl-carousel").owlCarousel({

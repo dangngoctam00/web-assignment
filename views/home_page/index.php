@@ -24,5 +24,8 @@
 
     <?php include('./best_seller.php'); ?>
 
+    <?php include("../layouts/footer.php"); ?>  
+
+
 </body>
 </html>

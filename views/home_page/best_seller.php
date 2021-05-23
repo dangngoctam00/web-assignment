@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../assets/css/home_page/best_seller.css">
+<!-- <link rel="stylesheet" href="../../assets/css/home_page/best_seller.css">
 
 <section class="best_seller">
     <div class="container">
@@ -7,4 +7,4 @@
             <p class="product_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form            
         </div>
     </div>
-</section>
+</section> -->
