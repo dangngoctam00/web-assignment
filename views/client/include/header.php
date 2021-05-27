@@ -14,6 +14,7 @@
             </button>
 
             <div class="cart">
+
                 <ul class="header_sidebar_right">
                     <li class="shop_search">
                         <a href="#"><i class="fas fa-search"></i></a>

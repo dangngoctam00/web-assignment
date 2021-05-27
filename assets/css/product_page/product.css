@@ -81,11 +81,11 @@
 }
 
 
-/* header .collapse.navbar-collapse ul a, 
+ /* header .collapse.navbar-collapse ul a, 
 .cart .header_sidebar_right a, 
 .navbar-toggler-icon {
     color: #fff !important;
-} */
+}  */
 
 header {
     background-color: #fff;    
