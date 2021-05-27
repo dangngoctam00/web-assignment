@@ -1,4 +1,4 @@
- <link rel="stylesheet" href="../../assets/css/contact_page/main.css">
+ <link rel="stylesheet" href="../../../assets/css/contact_page/main.css">
  <main class="contact_area margin-top">
      <!-- Introduction slide -->
      <figure class="intro_slide">
@@ -8,19 +8,19 @@
                      <div id="introSlide" class="carousel slide" data-ride="carousel" data-interval="1000">
                          <div class="carousel-inner">
                              <div class="carousel-item">
-                                 <img src="../../assets/images/contact_page/slide1.jpg" class="d-block"
+                                 <img src="../../../assets/images/contact_page/slide1.jpg" class="d-block"
                                      alt="First slide">
                              </div>
                              <div class="carousel-item">
-                                 <img src="../../assets/images/contact_page/slide2.jpg" class="d-block"
+                                 <img src="../../../assets/images/contact_page/slide2.jpg" class="d-block"
                                      alt="Second slide">
                              </div>
                              <div class="carousel-item active">
-                                 <img src="../../assets/images/contact_page/slide3.gif" class="d-block"
+                                 <img src="../../../assets/images/contact_page/slide3.gif" class="d-block"
                                      alt="Third slide">
                              </div>
                              <div class="carousel-item">
-                                 <img src="../../assets/images/contact_page/slide4.jpg" class="d-block"
+                                 <img src="../../../assets/images/contact_page/slide4.jpg" class="d-block"
                                      alt="Forth slide">
                              </div>
                          </div>

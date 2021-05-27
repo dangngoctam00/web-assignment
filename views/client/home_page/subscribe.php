@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../assets/css/home_page/subscribe.css">
+<link rel="stylesheet" href="../../../assets/css/home_page/subscribe.css">
 
 <section class="subscribe no-bg-img">
     <div class="container">

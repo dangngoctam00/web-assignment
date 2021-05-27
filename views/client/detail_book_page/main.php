@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../assets/css/detail_book_page/detail_book.css">
+<link rel="stylesheet" href="../../../assets/css/detail_book_page/detail_book.css">
 <div class="container-fluid">
     <div class="row" id="background">
         <h3 class="title col-md-12">4T STORE</h3>
@@ -8,9 +8,9 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="fotorama" data-nav="thumbs">
-                        <img src="../../assets/images/detail_book_page/3.png" alt="image 3">
-                        <img src="../../assets/images/detail_book_page/2.jpeg" alt="image 2">
-                        <img src="../../assets/images/detail_book_page/6.jpeg" alt="image 6">
+                        <img src="../../../assets/images/detail_book_page/3.png" alt="image 3">
+                        <img src="../../../assets/images/detail_book_page/2.jpeg" alt="image 2">
+                        <img src="../../../assets/images/detail_book_page/6.jpeg" alt="image 6">
                     </div>
                 </div>
                 <div class="col-md-6">

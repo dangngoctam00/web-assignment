@@ -4,7 +4,7 @@
 }
 
 .bg-img {
-    background-image: url('/assets/images/bg.jpg');
+    background-image: url('../../images/home_page/bg_subscribe.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

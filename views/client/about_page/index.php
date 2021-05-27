@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About page</title>
-    <?php include('../layouts/include/stylesheet.php'); ?>
+    <?php 
+    include('../include/stylesheet.php'); ?>
 
 </head>
 
 <body>
-    <?php include("../../views/layouts/header.php"); ?>
+    <?php include( "../include/header.php"); ?>
     <?php include("./main.php"); ?>
-    <?php include('../layouts/include/script.php'); ?>
-    <?php include("../layouts/footer.php"); ?>  
-
+    <?php include("../include/footer.php"); ?>
+    <?php include('../include/script.php'); ?>
 </body>
 
 </html>

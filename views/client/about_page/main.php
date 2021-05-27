@@ -1,4 +1,4 @@
- <link rel="stylesheet" href="../../assets/css/about_page/main.css">
+ <link rel="stylesheet" href="../../../assets/css/about_page/main.css">
  <main class="about_area  margin-top">
      <!-- Introduction -->
      <section class="summary">
@@ -108,7 +108,7 @@
              <div class="row">
                  <div class="col-md-3 col-6 my-md-4 my-3 d-flex align-items-stretch">
                      <div class="team_member card text-center border-danger">
-                         <img class="card-img-top img-fluid" src="../../assets/images/about_page/avatar1.gif"
+                         <img class="card-img-top img-fluid" src="../../../assets/images/about_page/avatar1.gif"
                              alt="A team member">
                          <div class="card-body">
                              <h5 class="card-title">Lê Bá Thông</h5>
@@ -123,7 +123,7 @@
                  </div>
                  <div class="col-md-3 col-6 my-md-4 my-3 d-flex align-items-stretch">
                      <div class="team_member card text-center border-danger">
-                         <img class="card-img-top img-fluid" src="../../assets/images/about_page/avatar2.gif"
+                         <img class="card-img-top img-fluid" src="../../../assets/images/about_page/avatar2.gif"
                              alt="A team member">
                          <div class="card-body">
                              <h5 class="card-title">Đặng Ngọc Tâm</h5>
@@ -138,7 +138,7 @@
                  </div>
                  <div class="col-md-3 col-6 my-md-4 my-3 d-flex align-items-stretch">
                      <div class="team_member card text-center border-danger">
-                         <img class="card-img-top img-fluid" src="../../assets/images/about_page/avatar3.gif"
+                         <img class="card-img-top img-fluid" src="../../../assets/images/about_page/avatar3.gif"
                              alt="A team member">
                          <div class="card-body">
                              <h5 class="card-title">Nguyễn Phi Thông</h5>
@@ -154,7 +154,7 @@
 
                  <div class="col-md-3 col-6 my-md-4 my-3 d-flex align-items-stretch">
                      <div class="team_member card text-center border-danger">
-                         <img class="card-img-top img-fluid" src="../../assets/images/about_page/avatar4.gif"
+                         <img class="card-img-top img-fluid" src="../../../assets/images/about_page/avatar4.gif"
                              alt="A team member">
                          <div class="card-body">
                              <h5 class="card-title">Nguyễn Ngọc Thuấn</h5>

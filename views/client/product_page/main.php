@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../assets/css/product_page/product.css">
+<link rel="stylesheet" href="../../../assets/css/product_page/product.css">
 
 <div class="product-page-banner text-center align-content-end align-middle">
     <div class="content">
@@ -29,7 +29,7 @@
                         </ul>
                     </div>
                     <div class="ads position-relative text-center">
-                        <img src="../../assets/images/product_page/banner_left.png" alt="banner" class="img-fluid my-3">
+                        <img src="../../../assets/images/product_page/banner_left.png" alt="banner" class="img-fluid my-3">
                         <div class="text position-absolute text-uppercase text-white">
                             <h5 class="color-orange">New product</h5>
                             <div class="">
@@ -46,7 +46,8 @@
                 <div class="product-list row">
                     <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
                         <div class="product-thumbnail">
-                            <a href="../detail_book_page/"><img src="../../assets/images/product_page/1.png" alt="product1" class="img-fluid">
+                            <a href="../detail_book_page/index.php"><img src="../../../assets/images/product_page/1.png"
+                                    alt="product1" class="img-fluid">
                             </a>
                         </div>
                         <div class="product-content text-center pt-3 pb-1 px-2">
@@ -66,7 +67,8 @@
                     </div>
                     <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
                         <div class="product-thumbnail">
-                            <a href="../detail_book_page/"><img src="../../assets/images/product_page/2.png" alt="product1" class="img-fluid">
+                            <a href="../detail_book_page/index.php"><img src="../../../assets/images/product_page/2.png"
+                                    alt="product1" class="img-fluid">
                             </a>
                         </div>
                         <div class="product-content text-center pt-3 pb-1 px-2">
@@ -86,7 +88,8 @@
                     </div>
                     <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
                         <div class="product-thumbnail">
-                            <a href="../detail_book_page/"><img src="../../assets/images/product_page/3.png" alt="product1" class="img-fluid">
+                            <a href="../detail_book_page/index.php"><img src="../../../assets/images/product_page/3.png"
+                                    alt="product1" class="img-fluid">
                             </a>
                         </div>
                         <div class="product-content text-center pt-3 pb-1 px-2">
@@ -106,7 +109,8 @@
                     </div>
                     <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
                         <div class="product-thumbnail">
-                            <a href="../detail_book_page/"><img src="../../assets/images/product_page/4.png" alt="product1" class="img-fluid">
+                            <a href="../detail_book_page/index.php"><img src="../../../assets/images/product_page/4.png"
+                                    alt="product1" class="img-fluid">
                             </a>
                         </div>
                         <div class="product-content text-center pt-3 pb-1 px-2">
@@ -126,7 +130,8 @@
                     </div>
                     <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
                         <div class="product-thumbnail">
-                            <a href="../detail_book_page/"><img src="../../assets/images/product_page/5.png" alt="product1" class="img-fluid">
+                            <a href="../detail_book_page/index.php"><img src="../../../assets/images/product_page/5.png"
+                                    alt="product1" class="img-fluid">
                             </a>
                         </div>
                         <div class="product-content text-center pt-3 pb-1 px-2">
@@ -146,7 +151,8 @@
                     </div>
                     <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
                         <div class="product-thumbnail">
-                            <a href="../detail_book_page/"><img src="../../assets/images/product_page/6.png" alt="product1" class="img-fluid">
+                            <a href="../detail_book_page/index.php"><img src="../../../assets/images/product_page/6.png"
+                                    alt="product1" class="img-fluid">
                             </a>
                         </div>
                         <div class="product-content text-center pt-3 pb-1 px-2">
