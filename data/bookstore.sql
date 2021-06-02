@@ -4,19 +4,20 @@ use bookstore;
 CREATE TABLE customer (
     id int AUTO_INCREMENT,
     name varchar(40),
-    email varchar(50),
+    email varchar(50) unique not null,
     phone varchar(15),
     birthdate date,
     registered_at datetime,
+    active INT(1) NOT NULL DEFAULT '0',
     password text,
     PRIMARY KEY (id)
 );
 create TABLE admin(
     id int AUTO_INCREMENT,
+    email varchar(50),
     first_name varchar(20) not null,
     last_name varchar(20) not null,
     user_name varchar(30) UNIQUE,
-    email varchar(50),
     phone varchar(15),
     birthdate date,
     registered_at datetime,
@@ -30,6 +31,7 @@ create TABLE employee(
     link_image varchar(100),
     link_twitter varchar(100),
     link_instagram varchar(100),
+    active INT(1) NOT NULL DEFAULT '0',
     password text,
     PRIMARY KEY (id)
 );
@@ -86,4 +88,11 @@ create table send_email_log(
     message varchar(255),
     created_at datetime,
     PRIMARY KEY (id)
+);
+
+create table verification_account(
+    email varchar(50),
+    hash text,
+    primary key (email),
+    foreign key (email) references customer(email)
 );
