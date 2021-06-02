@@ -8,6 +8,7 @@ CREATE TABLE customer (
     phone varchar(15),
     birthdate date,
     registered_at datetime,
+    password text,
     PRIMARY KEY (id)
 );
 create TABLE admin(
@@ -19,6 +20,7 @@ create TABLE admin(
     phone varchar(15),
     birthdate date,
     registered_at datetime,
+    password text,
     PRIMARY KEY (id)
 );
 create TABLE employee(
@@ -28,6 +30,7 @@ create TABLE employee(
     link_image varchar(100),
     link_twitter varchar(100),
     link_instagram varchar(100),
+    password text,
     PRIMARY KEY (id)
 );
 create TABLE book(
