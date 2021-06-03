@@ -36,23 +36,22 @@ create TABLE employee(
     PRIMARY KEY (id)
 );
 
-
 create table categories(
     category varchar(20),
     primary key (category)
 );
-
 
 create TABLE book(
 	id int AUTO_INCREMENT,
     name varchar(20) not NULL,
     category varchar(20) not null,
     price int not null,
-    link_description varchar(50),
+    description longtext,
     link_image varchar(50),
     published_at date,
+    is_bestseller int(1) default '0',
     PRIMARY KEY (id),
-    foreign key (category) references categories(category);
+    foreign key (category) references categories(category)
 );
 #One book may have more than 1 author.
 CREATE TABLE written_by (
@@ -107,7 +106,3 @@ create table verification_account(
     foreign key (email) references customer(email)
 );
 
-create table categories(
-    category varchar(20),
-    primary key (category)
-);
