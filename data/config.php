@@ -1,7 +1,7 @@
 <?php
 	define('DB_SERVER', 'localhost');
-	define('DB_USERNAME', '___');
-	define('DB_PASSWORD', '___');
+	define('DB_USERNAME', '____');
+	define('DB_PASSWORD', '____');
 	define('DB_NAME', 'bookstore');
 
 	// Attempt to connect to MySQL database
@@ -10,4 +10,3 @@
 	if (!$mysql_db) {
 		die("Error: Unable to connect " . $mysql_db->connect_error);
 	}
-?>
