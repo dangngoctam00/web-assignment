@@ -25,9 +25,21 @@
                     <li class="shop_cart">
                         <a href="#"><i class="fas fa-cart-plus"></i></a>
                     </li>
-                    <li class="shop_cart">
-                        <a href="#" data-toggle="modal" data-target="#loginFormModel"><i class="far fa-user"></i></a>
-                    </li>
+                    <?php 
+                        // print "<script>alert('ac')</script>";
+                        session_start();
+                        if (!empty($_SESSION['email'])) {
+                            print "<li class='shop_cart'>
+                                        <a href='../authenticate/logout.php'><i class='fa fa-sign-out'></i></a>
+                                    </li>";
+                        }
+                        else {
+                            print "<li class='shop_cart'>
+                                        <a href='../authenticate/login.php'><i class='fa fa-user'></i></a>
+                                    </li>";
+                        }
+                    ?>
+                    
                 </ul>
             </div>
 
@@ -40,10 +52,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../product_page/index.php">Book</a>
-                    </li>
-                    <!-- <li class="nav-item">
-            <a class="nav-link" href="/views/contact_page/">Pages</a>
-          </li>          -->
+                    </li>           
 
                     <li class="nav-item">
                         <a class="nav-link" href="../about_page/index.php">About</a>
@@ -61,36 +70,3 @@
     </div>
 
 </header>
-
-
-
-
-<div class="modal fade" id="loginFormModel" tabindex="-1" role="dialog" aria-labelledby="loginFormModelLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="loginFormModelLabel">Login</h5>
-                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button> -->
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Username:</label>
-                        <input type="text" class="form-control" id="username">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Password:</label>
-                        <input type="password" class="form-control" id="password">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Login</button>
-            </div>
-        </div>
-    </div>
-</div>

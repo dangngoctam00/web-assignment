@@ -1,3 +1,12 @@
+<?php
+    $id = $_GET["id"];
+    require ('../../../data/config.php'); 
+
+    $sql = "SELECT name, price, description, link_image from book where id = $id ";
+
+?>
+
+
 <link rel="stylesheet" href="../../../assets/css/detail_book_page/detail_book.css">
 <div class="container-fluid">
     <div class="row" id="background">
