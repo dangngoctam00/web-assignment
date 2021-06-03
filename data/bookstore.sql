@@ -42,7 +42,8 @@ create TABLE book(
     price int not null,
     link_description varchar(50),
     link_image varchar(50),
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    foreign key (category) references categories(category);
 );
 #One book may have more than 1 author.
 CREATE TABLE written_by (
@@ -95,4 +96,9 @@ create table verification_account(
     hash text,
     primary key (email),
     foreign key (email) references customer(email)
+);
+
+create table categories(
+    category varchar(20),
+    primary key (category)
 );
