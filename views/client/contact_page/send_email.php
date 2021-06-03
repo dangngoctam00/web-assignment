@@ -53,10 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->AltBody = "This is the plain text version of the email content";
         try {
             $mail->send();
-            echo json_encode($result);
-            // Insert to database
-            // $firstName = test_input($_POST["firstName"]);
-            // $lastName =
             $query = "insert into send_email_log (first_name,last_name,email,website,subject,message,created_at)
             values ('" . test_input($_POST["firstName"]) . "','"
                 . test_input($_POST["lastName"]) . "','"
@@ -67,9 +63,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 . date('Y-m-d H:i:s') . "')";
             $mysql_db->query($query);
         } catch (Exception $e) {
-            // echo "Mailer Error: " . $mail->ErrorInfo;
         }
     }
+    echo json_encode($result);
 }
 
 function test_input($data)
