@@ -27,7 +27,7 @@
                     </li>
                     <?php 
                         // print "<script>alert('ac')</script>";
-                        session_start();
+                      
                         if (!empty($_SESSION['email'])) {
                             print "<li class='shop_cart'>
                                         <a href='../authenticate/logout.php'><i class='fa fa-sign-out'></i></a>
