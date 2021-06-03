@@ -29,10 +29,9 @@ create TABLE employee(
     full_name varchar(40),
     work_as varchar(20),
     link_image varchar(100),
+    link_facebook varchar(100),
     link_twitter varchar(100),
     link_instagram varchar(100),
-    active INT(1) NOT NULL DEFAULT '0',
-    password text,
     PRIMARY KEY (id)
 );
 
@@ -105,4 +104,11 @@ create table verification_account(
     primary key (email),
     foreign key (email) references customer(email)
 );
-
+INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_twitter, link_instagram) VALUES
+("Lê Bá Thông", "Co-founder", "/assets/images/slide1.jpg","https://www.facebook.com/thong.leba.3", "https://www.instagram.com/thongleb/", "https://twitter.com/thong94584917");
+INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_twitter, link_instagram) VALUES
+("Nguyễn Phi Thông", "Co-founder", "/assets/images/slide2.jpg","https://www.facebook.com/profile.php?id=100008734362594", "https://www.instagram.com/thongleb/", "https://twitter.com/thong94584917");
+INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_twitter, link_instagram) VALUES
+("Đặng Ngọc Tâm", "Manager", "/assets/images/slide3.jpg","https://www.facebook.com/scotlandyard00", "https://www.instagram.com/dntt_00/", "https://twitter.com/thong94584917");
+INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_twitter, link_instagram) VALUES
+("Nguyễn Ngọc Thuấn", "Marketer", "/assets/images/slide4.jpg","https://www.facebook.com/ngocthuan1210", "https://www.instagram.com/dntt_00/", "https://twitter.com/thong94584917");
