@@ -1,5 +1,7 @@
 <?php
 // define variables and set to empty values
+require_once '../../../data/config.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 
 require_once "../../../vendor/autoload.php";
@@ -51,12 +53,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->AltBody = "This is the plain text version of the email content";
         try {
             $mail->send();
-            // echo "Message has been sent successfully";
+            echo json_encode($result);
+            // Insert to database
+            // $firstName = test_input($_POST["firstName"]);
+            // $lastName =
+            $query = "insert into send_email_log (first_name,last_name,email,website,subject,message,created_at)
+            values ('" . test_input($_POST["firstName"]) . "','"
+                . test_input($_POST["lastName"]) . "','"
+                . test_input($_POST["email"]) . "','"
+                . test_input($_POST["website"]) . "','"
+                . test_input($_POST["subject"]) . "','"
+                . test_input($_POST["message"]) . "','"
+                . date('Y-m-d H:i:s') . "')";
+            $mysql_db->query($query);
         } catch (Exception $e) {
             // echo "Mailer Error: " . $mail->ErrorInfo;
         }
     }
-    echo json_encode($result);
 }
 
 function test_input($data)

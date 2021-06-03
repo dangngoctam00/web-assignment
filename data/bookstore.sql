@@ -29,6 +29,7 @@ create TABLE employee(
     full_name varchar(40),
     work_as varchar(20),
     link_image varchar(100),
+    link_facebook varchar(100),
     link_twitter varchar(100),
     link_instagram varchar(100),
     active INT(1) NOT NULL DEFAULT '0',
@@ -36,23 +37,22 @@ create TABLE employee(
     PRIMARY KEY (id)
 );
 
-
 create table categories(
     category varchar(20),
     primary key (category)
 );
-
 
 create TABLE book(
 	id int AUTO_INCREMENT,
     name varchar(20) not NULL,
     category varchar(20) not null,
     price int not null,
-    link_description varchar(50),
+    description longtext,
     link_image varchar(50),
     published_at date,
+    is_bestseller int(1) default '0',
     PRIMARY KEY (id),
-    foreign key (category) references categories(category);
+    foreign key (category) references categories(category)
 );
 #One book may have more than 1 author.
 CREATE TABLE written_by (
@@ -106,8 +106,11 @@ create table verification_account(
     primary key (email),
     foreign key (email) references customer(email)
 );
-
-create table categories(
-    category varchar(20),
-    primary key (category)
-);
+INSERT INTO employee (full_name, work_as, link_image,link_facebook, link_instagram,link_twitter) VALUES
+("Lê Bá Thông", "Co-founder", "/assets/images/about_page/avatar1.gif","https://www.facebook.com/thong.leba.3", "https://www.instagram.com/thongleb/", "https://twitter.com/thong94584917");
+INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_instagram,link_twitter) VALUES
+("Nguyễn Phi Thông", "Co-founder", "/assets/images/about_page/avatar2.gif","https://www.facebook.com/profile.php?id=100008734362594", "https://www.instagram.com/thongleb/", "https://twitter.com/thong94584917");
+INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_instagram,link_twitter ) VALUES
+("Đặng Ngọc Tâm", "Manager", "/assets/images/about_page/avatar3.gif","https://www.facebook.com/scotlandyard00", "https://www.instagram.com/dntt_00/", "https://twitter.com/thong94584917");
+INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_instagram, link_twitter) VALUES
+("Nguyễn Ngọc Thuấn", "Marketer", "/assets/images/about_page/avatar4.gif","https://www.facebook.com/ngocthuan1210", "https://www.instagram.com/dntt_00/", "https://twitter.com/thong94584917");
