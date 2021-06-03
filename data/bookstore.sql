@@ -35,6 +35,14 @@ create TABLE employee(
     password text,
     PRIMARY KEY (id)
 );
+
+
+create table categories(
+    category varchar(20),
+    primary key (category)
+);
+
+
 create TABLE book(
 	id int AUTO_INCREMENT,
     name varchar(20) not NULL,
@@ -42,7 +50,8 @@ create TABLE book(
     price int not null,
     link_description varchar(50),
     link_image varchar(50),
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    foreign key (category) references categories(category)
 );
 #One book may have more than 1 author.
 CREATE TABLE written_by (
