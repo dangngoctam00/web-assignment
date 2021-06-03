@@ -179,8 +179,4 @@ function site_url($url)
 
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 11ab250577ae4615a2abae1b90287956a07f434f
