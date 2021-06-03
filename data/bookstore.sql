@@ -42,6 +42,7 @@ create TABLE book(
     price int not null,
     link_description varchar(50),
     link_image varchar(50),
+    published_at date,
     PRIMARY KEY (id),
     foreign key (category) references categories(category);
 );
