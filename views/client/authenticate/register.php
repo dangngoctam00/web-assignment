@@ -1,11 +1,8 @@
 <?php
+        use PHPMailer\PHPMailer\PHPMailer;    
+        require '../../../data/config.php';
+        require_once '../../../vendor//autoload.php';      
 
-use PHPMailer\PHPMailer\PHPMailer;
-
-require ('../../../data/config.php');    
-        require('./Exception.php');
-        require('./PHPMailer.php');
-        require('./SMTP.php');
         // session_start();
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $error = '';
@@ -49,12 +46,12 @@ require ('../../../data/config.php');
                     $subject = 'Signup | Verification'; // Give the email a subject 
                     $message = '
                     
-                    Thanks for signing up!
-                    Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+                    <p>Thanks for signing up!
+                    Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.</p>
                     
-                    ------------------------
-                    Username: '.$email.'                    
-                    ------------------------
+                    <p>------------------------</p>                
+                    <p style="font-weight: 600;">Username: '.$email.'</p>                    
+                    <p>------------------------</p>
                     
                     Please click this link to activate your account:
                     http://localhost:8000/views/client/authenticate/verify.php?email='.$email.'&hash='.$hash.'
@@ -63,44 +60,23 @@ require ('../../../data/config.php');
                                         
                     $headers = 'From:noreply@localhost.com' . "\r\n"; // Set from headers
 
-                    $mail = new PHPMailer();
-                    $mail->isSMTP();
-                    $mail->Mailer = "stmp";
-                    //Enable SMTP debugging
-                    // 0 = off (for production use)
-                    // 1 = client messages
-                    // 2 = client and server messages
-                    $mail->SMTPDebug = 1;
-
-                    //Set the hostname of the mail server
-                    $mail->Host = 'smtp.gmail.com';
-                    // use
-                    // $mail->Host = gethostbyname('smtp.gmail.com');
-                    // if your network does not support SMTP over IPv6
-
-                    //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+                    $mail = new PHPMailer(true);
+                    $mail->isSMTP();                  
+                    $mail->Username = "bookstore4t@gmail.com";
+                    $mail->Password = "burnthemall";                  
+                    $mail->Host = "smtp.gmail.com";
+                    $mail->SMTPSecure = "tls";
                     $mail->Port = 587;
-
-                    //Set the encryption system to use - ssl (deprecated) or tls
-                    $mail->SMTPSecure = 'tls';
-
-                    //Whether to use SMTP authentication
                     $mail->SMTPAuth = true;
 
-                    //Username to use for SMTP authentication - use full email address for gmail
-                    $mail->Username = "dangngoctam00@gmail.com";
-
-                    //Password to use for SMTP authentication
-                    $mail->Password = "scotlandyard29.10";
-
                     //Set who the message is to be sent from
-                    $mail->setFrom('from@example.com', 'First Last');
+                    $mail->setFrom('bookstore4t@gmail.com', 'Bookstore');
 
                     //Set an alternative reply-to address
-                    $mail->addReplyTo('replyto@example.com', 'First Last');
+                    $mail->addReplyTo('bookstore4t@gmail.com', 'Bookstore');
 
                     //Set who the message is to be sent to
-                    $mail->addAddress($to, 'dnt00');
+                    $mail->addAddress($to);
 
                     //Set the subject line
                     $mail->Subject = 'Bookstore activation account.';
@@ -108,9 +84,9 @@ require ('../../../data/config.php');
                     //Read an HTML message body from an external file, convert referenced images to embedded,
                     //convert HTML into a basic plain-text alternative body
                 
-
+                    $mail->isHTML(true);
                     //Replace the plain text body with one created manually
-                    $mail->AltBody = $message;
+                    $mail->Body = $message;                    
 
                     //Attach an image file
                     // $mail->addAttachment('images/phpmailer_mini.png');
@@ -118,8 +94,6 @@ require ('../../../data/config.php');
                     //send the message, check for errors
                     if (!$mail->send()) {
                         echo "Mailer Error: " . $mail->ErrorInfo;
-                    } else {
-                        echo "Message sent!";                     
                     }
 
                     // if (mail($to, $subject, $message, $headers) == false) {
@@ -189,7 +163,7 @@ require ('../../../data/config.php');
                     <hr>
                     <div class="action-btn">
                         <button type="submit" class="btn btn-primary btn-submit btn-block">Submit</button>
-                        <a href="../home_page" class="btn btn-outline-secondary btn-block mr-t">Cancel</a>
+                        <a href="../home_page/" class="btn btn-outline-secondary btn-block mr-t">Cancel</a>
                     </div>
                 </form>
             </div>
