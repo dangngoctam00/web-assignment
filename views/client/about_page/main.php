@@ -113,8 +113,6 @@
              </div>
              <div class="row d-flex justify-content-center">
                  <!-- "../../../assets/images/about_page/avatar1.gif" -->
-
-
                  <?php
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
@@ -134,10 +132,6 @@
                                  <a href=<?php echo $row["link_instagram"]; ?> class="card-link"><i
                                          class="fab fa-instagram"></i></a>
                              </nav>
-
-
-
-
                          </div>
                      </div>
                  </div>
