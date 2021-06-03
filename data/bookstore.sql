@@ -35,6 +35,14 @@ create TABLE employee(
     password text,
     PRIMARY KEY (id)
 );
+
+
+create table categories(
+    category varchar(20),
+    primary key (category)
+);
+
+
 create TABLE book(
 	id int AUTO_INCREMENT,
     name varchar(20) not NULL,
