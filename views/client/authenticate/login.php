@@ -14,7 +14,7 @@
                 else {
                     $email = $_POST['email'];
                     $password = $_POST['password'];
-                    $query = "select name, email, phone, birthdate, password from customer where email=?";
+                    $query = "select name, email, phone, birthdate, password, active from customer where email=?";
                     
                     $stmt = mysqli_prepare($mysql_db, $query);
                 
@@ -27,10 +27,10 @@
                     // Check if username exists, if yes then verify password
                     if(mysqli_stmt_num_rows($stmt) == 1){                                          
                         // Bind result variables
-                        mysqli_stmt_bind_result($stmt, $name, $email, $phone, $birthdate, $hashed_password);
+                        mysqli_stmt_bind_result($stmt, $name, $email, $phone, $birthdate, $hashed_password, $active);
                         if(mysqli_stmt_fetch($stmt)){
                             // echo "<script>alert('$hashed_password / $password')</script>"; 
-                            if(password_verify($password, $hashed_password) ){
+                            if(password_verify($password, $hashed_password) && $active == 1){
                                 // echo "<script>alert('123')</script>";  
                                 // Password is correct, so start a new session
                                 session_start();
