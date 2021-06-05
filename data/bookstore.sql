@@ -42,7 +42,7 @@ create table categories(
 
 create TABLE book(
 	id int AUTO_INCREMENT,
-    name varchar(20) not NULL,
+    name varchar(255) not NULL,
     category varchar(20) not null,
     price int not null,
     description longtext,
