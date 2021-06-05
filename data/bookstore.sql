@@ -51,6 +51,8 @@ create TABLE book(
     is_bestseller int(1) default '0',
     PRIMARY KEY (id),
     foreign key (category) references categories(category)
+    on delete cascade
+    on update cascade
 );
 #One book may have more than 1 author.
 CREATE TABLE written_by (
@@ -58,6 +60,8 @@ CREATE TABLE written_by (
     author varchar(255),
     PRIMARY key (book_id,author),
     FOREIGN key (book_id) REFERENCES book(id)
+    on delete cascade
+    on update cascade
 );
 CREATE table reviewed_by(
     book_id int,
@@ -68,8 +72,12 @@ CREATE table reviewed_by(
     date_review datetime,
     content longtext,
     PRIMARY KEY (book_id, customer_id, date_review),
-    FOREIGN KEY (book_id) REFERENCES book(id),
+    FOREIGN KEY (book_id) REFERENCES book(id)
+    on delete cascade
+    on update cascade,
     FOREIGN key (customer_id) REFERENCES customer(id)
+    on delete cascade
+    on update cascade
 );
 CREATE TABLE shopping_log(
     id int AUTO_INCREMENT,
