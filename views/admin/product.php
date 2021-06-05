@@ -72,7 +72,7 @@ if (!$_SESSION['id']) {
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 col-12 bg-dark mt-0" style="height: 100vh;">
+            <div class="col-md-2 col-12 bg-dark mt-0 min-vh-100 d-flex flex-column">
                 <nav class="left_nav_bar navbar navbar-dark sticky-top" style="top: 60px;">
                     <ul class="navbar-nav" id="leftNavbar">
                         <li class="nav-item">
