@@ -44,12 +44,13 @@
                             $name_2 = $row[$i+1][1];
                             $price_1 = $row[$i][2];
                             $price_2 = $row[$i+1][2];
-                            
+                            $id_1 = $row[$i][0];
+                            $id_2 = $row[$i+1][0];
                             print "
                                 <div class='book-col'>
                                     <div class='book'>
                                         <div class='book_thumb'>
-                                            <a href='../detail_book_page/index.php'><img src='$img_1' alt='' class='book_image'></a>
+                                            <a href='../detail_book_page/index.php?id=$id_1'><img src='$img_1' alt='' class='book_image'></a>
                                         </div>
                                         <div class='book_content'>
                                             <div class='product_content content_center'>
@@ -93,7 +94,7 @@
                                     </div>
                                     <div class='book'>
                                         <div class='book_thumb'>
-                                            <a href='../detail_book_page/index.php'><img src='$img_2' alt='' class='book_image'></a>
+                                            <a href='../detail_book_page/index.php?id=$id_2'><img src='$img_2' alt='' class='book_image'></a>
                                         </div>
                                         <div class='book_content'>
                                             <div class='product_content content_center'>
@@ -172,12 +173,13 @@
                                 $name_2 = $products[$j+1][1];
                                 $price_1 = $products[$j][2];
                                 $price_2 = $products[$j+1][2];
-                                
+                                $id_1 = $row[$i][0];
+                                $id_2 = $row[$i+1][0];
                                 print "
                                     <div class='book-col'>
                                         <div class='book'>
                                             <div class='book_thumb'>
-                                                <a href='../detail_book_page/index.php'><img src='$img_1' alt='' class='book_image'></a>
+                                                <a href='../detail_book_page/index.php?id=$id_1'><img src='$img_1' alt='' class='book_image'></a>
                                             </div>
                                             <div class='book_content'>
                                                 <div class='product_content content_center'>
@@ -221,7 +223,7 @@
                                         </div>
                                         <div class='book'>
                                             <div class='book_thumb'>
-                                                <a href='../detail_book_page/index.php'><img src='$img_2' alt='' class='book_image'></a>
+                                                <a href='../detail_book_page/index.php?id=$id_2'><img src='$img_2' alt='' class='book_image'></a>
                                             </div>
                                             <div class='book_content'>
                                                 <div class='product_content content_center'>

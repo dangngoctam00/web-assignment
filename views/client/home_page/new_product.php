@@ -21,10 +21,11 @@
                     while($sub_row = mysqli_fetch_row($sub_result)) {
                         $star = $sub_row[0];
                     }
+                    $id = $row[0];
                     print "
                     <div class='book'>
                         <div class='book_thumb'>
-                            <a href='../detail_book_page/index.php'><img src='$row[3]' alt='' class='book_image'></a>
+                            <a href='../detail_book_page/index.php?id=$id'><img src='$row[3]' alt='' class='book_image'></a>
                         </div>
                         <div class='book_content'>
                             <div class='product_content content_center'>
