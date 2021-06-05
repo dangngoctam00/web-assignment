@@ -36,17 +36,17 @@ create TABLE employee(
 );
 
 create table categories(
-    category varchar(20),
+    category varchar(255),
     primary key (category)
 );
 
 create TABLE book(
 	id int AUTO_INCREMENT,
     name varchar(255) not NULL,
-    category varchar(20) not null,
+    category varchar(255) not null,
     price int not null,
     description longtext,
-    link_image varchar(50),
+    link_image varchar(255),
     published_at date,
     is_bestseller int(1) default '0',
     PRIMARY KEY (id),
@@ -55,7 +55,7 @@ create TABLE book(
 #One book may have more than 1 author.
 CREATE TABLE written_by (
     book_id int,
-    author varchar(20),
+    author varchar(255),
     PRIMARY key (book_id,author),
     FOREIGN key (book_id) REFERENCES book(id)
 );
@@ -90,8 +90,8 @@ create table shopping_log_entry(
 );
 create table send_email_log(
     id int AUTO_INCREMENT,
-    first_name varchar(20),
-    last_name varchar(20),
+    first_name varchar(255),
+    last_name varchar(255),
     email varchar(30),
     website varchar(50),
     subject varchar(100),
@@ -101,7 +101,7 @@ create table send_email_log(
 );
 
 create table verification_account(
-    email varchar(50),
+    email varchar(255),
     hash text,
     primary key (email),
     foreign key (email) references customer(email)
@@ -133,7 +133,7 @@ INSERT INTO book (name, category, price, description, link_image, published_at, 
 VALUES ("Luật Tâm Thức - Giải Mã Ma Trận Vũ Trụ", "general knowledge", 9.7, "Cuốn sách này sẽ giúp bạn thấy rằng những kiến thức của người xưa không hề cao siêu huyền bí mà vô cùng đơn giản và liên quan chặt chẽ tới khoa học hiện đại.Việc của bạn chỉ là đọc với một tâm trí cởi mở để thức tỉnh, vượt qua những rào cản của tâm trí, những niềm tin cố hữu của mình.Nếu con người cứ đóng khung tư duy của mình trong hai trường phái duy vật và duy tâm, chúng ta sẽ mãi mãi không bao giờ có thể giải đáp được những vấn đề lớn lao của nhân loại. Khi đó, chúng ta cũng sẽ không bao giờ hiểu được bản chất của những câu chuyện về tâm linh, cũng như những vấn đề chưa lý giải được của khoa học.", "../../../assets/images/product_page/1.png", "2021-5-1", 0);
 
 INSERT INTO book (name, category, price, description, link_image, published_at, is_bestseller)
-VALUES ("Thần Số Học Ứng Dụng", "general knowledge", 8, "Mỗi cái tên, mỗi ngày tháng và mỗi con số đều mang những ý nghĩa riêng và có thể giúp bạn hiểu sâu sắc hơn về bản thân, các mối quan hệ và số phận của mình.Bạn có từng băn khoăn khi tình cờ nhìn thấy các dãy số lặp lại như 11:11 hay 444 hay ngày sinh của bạn bè, người thân?Bạn có từng thắc mắc tại sao ngay trong lần gặp đầu tiên có những người mang lại cho bạn cảm giác thân thiết, những người khác lại không?Tất cả những thắc mắc, băn khoăn của bạn sẽ được giải đáp trong cuốn Thần số học ứng dụng.Cuốn sách sẽ cung cấp mọi thứ bạn cần để mài giũa trực giác của mình, hiểu rõ hơn những người xung quanh và thậm chí có thêm tự tin khi đưa ra các quyết định lớn.Thần số học cũng có thể giúp bạn nhìn lại quá khứ. Khi suy ngẫm về các sự kiện của cuộc đời mình và cách chúng diễn ra trong các chu kỳ số, bạn sẽ nhìn nhận rõ ràng hơn về những gì đã xảy ra và nguyên nhân của những điều đó.Biết được những gì bạn sắp phải trải qua trong một năm, tháng hoặc ngày cụ thể giúp bạn điều hướng chu kỳ cuộc sống dễ dàng hơn. Bạn sẽ có thể dự đoán và chuẩn bị cho những thử thách sắp tới cũng như tận dụng các cơ hội tuyệt vời và đầy tiềm năng.", "../../../assets/images/product_page/2.png", "2020-12-1", 0);
+VALUES ("Thần Số Học Ứng Dụng", "general knowledge", 8.15, "Mỗi cái tên, mỗi ngày tháng và mỗi con số đều mang những ý nghĩa riêng và có thể giúp bạn hiểu sâu sắc hơn về bản thân, các mối quan hệ và số phận của mình.Bạn có từng băn khoăn khi tình cờ nhìn thấy các dãy số lặp lại như 11:11 hay 444 hay ngày sinh của bạn bè, người thân?Bạn có từng thắc mắc tại sao ngay trong lần gặp đầu tiên có những người mang lại cho bạn cảm giác thân thiết, những người khác lại không?Tất cả những thắc mắc, băn khoăn của bạn sẽ được giải đáp trong cuốn Thần số học ứng dụng.Cuốn sách sẽ cung cấp mọi thứ bạn cần để mài giũa trực giác của mình, hiểu rõ hơn những người xung quanh và thậm chí có thêm tự tin khi đưa ra các quyết định lớn.Thần số học cũng có thể giúp bạn nhìn lại quá khứ. Khi suy ngẫm về các sự kiện của cuộc đời mình và cách chúng diễn ra trong các chu kỳ số, bạn sẽ nhìn nhận rõ ràng hơn về những gì đã xảy ra và nguyên nhân của những điều đó.Biết được những gì bạn sắp phải trải qua trong một năm, tháng hoặc ngày cụ thể giúp bạn điều hướng chu kỳ cuộc sống dễ dàng hơn. Bạn sẽ có thể dự đoán và chuẩn bị cho những thử thách sắp tới cũng như tận dụng các cơ hội tuyệt vời và đầy tiềm năng.", "../../../assets/images/product_page/2.png", "2020-12-1", 0);
 
 INSERT INTO book (name, category, price, description, link_image, published_at, is_bestseller)
 VALUES ("Toàn Thư Chiêm Tinh Học Nhập Môn", "general knowledge", 7.2, "Hơn nửa đời người hành nghề chiêm tinh, tôi nhận ra rằng: Ai trong chúng ta đều muốn hiểu rõ hơn chính là bản thân mình. Bạn chắc chắn đã từng tự hỏi “Tôi là ai?”, bạn muốn biết động cơ nào đang thúc đẩy mình, tại sao cảm xúc, trực giác lúc đó của bạn lại mạnh mẽ đến vậy, và những người khác có mặc cảm về bản thân như bạn không. Người ta thường viết thư cho tôi để hỏi rằng “Tôi nên tìm kiếm người đàn ông như thế nào?”, “Tại sao tôi lại bất mãn với công việc của mình vậy?”, hay “Người phụ nữ đang hẹn hò với tôi thuộc cung Song Tử; vậy chúng tôi sẽ hạnh phúc bên nhau chứ?”. Họ hỏi tôi rằng họ sẽ tìm thấy tình yêu đích thực chứ, khi nào thì họ mới vượt qua được sự kiện đau buồn, sợ hãi vừa qua hoặc trút bỏ gánh nặng về những vấn đề của mình. Họ còn hỏi tôi về lựa chọn trong cuộc sống và cách để cảm thấy thỏa mãn hơn nữa. Vì những lý do đó, tôi luôn tin rằng lý do tồn tại của chiêm tinh học là để trả lời những câu hỏi của chúng ta về bản thân.", "../../../assets/images/product_page/3.png", "2020-10-1", 0);
@@ -146,7 +146,7 @@ VALUES ("Những Tù Nhân Của Địa Lý", "general knowledge", 6.5, "Khi ch�
 
 -- Literature
 INSERT INTO book (name, category, price, description, link_image, published_at, is_bestseller)
-VALUES ("Nhà Giả Kim (Tái Bản 2020)", "literature", 4, "Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã giúp Santiago thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người.Tiểu thuyết Nhà giả kim của Paulo Coelho như một câu chuyện cổ tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông. Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia, Nhà giả kim đã làm rung động hàng triệu tâm hồn, trở thành một trong những cuốn sách bán chạy nhất mọi thời đại, và có thể làm thay đổi cuộc đời người đọc.“Nhưng nhà luyện kim đan không quan tâm mấy đến những điều ấy. Ông đã từng thấy nhiều người đến rồi đi, trong khi ốc đảo và sa mạc vẫn là ốc đảo và sa mạc. Ông đã thấy vua chúa và kẻ ăn xin đi qua biển cát này, cái biển cát thường xuyên thay hình đổi dạng vì gió thổi nhưng vẫn mãi mãi là biển cát mà ông đã biết từ thuở nhỏ. Tuy vậy, tự đáy lòng mình, ông không thể không cảm thấy vui trước hạnh phúc của mỗi người lữ khách, sau bao ngày chỉ có cát vàng với trời xanh nay được thấy chà là xanh tươi hiện ra trước mắt. ‘Có thể Thượng đế tạo ra sa mạc chỉ để cho con người biết quý trọng cây chà là,’ ông nghĩ.”", "../../../assets/images/product_page/6.png", "2020-4-1", 1);
+VALUES ("Nhà Giả Kim (Tái Bản 2020)", "literature", 4.29, "Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã giúp Santiago thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người.Tiểu thuyết Nhà giả kim của Paulo Coelho như một câu chuyện cổ tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông. Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia, Nhà giả kim đã làm rung động hàng triệu tâm hồn, trở thành một trong những cuốn sách bán chạy nhất mọi thời đại, và có thể làm thay đổi cuộc đời người đọc.“Nhưng nhà luyện kim đan không quan tâm mấy đến những điều ấy. Ông đã từng thấy nhiều người đến rồi đi, trong khi ốc đảo và sa mạc vẫn là ốc đảo và sa mạc. Ông đã thấy vua chúa và kẻ ăn xin đi qua biển cát này, cái biển cát thường xuyên thay hình đổi dạng vì gió thổi nhưng vẫn mãi mãi là biển cát mà ông đã biết từ thuở nhỏ. Tuy vậy, tự đáy lòng mình, ông không thể không cảm thấy vui trước hạnh phúc của mỗi người lữ khách, sau bao ngày chỉ có cát vàng với trời xanh nay được thấy chà là xanh tươi hiện ra trước mắt. ‘Có thể Thượng đế tạo ra sa mạc chỉ để cho con người biết quý trọng cây chà là,’ ông nghĩ.”", "../../../assets/images/product_page/6.png", "2020-4-1", 1);
 
 INSERT INTO book (name, category, price, description, link_image, published_at, is_bestseller)
 VALUES ("Bố Già (Mario Puzo)", "literature", 4.8, "Thế giới ngầm được phản ánh trong tiểu thuyết Bố Già là sự gặp gỡ giữa một bên là ý chí cương cường và nền tảng gia tộc chặt chẽ theo truyền thống mafia xứ Sicily với một bên là xã hội Mỹ nhập nhằng đen trắng, mảnh đất màu mỡ cho những cơ hội làm ăn bất chính hứa hẹn những món lợi kếch xù. Trong thế giới ấy, hình tượng Bố Già được tác giả dày công khắc họa đã trở thành bức chân dung bất hủ trong lòng người đọc. Từ một kẻ nhập cư tay trắng đến ông trùm tột đỉnh quyền uy, Don Vito Corleone là con rắn hổ mang thâm trầm, nguy hiểm khiến kẻ thù phải kiềng nể, e dè, nhưng cũng được bạn bè, thân quyến xem như một đấng toàn năng đầy nghĩa khí. Nhân vật trung tâm ấy đồng thời cũng là hiện thân của một pho triết lí rất “đời” được nhào nặn từ vốn sống của hàng chục năm lăn lộn giữa chốn giang hồ bao phen vào sinh ra tử, vì thế mà có ý kiến cho rằng “Bố Già là sự tổng hòa của mọi hiểu biết. Bố Già là đáp án cho mọi câu hỏi”.Với cấu tứ hoàn hảo, cốt truyện không thiếu những pha hành động gay cấn, tình tiết bất ngờ và không khí kình địch đến nghẹt thở, Bố Già xứng đáng là đỉnh cao trong sự nghiệp văn chương của Mario Puzo. Và như một cơ duyên đặc biệt, ngay từ năm 1971-1972, Bố Già đã đến với bạn đọc trong nước qua phong cách chuyển ngữ hào sảng, đậm chất giang hồ của dịch giả Ngọc Thứ Lang. ", "../../../assets/images/product_page/7.png", "2016-7-1", 0);
