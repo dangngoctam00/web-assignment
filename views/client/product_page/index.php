@@ -1,3 +1,17 @@
+<?php 
+    require("../../../data/Product.php");
+    // Get categories data
+    $categoriesDetail = $product->getCategoriesDetail();
+    
+    // Get book data
+    $books = null;
+    if (isset($_GET['category'])) {
+        $category = $_GET['category'];
+        $books = $product->getBookCategory($category);
+    } else $books = $product->getData();
+    shuffle($books);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

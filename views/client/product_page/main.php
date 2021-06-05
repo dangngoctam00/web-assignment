@@ -16,16 +16,9 @@
                     <div class="category">
                         <h5 class="text-uppercase fw-bold pb-3 border-bottom border-dark">Product category</h5>
                         <ul>
-                            <li><a href="#">Biography <span class="float-end">(3)</span></a></li>
-                            <li><a href="#">Business <span class="float-end">(4)</span></a></li>
-                            <li><a href="#">Cookbooks <span class="float-end">(6)</span></a></li>
-                            <li><a href="#">Heath & Fitness <span class="float-end">(7)</span></a></li>
-                            <li><a href="#">History <span class="float-end">(8)</span></a></li>
-                            <li><a href="#">Mystery <span class="float-end">(9)</span></a></li>
-                            <li><a href="#">Inspiration <span class="float-end">(13)</span></a></li>
-                            <li><a href="#">Romance <span class="float-end">(20)</span></a></li>
-                            <li><a href="#">Fiction/Fantasy <span class="float-end">(22)</span></a></li>
-                            <li><a href="#">Self-improvement <span class="float-end">(13)</span></a></li>
+                            <?php foreach($categoriesDetail as $category) { ?>
+                                <li><a href="index.php?category=<?php echo $category['name']; ?>"><?php echo ucwords($category['name']); ?><span class="float-end">(<?php echo $category['number'] ?>)</span></a></li>
+                            <?php } ?>
                         </ul>
                     </div>
                     <div class="ads position-relative text-center">
@@ -44,132 +37,29 @@
             </div>
             <div class="col-lg-9 col-md-9">
                 <div class="product-list row">
-                    <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
-                        <div class="product-thumbnail">
-                            <a href="../detail_book_page/index.php"><img src="../../../assets/images/product_page/1.png"
-                                    alt="product1" class="img-fluid">
-                            </a>
-                        </div>
-                        <div class="product-content text-center pt-3 pb-1 px-2">
-                            <h5>Robin Parrish</h5>
-                            <ul class="price d-flex justify-content-center mt-1">
-                                <li class="color-orange me-5 fw-bold">$34.00</li>
-                                <li class="fw-bold text-decoration-line-through">$35.00</li>
+                    <?php foreach($books as $book) {?>
+                        <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
+                            <div class="product-thumbnail">
+                                <a href="../detail_book_page/index.php?id=<?php echo $book['id']; ?>"><img style="max-height: 210px;" src="<?php echo $book['link_image']?>"
+                                        alt="product<?php echo $book['id']; ?>" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="product-content text-center pt-3 pb-1 px-2">
+                                <h6 title="<?php echo $book['name']; ?>"><?php echo $book['name']; ?></h6>
+                                <ul class="price d-flex justify-content-center mt-1">
+                                    <li class="color-orange mr-5 fw-bold">$<?php echo $book['price']; ?></li>
+                                    <li class="fw-bold text-decoration-line-through"><del>$<?php echo $book['price'] + 1.0; ?></del></li>
+                                </ul>
+                            </div>
+                            <ul class="rating d-flex justify-content-center">
+                                <li class="me-1 color-orange fa fa-star"></li>
+                                <li class="me-1 color-orange fa fa-star"></li>
+                                <li class="me-1 color-orange fa fa-star"></li>
+                                <li class="me-1 color-orange fa fa-star"></li>
+                                <li class="fa fa-star"></li>
                             </ul>
                         </div>
-                        <ul class="rating d-flex justify-content-center">
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                        </ul>
-                    </div>
-                    <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
-                        <div class="product-thumbnail">
-                            <a href="../detail_book_page/index.php"><img src="../../../assets/images/product_page/2.png"
-                                    alt="product1" class="img-fluid">
-                            </a>
-                        </div>
-                        <div class="product-content text-center pt-3 pb-1 px-2">
-                            <h5>Robin Parrish</h5>
-                            <ul class="price d-flex justify-content-center mt-1">
-                                <li class="color-orange me-5 fw-bold">$34.00</li>
-                                <li class="fw-bold text-decoration-line-through">$35.00</li>
-                            </ul>
-                        </div>
-                        <ul class="rating d-flex justify-content-center">
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                        </ul>
-                    </div>
-                    <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
-                        <div class="product-thumbnail">
-                            <a href="../detail_book_page/index.php"><img src="../../../assets/images/product_page/3.png"
-                                    alt="product1" class="img-fluid">
-                            </a>
-                        </div>
-                        <div class="product-content text-center pt-3 pb-1 px-2">
-                            <h5>Robin Parrish</h5>
-                            <ul class="price d-flex justify-content-center mt-1">
-                                <li class="color-orange me-5 fw-bold">$34.00</li>
-                                <li class="fw-bold text-decoration-line-through">$35.00</li>
-                            </ul>
-                        </div>
-                        <ul class="rating d-flex justify-content-center">
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                        </ul>
-                    </div>
-                    <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
-                        <div class="product-thumbnail">
-                            <a href="../detail_book_page/index.php"><img src="../../../assets/images/product_page/4.png"
-                                    alt="product1" class="img-fluid">
-                            </a>
-                        </div>
-                        <div class="product-content text-center pt-3 pb-1 px-2">
-                            <h5>Robin Parrish</h5>
-                            <ul class="price d-flex justify-content-center mt-1">
-                                <li class="color-orange me-5 fw-bold">$34.00</li>
-                                <li class="fw-bold text-decoration-line-through">$35.00</li>
-                            </ul>
-                        </div>
-                        <ul class="rating d-flex justify-content-center">
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                        </ul>
-                    </div>
-                    <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
-                        <div class="product-thumbnail">
-                            <a href="../detail_book_page/index.php"><img src="../../../assets/images/product_page/5.png"
-                                    alt="product1" class="img-fluid">
-                            </a>
-                        </div>
-                        <div class="product-content text-center pt-3 pb-1 px-2">
-                            <h5>Arifean Hason</h5>
-                            <ul class="price d-flex justify-content-center mt-1">
-                                <li class="color-orange me-5 fw-bold">$34.00</li>
-                                <li class="fw-bold text-decoration-line-through">$35.00</li>
-                            </ul>
-                        </div>
-                        <ul class="rating d-flex justify-content-center">
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                        </ul>
-                    </div>
-                    <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
-                        <div class="product-thumbnail">
-                            <a href="../detail_book_page/index.php"><img src="../../../assets/images/product_page/6.png"
-                                    alt="product1" class="img-fluid">
-                            </a>
-                        </div>
-                        <div class="product-content text-center pt-3 pb-1 px-2">
-                            <h5>Tyehimba Jess</h5>
-                            <ul class="price d-flex justify-content-center mt-1">
-                                <li class="color-orange me-5 fw-bold">$34.00</li>
-                                <li class="fw-bold text-decoration-line-through">$35.00</li>
-                            </ul>
-                        </div>
-                        <ul class="rating d-flex justify-content-center">
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="me-1 color-orange fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                        </ul>
-                    </div>
+                    <?php } ?>
                 </div>
                 <div class="paginationlist text-center">
                     <ul class="text-center">

@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact page</title>
     <?php include('../include/stylesheet.php'); ?>
-
+    <?php include('../include/script.php'); ?>
 </head>
 
 <body>
     <?php include("../include/header.php"); ?>
     <?php include("./main.php"); ?>
     <?php include("../include/footer.php"); ?>
-    <?php include('../include/script.php'); ?>
+
 
 </body>
 
