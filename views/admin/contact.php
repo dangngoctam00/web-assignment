@@ -269,7 +269,7 @@ if (!$_SESSION['id']) {
                                         if ($result) {
                                             while ($row = $result->fetch_assoc()) {
                                         ?>
-                                        <tr>
+                                        <tr id=<?php echo $row['id']; ?>>
                                             <td><?php echo $row['id']; ?></td>
                                             <td><?php echo $row['first_name']; ?></td>
                                             <td><?php echo $row['last_name']; ?></td>
@@ -285,12 +285,14 @@ if (!$_SESSION['id']) {
                                                     value=<?php echo $row['id']; ?>>Delete</button></td>
                                         </tr>
 
-                                        <tr class="">
+                                        <tr id=<?php echo $row['id'] . "collapse"; ?>>
                                             <th colspan="9">
                                                 <div class="card collapse" id=<?php echo "msg" . $row['id']; ?>>
                                                     <div class="card-header">
                                                         <h6 id="titleTable">
-                                                            Customer Message
+                                                            <?php
+                                                                    echo $row['first_name'] . " " . $row["last_name"] . "'s message";
+                                                                    ?>
                                                         </h6>
                                                     </div>
                                                     <div class="card-content p-3">
@@ -323,6 +325,7 @@ if (!$_SESSION['id']) {
             </div>
         </div>
     </div>
+    <script src="../../assets/js/admin/contact.js"></script>
 </body>
 
 </html>
