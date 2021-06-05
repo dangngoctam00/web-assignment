@@ -1,4 +1,10 @@
  <link rel="stylesheet" href="../../../assets/css/about_page/main.css">
+ <?php
+    require_once "../../../data/config.php";
+    $query = "select * from employee";
+    $result = $mysql_db->query($query);
+
+    ?>
  <main class="about_area  margin-top">
      <!-- Introduction -->
      <section class="summary">
@@ -105,69 +111,40 @@
                      </section>
                  </div>
              </div>
-             <div class="row">
+             <div class="row d-flex justify-content-center">
+                 <!-- "../../../assets/images/about_page/avatar1.gif" -->
+                 <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                    ?>
                  <div class="col-md-3 col-6 my-md-4 my-3 d-flex align-items-stretch">
                      <div class="team_member card text-center border-danger">
-                         <img class="card-img-top img-fluid" src="../../../assets/images/about_page/avatar1.gif"
+                         <img class="card-img-top img-fluid" src=<?php echo "../../../" . $row['link_image']; ?>
                              alt="A team member">
                          <div class="card-body">
-                             <h5 class="card-title">Lê Bá Thông</h5>
-                             <h6 class="card-subtitle mb-2 text-muted">Co-founder</h6>
+                             <h5 class="card-title"><?php echo $row['full_name']; ?></h5>
+                             <h6 class="card-subtitle mb-2 text-muted"><?php echo $row['work_as']; ?></h6>
                              <nav id="nav_member">
-                                 <a href="#" class="card-link"><i class="fab fa-twitter"></i></a>
-                                 <a href="#" class="card-link"><i class="fab fa-facebook-f"></i></a>
-                                 <a href="#" class="card-link"><i class="fab fa-instagram"></i></a>
+                                 <a href=<?php echo $row["link_twitter"]; ?> class="card-link"><i
+                                         class="fab fa-twitter"></i></a>
+                                 <a href=<?php echo $row["link_facebook"]; ?> class="card-link"><i
+                                         class="fab fa-facebook-f"></i></a>
+                                 <a href=<?php echo $row["link_instagram"]; ?> class="card-link"><i
+                                         class="fab fa-instagram"></i></a>
                              </nav>
                          </div>
                      </div>
                  </div>
-                 <div class="col-md-3 col-6 my-md-4 my-3 d-flex align-items-stretch">
-                     <div class="team_member card text-center border-danger">
-                         <img class="card-img-top img-fluid" src="../../../assets/images/about_page/avatar2.gif"
-                             alt="A team member">
-                         <div class="card-body">
-                             <h5 class="card-title">Đặng Ngọc Tâm</h5>
-                             <h6 class="card-subtitle mb-2 text-muted">Manager</h6>
-                             <nav id="nav_member">
-                                 <a href="#" class="card-link"><i class="fab fa-twitter"></i></a>
-                                 <a href="#" class="card-link"><i class="fab fa-facebook-f"></i></a>
-                                 <a href="#" class="card-link"><i class="fab fa-instagram"></i></a>
-                             </nav>
-                         </div>
-                     </div>
+                 <?php
+                        }
+                    } else {
+                        ?>
+                 <div>
+                     <h3>There are current no experts.</h3>
                  </div>
-                 <div class="col-md-3 col-6 my-md-4 my-3 d-flex align-items-stretch">
-                     <div class="team_member card text-center border-danger">
-                         <img class="card-img-top img-fluid" src="../../../assets/images/about_page/avatar3.gif"
-                             alt="A team member">
-                         <div class="card-body">
-                             <h5 class="card-title">Nguyễn Phi Thông</h5>
-                             <h6 class="card-subtitle mb-2 text-muted">Co-founder</h6>
-                             <nav id="nav_member">
-                                 <a href="#" class="card-link"><i class="fab fa-twitter"></i></a>
-                                 <a href="#" class="card-link"><i class="fab fa-facebook-f"></i></a>
-                                 <a href="#" class="card-link"><i class="fab fa-instagram"></i></a>
-                             </nav>
-                         </div>
-                     </div>
-                 </div>
-
-                 <div class="col-md-3 col-6 my-md-4 my-3 d-flex align-items-stretch">
-                     <div class="team_member card text-center border-danger">
-                         <img class="card-img-top img-fluid" src="../../../assets/images/about_page/avatar4.gif"
-                             alt="A team member">
-                         <div class="card-body">
-                             <h5 class="card-title">Nguyễn Ngọc Thuấn</h5>
-                             <h6 class="card-subtitle mb-2 text-muted">Marketer</h6>
-                             <nav id="nav_member">
-                                 <a href="#" class="card-link"><i class="fab fa-twitter"></i></a>
-                                 <a href="#" class="card-link"><i class="fab fa-facebook-f"></i></a>
-                                 <a href="#" class="card-link"><i class="fab fa-instagram"></i></a>
-                             </nav>
-                         </div>
-                     </div>
-                 </div>
+                 <?php
+                    }
+                    ?>
              </div>
-         </div>
      </section>
  </main>

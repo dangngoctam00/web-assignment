@@ -76,7 +76,7 @@ if (!$_SESSION['id']) {
                 <nav class="left_nav_bar navbar navbar-dark sticky-top" style="top: 60px;">
                     <ul class="navbar-nav" id="leftNavbar">
                         <li class="nav-item">
-                            <a class="left_bar_link nav-link active" href="index.php">
+                            <a class="left_bar_link nav-link" href="index.php">
                                 <i class="fas fa-tachometer-alt"></i>
                                 <span class="nav-link-text ml-4">Dashboard</span>
                             </a>
@@ -103,7 +103,7 @@ if (!$_SESSION['id']) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="left_bar_link nav-link" href="contact.php">
+                            <a class="left_bar_link nav-link active" href="contact.php">
                                 <i class="fas fa-comment"></i>
                                 <span class="nav-link-text ml-4">Contact</span>
                             </a>
@@ -239,81 +239,6 @@ if (!$_SESSION['id']) {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 id="titleTable">
-                                    My Profile
-                                </h3>
-                            </div>
-                            <div class="card-content">
-                                <?php
-                                $sql = "select email, first_name, last_name, 
-                                user_name , phone, birthdate from admin WHERE id= '" . $_SESSION['id'] . "'";
-                                $result = $mysql_db->query($sql);
-                                $row = $result->fetch_assoc();
-                                ?>
-
-                                <table class="table">
-                                    <tr>
-                                        <th>Username</th>
-                                        <td><?php echo $row['user_name']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>First Name</th>
-                                        <td><?php echo $row['first_name']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Last Name</th>
-                                        <td><?php echo $row['last_name']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Email</th>
-                                        <td><?php echo $row['email']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Telephone</th>
-                                        <td><?php echo $row['phone']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Birthday</th>
-                                        <td><?php echo $row['birthdate']; ?></td>
-                                    </tr>
-                                </table>
-
-                            </div>
-
-                        </div>
-                        <div class="col d-flex justify-content-center my-3">
-                            <button class="btn btn-outline-primary mx-3" data-toggle="modal"
-                                data-target="#profileModal">Edit Profile</button>
-                            <button class="btn btn-outline-success mr-2" data-toggle="modal"
-                                data-target="#passwordModal">Change Password</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal section -->
-    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
-        id="profileModal">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

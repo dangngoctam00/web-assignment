@@ -9,9 +9,3 @@
 
 
 <script src="https://kit.fontawesome.com/1394c726bd.js" crossorigin="anonymous"></script>
-<script src="../../../assets/js/home_page/data-scroll.js"></script>
-<script>
-$('.carousel').carousel({
-    interval: 2000
-});
-</script>

@@ -53,8 +53,8 @@
                         <div class="product-content text-center pt-3 pb-1 px-2">
                             <h5>Robin Parrish</h5>
                             <ul class="price d-flex justify-content-center mt-1">
-                                <li class="color-orange me-5 fw-bold">$34.00</li>
-                                <li class="fw-bold text-decoration-line-through">$35.00</li>
+                                <li class="color-orange mr-5 fw-bold">$34.00</li>
+                                <li class="fw-bold text-decoration-line-through"><del>$35.00</del></li>
                             </ul>
                         </div>
                         <ul class="rating d-flex justify-content-center">
@@ -74,8 +74,8 @@
                         <div class="product-content text-center pt-3 pb-1 px-2">
                             <h5>Robin Parrish</h5>
                             <ul class="price d-flex justify-content-center mt-1">
-                                <li class="color-orange me-5 fw-bold">$34.00</li>
-                                <li class="fw-bold text-decoration-line-through">$35.00</li>
+                                <li class="color-orange mr-5 fw-bold">$34.00</li>
+                                <li class="fw-bold text-decoration-line-through"><del>$35.00</del></li>
                             </ul>
                         </div>
                         <ul class="rating d-flex justify-content-center">
@@ -95,8 +95,8 @@
                         <div class="product-content text-center pt-3 pb-1 px-2">
                             <h5>Robin Parrish</h5>
                             <ul class="price d-flex justify-content-center mt-1">
-                                <li class="color-orange me-5 fw-bold">$34.00</li>
-                                <li class="fw-bold text-decoration-line-through">$35.00</li>
+                                <li class="color-orange mr-5 fw-bold">$34.00</li>
+                                <li class="fw-bold text-decoration-line-through"><del>$35.00</del></li>
                             </ul>
                         </div>
                         <ul class="rating d-flex justify-content-center">
@@ -116,8 +116,8 @@
                         <div class="product-content text-center pt-3 pb-1 px-2">
                             <h5>Robin Parrish</h5>
                             <ul class="price d-flex justify-content-center mt-1">
-                                <li class="color-orange me-5 fw-bold">$34.00</li>
-                                <li class="fw-bold text-decoration-line-through">$35.00</li>
+                                <li class="color-orange mr-5 fw-bold">$34.00</li>
+                                <li class="fw-bold text-decoration-line-through"><del>$35.00</del></li>
                             </ul>
                         </div>
                         <ul class="rating d-flex justify-content-center">
@@ -135,10 +135,10 @@
                             </a>
                         </div>
                         <div class="product-content text-center pt-3 pb-1 px-2">
-                            <h5>Arifean Hason</h5>
+                            <h5>Robin Parrish</h5>
                             <ul class="price d-flex justify-content-center mt-1">
-                                <li class="color-orange me-5 fw-bold">$34.00</li>
-                                <li class="fw-bold text-decoration-line-through">$35.00</li>
+                                <li class="color-orange mr-5 fw-bold">$34.00</li>
+                                <li class="fw-bold text-decoration-line-through"><del>$35.00</del></li>
                             </ul>
                         </div>
                         <ul class="rating d-flex justify-content-center">
@@ -156,10 +156,10 @@
                             </a>
                         </div>
                         <div class="product-content text-center pt-3 pb-1 px-2">
-                            <h5>Tyehimba Jess</h5>
+                            <h5>Robin Parrish</h5>
                             <ul class="price d-flex justify-content-center mt-1">
-                                <li class="color-orange me-5 fw-bold">$34.00</li>
-                                <li class="fw-bold text-decoration-line-through">$35.00</li>
+                                <li class="color-orange mr-5 fw-bold">$34.00</li>
+                                <li class="fw-bold text-decoration-line-through"><del>$35.00</del></li>
                             </ul>
                         </div>
                         <ul class="rating d-flex justify-content-center">

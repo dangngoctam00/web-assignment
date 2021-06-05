@@ -44,38 +44,47 @@
                          </p>
                          <form id="contactForm">
                              <div class="form-row">
-                                 <div class="form-group col-md-6">
-                                     <label for="inputFirstName">First Name:</label>
-                                     <input type="text" class="form-control" id="inputFirstname" placeholder="John">
-
+                                 <div class="form-group col-md-6" id="formFirstName">
+                                     <label for="inputFirstName">First Name*:</label>
+                                     <input type="text" class="form-control" id="inputFirstname" placeholder="John"
+                                         value="">
+                                     <!-- <small><i class="fas fa-exclamation-triangle"></i> sdfsdajjdlsf</small> -->
                                  </div>
-                                 <div class="form-group col-md-6">
-                                     <label for="inputLastName">Last Name:</label>
+                                 <div class="form-group col-md-6" id="formLastName">
+                                     <label for="inputLastName">Last Name*:</label>
                                      <input type="text" class="form-control" id="inputLastName" placeholder="Smith">
                                  </div>
                              </div>
                              <div class="form-row">
-                                 <div class="form-group col-md-6">
-                                     <label for="inputEmail">Email:</label>
+                                 <div class="form-group col-md-6" id="formEmail">
+                                     <label for="inputEmail">Email*:</label>
                                      <input type="email" class="form-control" id="inputEmail"
                                          placeholder="example@gmail.com">
                                  </div>
-                                 <div class="form-group col-md-6">
+                                 <div class="form-group col-md-6" id="formWebsite">
                                      <label for="inputWebsite">Website:</label>
                                      <input type="text" class="form-control" id="inputWebsite"
                                          placeholder="https://www.facebook.com/user">
                                  </div>
                              </div>
-                             <div class="form-group">
+                             <div class="form-group" id="formSubject">
                                  <label for="inputSubject">Subject:</label>
                                  <input type="text" class="form-control" id="inputSubject" placeholder="Improvement">
                              </div>
-                             <div class="form-group">
-                                 <label for="inputMessage">Type your message here:</label>
+                             <div class="form-group" id="formMessage">
+                                 <label for="inputMessage">Type your message here*:</label>
                                  <textarea id="inputMessage" class="form-control" rows="8"></textarea>
                              </div>
+                             <div class="d-flex justify-content-center">
+                                 <button type="button" class="btn btn-primary mt-2" name="btn_send_email"
+                                     id="btn_send_email">
+                                     Send email
+                                 </button>
+                                 <div class="spinner-border mt-2 ml-2" id="spinnerEmail" role="status">
 
-                             <button type="submit" class="btn btn-primary">Send email</button>
+                                 </div>
+                             </div>
+
                          </form>
                      </section>
                  </div>
@@ -126,7 +135,6 @@
                                  </div>
                                  <div class="info_content ml-3">
                                      <h5>Website: </h5>
-
                                      <a id="linkWeb" href="https://mybk.hcmut.edu.vn/">
                                          https://mybk.hcmut.edu.vn/
                                      </a>
@@ -145,3 +153,4 @@
      </section>
      <!-- end content -->
  </main>
+ <script src="../../../assets/js/contact_page/postEmail.js"></script>
