@@ -65,7 +65,9 @@ CREATE table reviewed_by(
     #Number of stars 0-5 quality and price
     quality int,
     price int,
-    PRIMARY KEY (book_id, customer_id),
+    date_review datetime,
+    content longtext,
+    PRIMARY KEY (book_id, customer_id, date_review),
     FOREIGN KEY (book_id) REFERENCES book(id),
     FOREIGN key (customer_id) REFERENCES customer(id)
 );
@@ -104,6 +106,12 @@ create table verification_account(
     primary key (email),
     foreign key (email) references customer(email)
 );
+
+create table image_foto(
+    book_id int,
+    link varchar(50),
+    primary key (book_id,link)
+);
 INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_twitter, link_instagram) VALUES
 ("Lê Bá Thông", "Co-founder", "/assets/images/slide1.jpg","https://www.facebook.com/thong.leba.3", "https://www.instagram.com/thongleb/", "https://twitter.com/thong94584917");
 INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_twitter, link_instagram) VALUES
@@ -112,3 +120,50 @@ INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_twitter,
 ("Đặng Ngọc Tâm", "Manager", "/assets/images/slide3.jpg","https://www.facebook.com/scotlandyard00", "https://www.instagram.com/dntt_00/", "https://twitter.com/thong94584917");
 INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_twitter, link_instagram) VALUES
 ("Nguyễn Ngọc Thuấn", "Marketer", "/assets/images/slide4.jpg","https://www.facebook.com/ngocthuan1210", "https://www.instagram.com/dntt_00/", "https://twitter.com/thong94584917");
+
+# insert image_foto
+INSERT INTO image_foto (book_id,link) VALUES (1,"../../../assets/images/detail_book_page/1/1.jpeg");
+INSERT INTO image_foto (book_id,link) VALUES (1,"../../../assets/images/detail_book_page/1/2.jpeg");
+INSERT INTO image_foto (book_id,link) VALUES (1,"../../../assets/images/detail_book_page/1/3.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (2,"../../../assets/images/detail_book_page/2/1.jpeg");
+INSERT INTO image_foto (book_id,link) VALUES (2,"../../../assets/images/detail_book_page/2/2.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (3,"../../../assets/images/detail_book_page/3/1.jpeg");
+INSERT INTO image_foto (book_id,link) VALUES (3,"../../../assets/images/detail_book_page/3/2.png");
+
+INSERT INTO image_foto (book_id,link) VALUES (4,"../../../assets/images/detail_book_page/4/1.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (5,"../../../assets/images/detail_book_page/5.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (6,"../../../assets/images/detail_book_page/6.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (7,"../../../assets/images/detail_book_page/7.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (8,"../../../assets/images/detail_book_page/8.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (9,"../../../assets/images/detail_book_page/9.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (10,"../../../assets/images/detail_book_page/10.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (11,"../../../assets/images/detail_book_page/11.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (12,"../../../assets/images/detail_book_page/12.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (13,"../../../assets/images/detail_book_page/13.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (14,"../../../assets/images/detail_book_page/14.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (15,"../../../assets/images/detail_book_page/15.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (16,"../../../assets/images/detail_book_page/16.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (17,"../../../assets/images/detail_book_page/17.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (18,"../../../assets/images/detail_book_page/18.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (19,"../../../assets/images/detail_book_page/19.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (20,"../../../assets/images/detail_book_page/20.jpeg");
+
+
