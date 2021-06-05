@@ -53,6 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->AltBody = "This is the plain text version of the email content";
         try {
             $mail->send();
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
             $query = "insert into send_email_log (first_name,last_name,email,website,subject,message,created_at)
             values ('" . test_input($_POST["firstName"]) . "','"
                 . test_input($_POST["lastName"]) . "','"

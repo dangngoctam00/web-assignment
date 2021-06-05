@@ -72,7 +72,7 @@ if (!$_SESSION['id']) {
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 col-12 bg-dark mt-0" style="height: 100vh;">
+            <div class="col-md-2 col-12 bg-dark mt-0 min-vh-100 d-flex flex-column">
                 <nav class="left_nav_bar navbar navbar-dark sticky-top" style="top: 60px;">
                     <ul class="navbar-nav" id="leftNavbar">
                         <li class="nav-item">
@@ -298,27 +298,121 @@ if (!$_SESSION['id']) {
         </div>
     </div>
     <!-- Modal section -->
+    <!-- Edit profile -->
     <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
         id="profileModal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h5 class="modal-title">Edit Your Profile</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
+                    <form>
+                        <div class="form-group row">
+                            <label for="inputUserName" class="col-sm-2 col-form-label font-weight-bold">Username</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputUserName" value=<?php
+                                                                                                    echo $row['user_name'];
+                                                                                                    ?>>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputFirstName" class="col-sm-2 col-form-label font-weight-bold">First
+                                Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputFirstName" value=<?php
+                                                                                                    echo $row['first_name'];
+                                                                                                    ?>>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputLastName" class="col-sm-2 col-form-label font-weight-bold">Last
+                                Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputLastName" value=<?php
+                                                                                                    echo $row['last_name'];
+                                                                                                    ?>>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail" class="col-sm-2 col-form-label font-weight-bold">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail" value=<?php
+                                                                                                echo $row['email'];
+                                                                                                ?>>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPhone" class="col-sm-2 col-form-label font-weight-bold">Telephone</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPhone" value=<?php
+                                                                                                echo $row['phone'];
+                                                                                                ?>>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputBirthday" class="col-sm-2 col-form-label font-weight-bold">Birthday</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" id="inputBirthday" value=<?php
+                                                                                                    echo $row['birthdate'];
+                                                                                                    ?>>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer d-flex justify-content-center">
                     <button type="button" class="btn btn-primary">Save changes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Change password -->
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
+        id="passwordModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Change your password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row">
+                            <label for="inputOldPassword" class="col-sm-3 col-form-label font-weight-bold">Old
+                                Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="inputOldPassword">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputNewPassWord1" class="col-sm-3 col-form-label font-weight-bold">New
+                                Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="inputNewPassWord1">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputNewPassWord2" class="col-sm-3 col-form-label font-weight-bold">Retype New
+                                Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="inputNewPassWord2">
+                            </div>
 
+                    </form>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary">Confirm</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
