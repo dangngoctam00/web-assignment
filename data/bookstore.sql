@@ -106,3 +106,7 @@ create table verification_account(
     foreign key (email) references customer(email)
 );
 
+create table subscribes(
+    email varchar(50),
+    primary key (email)
+);

@@ -66,3 +66,13 @@
         background: #f6f6f6;
     }
 }
+
+.error-mesg {
+    color: #cc0000;
+    margin-top: 10px;
+}
+
+.success-mesg {
+    margin-top: 10px;
+    color: #619664;
+}
