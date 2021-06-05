@@ -51,6 +51,8 @@ create TABLE book(
     is_bestseller int(1) default '0',
     PRIMARY KEY (id),
     foreign key (category) references categories(category)
+    on delete cascade
+    on update cascade
 );
 #One book may have more than 1 author.
 CREATE TABLE written_by (
@@ -58,6 +60,8 @@ CREATE TABLE written_by (
     author varchar(255),
     PRIMARY key (book_id,author),
     FOREIGN key (book_id) REFERENCES book(id)
+    on delete cascade
+    on update cascade
 );
 CREATE table reviewed_by(
     book_id int,
@@ -65,9 +69,15 @@ CREATE table reviewed_by(
     #Number of stars 0-5 quality and price
     quality int,
     price int,
-    PRIMARY KEY (book_id, customer_id),
-    FOREIGN KEY (book_id) REFERENCES book(id),
+    date_review datetime,
+    content longtext,
+    PRIMARY KEY (book_id, customer_id, date_review),
+    FOREIGN KEY (book_id) REFERENCES book(id)
+    on delete cascade
+    on update cascade,
     FOREIGN key (customer_id) REFERENCES customer(id)
+    on delete cascade
+    on update cascade
 );
 CREATE TABLE shopping_log(
     id int AUTO_INCREMENT,
@@ -214,6 +224,50 @@ Chuyện gì sẽ xảy ra nếu tôi nói rằng có một phương pháp cực
 Chuyện gì sẽ xảy ra nếu tôi nói rằng phương pháp này nằm trong chính cuốn sách Triệu phú bất động sản tự thân – và bạn hoàn toàn có thể học cách trở thành triệu phú?
 Bạn hứng thú chứ? Bạn sẵn lòng dành thời gian với tôi không? Bạn có thật sự muốn trở thành triệu phú bất động sản không?", "../../../assets/images/product_page/20.png", "2018-10-1", 0);
 
+# insert image_foto
 
+INSERT INTO image_foto (book_id,link) VALUES (1,"../../../assets/images/detail_book_page/1/1.jpeg");
+INSERT INTO image_foto (book_id,link) VALUES (1,"../../../assets/images/detail_book_page/1/2.jpeg");
+INSERT INTO image_foto (book_id,link) VALUES (1,"../../../assets/images/detail_book_page/1/3.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (2,"../../../assets/images/detail_book_page/2/1.jpeg");
+INSERT INTO image_foto (book_id,link) VALUES (2,"../../../assets/images/detail_book_page/2/2.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (3,"../../../assets/images/detail_book_page/3/1.jpeg");
+INSERT INTO image_foto (book_id,link) VALUES (3,"../../../assets/images/detail_book_page/3/2.png");
+
+INSERT INTO image_foto (book_id,link) VALUES (4,"../../../assets/images/detail_book_page/4/1.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (5,"../../../assets/images/detail_book_page/5.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (6,"../../../assets/images/detail_book_page/6.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (7,"../../../assets/images/detail_book_page/7.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (8,"../../../assets/images/detail_book_page/8.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (9,"../../../assets/images/detail_book_page/9.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (10,"../../../assets/images/detail_book_page/10.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (11,"../../../assets/images/detail_book_page/11.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (12,"../../../assets/images/detail_book_page/12.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (13,"../../../assets/images/detail_book_page/13.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (14,"../../../assets/images/detail_book_page/14.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (15,"../../../assets/images/detail_book_page/15.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (16,"../../../assets/images/detail_book_page/16.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (17,"../../../assets/images/detail_book_page/17.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (18,"../../../assets/images/detail_book_page/18.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (19,"../../../assets/images/detail_book_page/19.jpeg");
+
+INSERT INTO image_foto (book_id,link) VALUES (20,"../../../assets/images/detail_book_page/20.jpeg");
 
 
