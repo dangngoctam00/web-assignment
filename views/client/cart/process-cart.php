@@ -3,7 +3,7 @@
     if(isset($_COOKIE["shopping_cart"])) {
         $cookie_data = stripslashes($_COOKIE['shopping_cart']);
         $cart_data = json_decode($cookie_data, true, JSON_UNESCAPED_UNICODE);
-        $arr = array_column($cart_data, 'item_name');
+        $arr = array_column($cart_data, 'item_city');
         foreach($arr as $a) {
             echo "<p>$a</p>";
         }

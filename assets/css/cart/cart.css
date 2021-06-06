@@ -24,9 +24,42 @@
     margin-bottom: 20px;
 }
 
+.address-label {
+    margin-right: 10px;   
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;        
+}
+
+.form-control {
+    background-color: #fbfbfb;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+}
+
+[class^='product-'],
+.value-order {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-weight: 500;
+    font-size: 1rem !important;
+}
+
+
 .cartbox__btn {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .checkout-btn {

@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="../../../assets/css/home_page/new_product.css">
 <link rel="stylesheet" href="../../../assets/owl_carousel/dist/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="../../../assets/owl_carousel/dist/assets/owl.theme.default.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 <section class="new_product">
     <div class="container">
         <div class="text">
@@ -101,7 +103,17 @@
                 success: function(mesg){
                     if (mesg == 'error') {                      
                         return;
-                    }                    
+                    }      
+                    toastr.options = {
+                        "debug": false,
+                        "positionClass": "toast-top-full-width",
+                        "onclick": null,
+                        "fadeIn": 300,
+                        "fadeOut": 600,
+                        "timeOut": 2000,
+                        "extendedTimeOut": 1000
+                    }
+                    toastr.success('Add product to cart successfully');
                 }                                         
             })                   
 
