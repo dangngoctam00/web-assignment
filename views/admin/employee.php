@@ -53,10 +53,10 @@ if (!$_SESSION['id']) {
                             ?>
                         </span>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">
                             <i class="fas fa-cog"></i>
-                            <span class="nav-link-text">Settings</span>
+                            <span class="nav-link-text">Change avatar</span>
                         </a>
                         <a class="dropdown-item" href="./logout.php">
                             <i class="fas fa-sign-out-alt"></i>
@@ -245,7 +245,8 @@ if (!$_SESSION['id']) {
                 <div class="row">
                     <div class="col-12">
                         <div class="col d-flex justify-content-end">
-                            <button class="btn btn-outline-primary mx-3" data-toggle="modal" data-target="#staffModal">Add new employee</button>
+                            <button class="btn btn-outline-primary mx-3" data-toggle="modal"
+                                data-target="#staffModal">Add new employee</button>
                         </div>
                         <br>
                         <div class="card">
@@ -255,7 +256,8 @@ if (!$_SESSION['id']) {
                                 </h3>
                             </div>
                             <div class="card-content">
-                                <table class="table table-striped table-hover table-responsive-lg" style="table-layout:fixed;">
+                                <table class="table table-striped table-hover table-responsive-lg"
+                                    style="table-layout:fixed;">
                                     <thead>
                                         <tr>
                                             <th class="font-weight-bold table-primary">ID</th>
@@ -271,10 +273,10 @@ if (!$_SESSION['id']) {
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql = "SELECT * from employee";
-                                            $res = $mysql_db -> query($sql);
-                                            while ($row = $res -> fetch_assoc()){
-                                            
+                                        $sql = "SELECT * from employee";
+                                        $res = $mysql_db->query($sql);
+                                        while ($row = $res->fetch_assoc()) {
+
                                         ?>
                                         <tr>
                                             <td> <?php echo $row['id'] ?> </td>
@@ -284,12 +286,16 @@ if (!$_SESSION['id']) {
                                             <td> <?php echo $row['link_facebook'] ?> </td>
                                             <td> <?php echo $row['link_twitter'] ?> </td>
                                             <td> <?php echo $row['link_instagram'] ?> </td>
-                                            <td> <button class="btn btn-primary" data-toggle="modal" data-target="#staffEditModal<?php echo $row['id'] ?>">Edit</button> </td>
-                                            <td> <button class="btn btn-danger" onclick="deleteStaff(<?php echo $row['id'] ?>)">Delete</button></td>  </td>
+                                            <td> <button class="btn btn-primary" data-toggle="modal"
+                                                    data-target="#staffEditModal<?php echo $row['id'] ?>">Edit</button>
+                                            </td>
+                                            <td> <button class="btn btn-danger"
+                                                    onclick="deleteStaff(<?php echo $row['id'] ?>)">Delete</button></td>
+                                            </td>
                                         </tr>
 
                                         <?php
-                                            }
+                                        }
                                         ?>
                                     </tbody>
                                 </table>
@@ -302,7 +308,7 @@ if (!$_SESSION['id']) {
         </div>
     </div>
 
-    
+
 
 </body>
 

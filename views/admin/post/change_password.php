@@ -8,7 +8,7 @@ function validPassword($password)
     $number    = preg_match('@[0-9]@', $password);
 
     if (!$uppercase || !$lowercase || !$number  || strlen($password) < 8) {
-        return 'Password should be at least 8 characters in length and should include at least one upper case letter, and one one number.';
+        return 'Password should be at least 8 characters in length and should include at least one upper case letter, and one number.';
     } else {
         return "";
     }
