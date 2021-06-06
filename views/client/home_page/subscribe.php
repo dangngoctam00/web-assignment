@@ -10,14 +10,47 @@
                 <div class="newsletter_block text_center">
                     <p>Subscribe to our newsletters now and stay up-to-date with new collections, the latest
                         lookbooks and exclusive offers.</p>
-                    <form action="#">
+                    <form action="">
                         <div class="newsletter_box">
-                            <input type="email" placeholder="Enter your e-mail">
-                            <button>Subscribe</button>
+                            <input id="email" type="email" placeholder="Enter your e-mail">
+                            <button id="subscribe-btn" type="button">Subscribe</button>
                         </div>
+                        <div id="mesg"></div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+        $('#subscribe-btn').click(function() {
+        if ($('#email').val() == '') {
+            $('#mesg').html('Please enter a valid mail address.');
+            $('#mesg').removeClass('success-mesg');
+            $('#mesg').addClass('error-mesg');
+            return;
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: 'process_subscribe.php',
+            data: { email: $('#email').val() },
+            success: function(mesg){
+                if (mesg == 'error') {
+                    $('#mesg').html('This email has been already subscribed.');
+                    $('#mesg').removeClass('success-mesg');
+                    $('#mesg').addClass('error-mesg');
+                    return;
+                }
+                $('#mesg').html('Subscribe successfully.');
+                $('#mesg').addClass('success-mesg');
+            },
+            error: function(mes){
+                $('#mesg').html('This email has been already subscribed.');
+                $('#mesg').removeClass('success-mesg');
+                $('#mesg').addClass('error-mesg');
+            }                              
+        })                       
+    });
+</script>

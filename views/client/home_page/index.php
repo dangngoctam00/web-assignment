@@ -22,7 +22,6 @@
     <?php include( '../include/script.php'); ?>
     <?php include( './new_product.php'); ?>
     <?php include( './subscribe.php'); ?>
-    <?php include( './all_products.php'); ?>
     <?php include( './best_seller.php'); ?>
     <?php include( "../include/footer.php"); ?>
 </body>

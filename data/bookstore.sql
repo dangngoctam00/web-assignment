@@ -119,6 +119,10 @@ create table image_foto(
     book_id int,
     link varchar(255),
     PRIMARY KEY (book_id,link)
+
+create table subscribes(
+    email varchar(50),
+    primary key (email)
 );
 
 INSERT INTO employee (full_name, work_as, link_image,link_facebook, link_instagram,link_twitter) VALUES
