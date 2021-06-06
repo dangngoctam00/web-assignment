@@ -9,7 +9,7 @@
         $category = $_GET['category'];
         $books = $product->getBookCategory($category);
     } else $books = $product->getData();
-    shuffle($books);
+    // shuffle($books);
 
     // For pagination
     // Number of items to display in one page
