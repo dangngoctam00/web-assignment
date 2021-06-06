@@ -259,7 +259,7 @@ while ($item = mysqli_fetch_assoc($result)) {
                             </div>
                             <div class="card-content">
                                 <div class="col d-flex justify-content-end">
-                                    <button class="btn btn-outline-primary mx-3" data-toggle="modal" data-target="#customerAddModal">Add new staff</button>
+                                    <button class="btn btn-outline-primary mx-3" data-toggle="modal" data-target="#customerAddModal">Add New Customer</button>
                                 </div>
                                 <table class="table-stripped">
                                     <tr>
@@ -303,7 +303,7 @@ while ($item = mysqli_fetch_assoc($result)) {
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Add new customer</h5>
+                    <h5 class="modal-title" id="modalLabel">Add New Customer</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -313,7 +313,7 @@ while ($item = mysqli_fetch_assoc($result)) {
                         <div class="form-group row align-items-center justify-content-center">
                             <label for="name" class="col-2 col-form-label"><strong>Name</strong></label>
                             <div class="col-10">
-                                <input class="form-control" type="text" value="" id="name" placeholder="Email">
+                                <input class="form-control" type="text" value="" id="name" placeholder="Name">
                             </div>
                             <span class="text-danger" id="nameErr"></span>
                         </div>
@@ -375,7 +375,7 @@ while ($item = mysqli_fetch_assoc($result)) {
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel">Edit customer</h5>
+                        <h5 class="modal-title" id="modalLabel">Edit Customer Information</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
