@@ -120,6 +120,7 @@ create table image_foto(
     link varchar(255),
     PRIMARY KEY (book_id,link)
 );
+
 create table subscribes(
     email varchar(50),
     primary key (email)
@@ -280,4 +281,25 @@ INSERT INTO image_foto (book_id,link) VALUES (19,"../../../assets/images/detail_
 
 INSERT INTO image_foto (book_id,link) VALUES (20,"../../../assets/images/detail_book_page/20.jpeg");
 
-
+-- insert data table written_by
+INSERT INTO written_by (book_id,author) VALUES (1,'Ngô Sa Thạch');
+INSERT INTO written_by (book_id,author) VALUES (2,'Joy Woodward');
+INSERT INTO written_by (book_id,author) VALUES (3,'Joanna Martine Woolfolk');
+INSERT INTO written_by (book_id,author) VALUES (4,'Gia Cát Lượng');
+INSERT INTO written_by (book_id,author) VALUES (5,'Tim Marshall');
+INSERT INTO written_by (book_id,author) VALUES (6,'Paulo Coelho');
+INSERT INTO written_by (book_id,author) VALUES (7,'Mario Puzo');
+INSERT INTO written_by (book_id,author) VALUES (8,'Jeffrey Archer');
+INSERT INTO written_by (book_id,author) VALUES (9,'La Quán Trung');
+INSERT INTO written_by (book_id,author) VALUES (10,'Victor Hugo');
+INSERT INTO written_by (book_id,author) VALUES (11,'Yuval Noah Harari');
+INSERT INTO written_by (book_id,author) VALUES (12,'Dale Carnegie');
+INSERT INTO written_by (book_id,author) VALUES (13,'Dịch giả Lương Trọng Vũ');
+INSERT INTO written_by (book_id,author) VALUES (14,'Francesca Cavallo');
+INSERT INTO written_by (book_id,author) VALUES (14,'Elena Favilli');
+INSERT INTO written_by (book_id,author) VALUES (15,'E. L. James');
+INSERT INTO written_by (book_id,author) VALUES (16,'Benjamin Graham');
+INSERT INTO written_by (book_id,author) VALUES (17,'Nhiều tác giả');
+INSERT INTO written_by (book_id,author) VALUES (18,'Huỳnh Vĩnh Sơn');
+INSERT INTO written_by (book_id,author) VALUES (19,'Dịch giả Bùi Thị Quỳnh Chi');
+INSERT INTO written_by (book_id,author) VALUES (20,'Nhiều tác giả');
