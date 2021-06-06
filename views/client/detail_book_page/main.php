@@ -1,7 +1,7 @@
 <?php
     session_start();
-    //$id = $_GET["id"];
-    $book_id = 3;
+    $book_id = $_GET["id"];
+    //$book_id = 3;
     require ('../../../data/config.php'); 
 
     $sql = "SELECT name, price, description, link_image, published_at from book where id = $book_id";
