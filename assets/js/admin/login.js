@@ -16,7 +16,6 @@ $(document).ready(function () {
                     alert("Welcome Admin " + $('#user_name').val());
                     location.reload();
                 }
-
             });
         return false;
     });
