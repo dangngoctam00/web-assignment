@@ -115,6 +115,12 @@ create table verification_account(
     foreign key (email) references customer(email)
 );
 
+
+create table subscribes(
+    email varchar(50),
+    primary key (email)
+);
+
 INSERT INTO employee (full_name, work_as, link_image,link_facebook, link_instagram,link_twitter) VALUES
 ("Lê Bá Thông", "Co-founder", "/assets/images/about_page/avatar1.gif","https://www.facebook.com/thong.leba.3", "https://www.instagram.com/thongleb/", "https://twitter.com/thong94584917");
 INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_instagram,link_twitter) VALUES
