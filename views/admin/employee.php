@@ -240,9 +240,69 @@ if (!$_SESSION['id']) {
                         </div>
                     </div>
                 </div>
+
+                <!-- start code     -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="col d-flex justify-content-end">
+                            <button class="btn btn-outline-primary mx-3" data-toggle="modal" data-target="#staffModal">Add new employee</button>
+                        </div>
+                        <br>
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 id="titleTable">
+                                    All Employees
+                                </h3>
+                            </div>
+                            <div class="card-content">
+                                <table class="table table-striped table-hover table-responsive-lg" style="table-layout:fixed;">
+                                    <thead>
+                                        <tr>
+                                            <th class="font-weight-bold table-primary">ID</th>
+                                            <th class="font-weight-bold table-primary">Full name</th>
+                                            <th class="font-weight-bold table-primary">Work as</th>
+                                            <th class="font-weight-bold table-primary">Link image</th>
+                                            <th class="font-weight-bold table-primary">Link facebook</th>
+                                            <th class="font-weight-bold table-primary">Link twitter</th>
+                                            <th class="font-weight-bold table-primary">Link instagram</th>
+                                            <th class="font-weight-bold table-primary"></th>
+                                            <th class="font-weight-bold table-primary"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                            $sql = "SELECT * from employee";
+                                            $res = $mysql_db -> query($sql);
+                                            while ($row = $res -> fetch_assoc()){
+                                            
+                                        ?>
+                                        <tr>
+                                            <td> <?php echo $row['id'] ?> </td>
+                                            <td> <?php echo $row['full_name'] ?> </td>
+                                            <td> <?php echo $row['work_as'] ?> </td>
+                                            <td> <?php echo $row['link_image'] ?> </td>
+                                            <td> <?php echo $row['link_facebook'] ?> </td>
+                                            <td> <?php echo $row['link_twitter'] ?> </td>
+                                            <td> <?php echo $row['link_instagram'] ?> </td>
+                                            <td> <button class="btn btn-primary" data-toggle="modal" data-target="#staffEditModal<?php echo $row['id'] ?>">Edit</button> </td>
+                                            <td> <button class="btn btn-danger" onclick="deleteStaff(<?php echo $row['id'] ?>)">Delete</button></td>  </td>
+                                        </tr>
+
+                                        <?php
+                                            }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
+
+    
 
 </body>
 
