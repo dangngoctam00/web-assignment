@@ -17,6 +17,7 @@ if (!$_SESSION['id']) {
     <?php include('./include/stylesheet.php'); ?>
     <?php include('./include/script.php'); ?>
     <link rel="stylesheet" href="../../assets/css/admin/navbar.css">
+    <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
 </head>
 
 <body style="overflow: unset;">
@@ -290,7 +291,8 @@ if (!$_SESSION['id']) {
                             <button class="btn btn-outline-primary mx-3" data-toggle="modal"
                                 data-target="#profileModal">Edit Profile</button>
                             <button class="btn btn-outline-success mr-2" data-toggle="modal"
-                                data-target="#passwordModal">Change Password</button>
+                                data-target="#passwordModal" ?>Change
+                                Password</button>
                         </div>
                     </div>
                 </div>
@@ -386,33 +388,35 @@ if (!$_SESSION['id']) {
                         <div class="form-group row">
                             <label for="inputOldPassword" class="col-sm-3 col-form-label font-weight-bold">Old
                                 Password</label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-9" id="formOldPassword">
                                 <input type="password" class="form-control" id="inputOldPassword">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputNewPassWord1" class="col-sm-3 col-form-label font-weight-bold">New
                                 Password</label>
-                            <div class="col-sm-9">
-                                <input type="password" class="form-control" id="inputNewPassWord1">
+                            <div class="col-sm-9" id="formNewPassword">
+                                <input type="password" class="form-control" id="inputNewPassword">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputNewPassWord2" class="col-sm-3 col-form-label font-weight-bold">Retype New
                                 Password</label>
-                            <div class="col-sm-9">
-                                <input type="password" class="form-control" id="inputNewPassWord2">
+                            <div class="col-sm-9" id="formConfirmNewPassword">
+                                <input type="password" class="form-control" id="inputConfirmNewPassword">
                             </div>
 
                     </form>
                 </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary">Confirm</button>
+                <div class="modal-footer d-flex justify-content-center" id="passwordModalFooter">
+                    <button type="button" class="btn btn-primary" id="confirmChangePassword">Confirm</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
+    <script src="../../assets/js/admin/edit_profile.js"></script>
+    <script src="../../assets/js/admin/change_password.js"></script>
 </body>
 
 </html>

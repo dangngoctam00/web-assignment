@@ -115,6 +115,11 @@ create table verification_account(
     foreign key (email) references customer(email)
 );
 
+create table image_foto(
+    book_id int,
+    link varchar(255),
+    PRIMARY KEY (book_id,link)
+);
 
 create table subscribes(
     email varchar(50),
@@ -230,7 +235,7 @@ Chuyện gì sẽ xảy ra nếu tôi nói rằng có một phương pháp cực
 Chuyện gì sẽ xảy ra nếu tôi nói rằng phương pháp này nằm trong chính cuốn sách Triệu phú bất động sản tự thân – và bạn hoàn toàn có thể học cách trở thành triệu phú?
 Bạn hứng thú chứ? Bạn sẵn lòng dành thời gian với tôi không? Bạn có thật sự muốn trở thành triệu phú bất động sản không?", "../../../assets/images/product_page/20.png", "2018-10-1", 0);
 
-# insert image_foto
+-- insert image_foto
 
 INSERT INTO image_foto (book_id,link) VALUES (1,"../../../assets/images/detail_book_page/1/1.jpeg");
 INSERT INTO image_foto (book_id,link) VALUES (1,"../../../assets/images/detail_book_page/1/2.jpeg");
@@ -276,4 +281,25 @@ INSERT INTO image_foto (book_id,link) VALUES (19,"../../../assets/images/detail_
 
 INSERT INTO image_foto (book_id,link) VALUES (20,"../../../assets/images/detail_book_page/20.jpeg");
 
-
+-- insert data table written_by
+INSERT INTO written_by (book_id,author) VALUES (1,'Ngô Sa Thạch');
+INSERT INTO written_by (book_id,author) VALUES (2,'Joy Woodward');
+INSERT INTO written_by (book_id,author) VALUES (3,'Joanna Martine Woolfolk');
+INSERT INTO written_by (book_id,author) VALUES (4,'Gia Cát Lượng');
+INSERT INTO written_by (book_id,author) VALUES (5,'Tim Marshall');
+INSERT INTO written_by (book_id,author) VALUES (6,'Paulo Coelho');
+INSERT INTO written_by (book_id,author) VALUES (7,'Mario Puzo');
+INSERT INTO written_by (book_id,author) VALUES (8,'Jeffrey Archer');
+INSERT INTO written_by (book_id,author) VALUES (9,'La Quán Trung');
+INSERT INTO written_by (book_id,author) VALUES (10,'Victor Hugo');
+INSERT INTO written_by (book_id,author) VALUES (11,'Yuval Noah Harari');
+INSERT INTO written_by (book_id,author) VALUES (12,'Dale Carnegie');
+INSERT INTO written_by (book_id,author) VALUES (13,'Dịch giả Lương Trọng Vũ');
+INSERT INTO written_by (book_id,author) VALUES (14,'Francesca Cavallo');
+INSERT INTO written_by (book_id,author) VALUES (14,'Elena Favilli');
+INSERT INTO written_by (book_id,author) VALUES (15,'E. L. James');
+INSERT INTO written_by (book_id,author) VALUES (16,'Benjamin Graham');
+INSERT INTO written_by (book_id,author) VALUES (17,'Nhiều tác giả');
+INSERT INTO written_by (book_id,author) VALUES (18,'Huỳnh Vĩnh Sơn');
+INSERT INTO written_by (book_id,author) VALUES (19,'Dịch giả Bùi Thị Quỳnh Chi');
+INSERT INTO written_by (book_id,author) VALUES (20,'Nhiều tác giả');
