@@ -17,6 +17,7 @@ if (!$_SESSION['id']) {
     <?php include('./include/stylesheet.php'); ?>
     <?php include('./include/script.php'); ?>
     <link rel="stylesheet" href="../../assets/css/admin/navbar.css">
+    <link rel="stylesheet" href="../../assets/css/admin/contact.css">
 </head>
 
 <body style="overflow: unset;">
@@ -281,8 +282,9 @@ if (!$_SESSION['id']) {
                                                     aria-controls=<?php echo "msg" . $row['id']; ?>>View
                                                     message</button>
                                             </th>
-                                            <td><button class="btn_delete btn btn-danger"
-                                                    value=<?php echo $row['id']; ?>>Delete</button></td>
+                                            <td><button class="btn_delete btn btn-danger" data-toggle="modal"
+                                                    data-rowid=<?php echo $row['id']; ?>
+                                                    data-target="#deleteConfirm">Delete</button></td>
                                         </tr>
 
                                         <tr id=<?php echo $row['id'] . "collapse"; ?>>
@@ -321,6 +323,27 @@ if (!$_SESSION['id']) {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal delete confirm-->
+    <div class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
+        id="deleteConfirm">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Delete Contact</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    This operation will remove the contact permanently.
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" id="confirmDeleteBtn" class="btn btn-primary">Confirm</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
