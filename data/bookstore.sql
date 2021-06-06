@@ -115,6 +115,16 @@ create table verification_account(
     foreign key (email) references customer(email)
 );
 
+create table image_foto(
+    book_id int,
+    link varchar(255),
+    PRIMARY KEY (book_id,link)
+);
+create table subscribes(
+    email varchar(50),
+    primary key (email)
+);
+
 INSERT INTO employee (full_name, work_as, link_image,link_facebook, link_instagram,link_twitter) VALUES
 ("Lê Bá Thông", "Co-founder", "/assets/images/about_page/avatar1.gif","https://www.facebook.com/thong.leba.3", "https://www.instagram.com/thongleb/", "https://twitter.com/thong94584917");
 INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_instagram,link_twitter) VALUES
@@ -224,7 +234,7 @@ Chuyện gì sẽ xảy ra nếu tôi nói rằng có một phương pháp cực
 Chuyện gì sẽ xảy ra nếu tôi nói rằng phương pháp này nằm trong chính cuốn sách Triệu phú bất động sản tự thân – và bạn hoàn toàn có thể học cách trở thành triệu phú?
 Bạn hứng thú chứ? Bạn sẵn lòng dành thời gian với tôi không? Bạn có thật sự muốn trở thành triệu phú bất động sản không?", "../../../assets/images/product_page/20.png", "2018-10-1", 0);
 
-# insert image_foto
+-- insert image_foto
 
 INSERT INTO image_foto (book_id,link) VALUES (1,"../../../assets/images/detail_book_page/1/1.jpeg");
 INSERT INTO image_foto (book_id,link) VALUES (1,"../../../assets/images/detail_book_page/1/2.jpeg");

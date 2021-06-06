@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="../../../assets/css/product_page/product.css">
 
 <div class="product-page-banner text-center align-content-end align-middle">
-    <div class="content">
+    <div class="content" style="margin-top: 10.5%; padding-bottom: 12.5%;">
         <h1 class="title">4T STORE</h1>
         <div class="route">
-            <a href="#" style="color: #CE7852; font-style: italic;">Home</a> / <p class="d-inline">Books</p>
+            <a href="../home_page/index.php" style="color: #CE7852; font-style: italic;">Home</a> / <p class="d-inline">Books</p>
         </div>
     </div>
 </div>
@@ -16,8 +16,9 @@
                     <div class="category">
                         <h5 class="text-uppercase fw-bold pb-3 border-bottom border-dark">Product category</h5>
                         <ul>
+                            <li><a href="index.php">All<span class="float-right"> (<?php echo count($product->getData()); ?>)</span></a></li>
                             <?php foreach($categoriesDetail as $category) { ?>
-                                <li><a href="index.php?category=<?php echo $category['name']; ?>"><?php echo ucwords($category['name']); ?><span class="float-end">(<?php echo $category['number'] ?>)</span></a></li>
+                                <li><a href="index.php?category=<?php echo $category['name']; ?>"><?php echo ucwords($category['name']); ?><span class="float-right"> (<?php echo $category['number'] ?>)</span></a></li>
                             <?php } ?>
                         </ul>
                     </div>
@@ -43,6 +44,9 @@
                                 <a href="../detail_book_page/index.php?id=<?php echo $book['id']; ?>"><img style="max-height: 210px;" src="<?php echo $book['link_image']?>"
                                         alt="product<?php echo $book['id']; ?>" class="img-fluid">
                                 </a>
+                                <div class="hot-box" <?php if ($book['is_bestseller'] == 0) echo "hidden"; ?>>
+                                    <span class="hot-label">BEST SALLER</span>
+                                </div>
                             </div>
                             <div class="product-content text-center pt-3 pb-1 px-2">
                                 <h6 title="<?php echo $book['name']; ?>"><?php echo $book['name']; ?></h6>
@@ -62,12 +66,18 @@
                     <?php } ?>
                 </div>
                 <div class="paginationlist text-center">
-                    <ul class="text-center">
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#"><i class="bi bi-chevron-right" style="font-size: 13px;"></i></a></li>
+                    <ul class="pagination justify-content-center align-content-center">
+                        <li class="page-item" <?php if ($page_no == 1) echo "hidden"; ?> >
+                            <a href="<?php echo "?page=".($page_no - 1); ?>" class="page-link"> < </a>
+                        </li>
+                        <?php for ($i = 1; $i <= $total_pages; $i++) { ?> 
+                        <li class="page-item <?php if ($i == $page_no) echo "active"; ?>">
+                            <a href="<?php echo "?page=".$i; ?>" class="page-link"><?php echo $i; ?></a>
+                        </li>
+                        <?php } ?>
+                        <li class="page-item" <?php if ($page_no == $total_pages) echo "hidden"; ?> >
+                            <a href="<?php echo "?page=".($page_no + 1); ?>" class="page-link"> > </a>
+                        </li>
                     </ul>
                 </div>
             </div>

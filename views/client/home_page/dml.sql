@@ -1,0 +1,4 @@
+INSERT INTO `book`(`name`, `category`, `price`, `description`, `link_image`, `published_at`, `is_bestseller`) VALUES ('Bói biển', 'biographic', 11000, 'This is novel book' ,'../../../assets/images/home_page/9.jpg', '2021-06-02', 1);
+INSERT INTO `book`(`name`, `category`, `price`, `description`, `link_image`, `published_at`, `is_bestseller`) VALUES ('Bố già', 'biographic', 11000, 'This is novel book' ,'../../../assets/images/home_page/10.jpg', '2021-05-01', 1);
+INSERT INTO `book`(`name`, `category`, `price`, `description`, `link_image`, `published_at`, `is_bestseller`) VALUES ('Sợi tơ', 'biographic', 20000, 'This is novel book' ,'../../../assets/images/home_page/11.jpg', '2021-05-01', 1);
+INSERT INTO `book`(`name`, `category`, `price`, `description`, `link_image`, `published_at`, `is_bestseller`) VALUES ('Hoàng hôn', 'biographic', 31000, 'This is novel book' ,'../../../assets/images/home_page/12.jpg', '2021-05-01', 1);

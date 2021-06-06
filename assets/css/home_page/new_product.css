@@ -25,6 +25,48 @@
     cursor: pointer;
 }
 
+.owl-prev, .owl-next {
+    width: 15px;
+    height: 100px;
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    display: block !important;
+    border:0px solid black;
+}
+.owl-prev { 
+    left: -1rem; 
+}
+
+.owl-next { 
+    right: -1rem; 
+}
+
+.owl-prev i,
+.owl-next i {
+    transform : scale(3,5);
+    color: #ccc;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+
+@media screen and (max-width: 576px) {
+    .book {        
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 300px;
+    }
+    .owl-prev { 
+        left: 0rem; 
+    }
+    
+    .owl-next { 
+        right: 0rem; 
+    }
+}
 
 /* .new_books {
     display: flex;
