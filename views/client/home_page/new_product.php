@@ -22,6 +22,15 @@
                         $star = $sub_row[0];
                     }
                     $id = $row[0];
+                    $form_class = 'add-cart-form' . $id;
+                    $btn_class = 'btn-add-cart-' . $id;
+                    $hidden_name = 'hidden-name-' . $id;
+                    $hidden_price = 'hidden-price-' . $id;
+                    $hidden_img = 'hidden-image-' . $id;
+                    $name = $row[1];
+                    $price = $row[2];
+                    $img = $row[3];
+                    // print "<script>alert('$btn_class')</script>";
                     print "
                     <div class='book'>
                         <div class='book_thumb'>
@@ -37,12 +46,19 @@
                             <div class='action'>
                                 <div class='actions_inner'>
                                     <ul class='add_to_links'>
-                                        <li><a class='cart'
-                                                href='https://demo.hasthemes.com/boighor-preview/boighor/cart.html'><i
-                                                    class='fas fa-cart-plus'></i></a></li>
-                                        <li><a class='compare'
-                                                href='https://demo.hasthemes.com/boighor-preview/boighor/index.html#'><i
-                                                    class='far fa-heart'></i></a></li>
+                                        <li>
+                                            <form class='$form_class' method='post' action='#'>
+                                                <button class='$btn_class' type='submit'>
+                                                    
+                                                        <i class='fas fa-cart-plus'></i>
+                                                    
+                                                </button>
+                                                <input type='hidden' class='$hidden_name' name='hidden_name' value='$name' />
+                                                <input type='hidden' class='$hidden_price' name='hidden_price' value='$price'/>
+                                                <input type='hidden' class='hidden_id' name='hidden_id' value='$id'/>
+                                                <input type='hidden' class='$hidden_img' name='hidden_img' value='$img'/>
+                                            <form>                                        
+                                        </li>                                       
                                     </ul>
                                 </div>
                             </div>
@@ -66,3 +82,30 @@
 
 </section>
 
+<script>
+       
+        $("*[class^='btn-add-cart-']").click(function(event) {                               
+            
+            let id = this.className.split('-');
+            id = id[id.length - 1];
+            
+            let name = $('.hidden-name-'+id).val();
+            let price = $('.hidden-price-'+id).val();
+            let image = $('.hidden-image-'+id).val();
+            // alert(image);
+            // alert(id + '/' + name + '/' + price);
+            $.ajax({
+                type: 'POST',
+                url: "../cart/process-cart.php",
+                data: { id, name, price, image },
+                success: function(mesg){
+                    if (mesg == 'error') {                      
+                        return;
+                    }                    
+                }                                         
+            })                   
+
+            event.preventDefault();
+            return false;
+        });                      
+</script>
