@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    $('#loginBtn').click(function () {
-        $('.warning_email').remove();
-        $.post('./post/valid_login.php',
+    $('.btn_delete').click(function () {
+        $('#' + $(this).val()).remove();
+        $('#' + $(this).val() + "collapse").remove();
+        $.post('./post/contact_functionals.php',
             {
-                user_name: $('#user_name').val(),
-                password: $('#password').val(),
+                id: $(this).val()
             },
             function (data, status) {
                 if (data) {
