@@ -16,8 +16,6 @@
 
 .title {
     text-align: center;
-    padding-top: 10.5%;
-    padding-bottom: 12.5%;
     color: white;
     font-size: 40px;
 }
@@ -53,19 +51,20 @@
     right: 0;
 }
 
-.product-page .paginationlist li {
+/* .product-page .paginationlist li {
     display: inline-block;
 
-}
+} */
 
 .product-page .paginationlist li a {
     color: #333;
-    padding: 0 13px;
-    border-bottom: 2px solid transparent;
+    /* padding: 0 13px; */
+    /* border-bottom: 2px solid transparent; */
 }
 
 .product-page .paginationlist li a:hover {
     border-color: #333;
+    text-decoration: none;
 }
 
 .product-page .product-list img {
