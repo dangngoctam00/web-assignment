@@ -1,0 +1,68 @@
+  .card {
+    background: var(--main-bg-color);
+    color: var(--main-color);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-header {
+    padding: 15px 30px;
+    border-bottom: 1px solid var(--second-bg-color);
+    position: relative;
+  }
+  
+  .card-header i {
+    color: var(--main-color);
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .card-header i:hover {
+    cursor: pointer;
+  }
+  
+  .card-header h3 {
+    margin: 0;
+  }
+  
+  .card-content {
+    padding: 20px;
+    overflow-x: auto;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table td {
+    border-top: 1px solid var(--second-bg-color);
+    padding: 15px;
+  }
+  
+  table th {
+    border-top: 1px solid var(--second-bg-color);
+    border-bottom: 1px solid var(--second-bg-color);
+    padding: 15px 12px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+
+  .progress {
+    height: 10px;
+    overflow: hidden;
+    display: flex;
+    font-size: 0.75rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 0.25rem;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .overlay{
+      width: 100%;
+      height: 100vh;
+  }
