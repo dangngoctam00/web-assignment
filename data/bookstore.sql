@@ -119,7 +119,7 @@ create table image_foto(
     book_id int,
     link varchar(255),
     PRIMARY KEY (book_id,link)
-
+);
 create table subscribes(
     email varchar(50),
     primary key (email)
