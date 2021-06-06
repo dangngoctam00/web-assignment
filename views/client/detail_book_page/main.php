@@ -250,7 +250,7 @@
                                         <input id="qty" class="input-text qty" name="qty" min="1" value="1" title="Qty" type="number">
                                     </div>
                                     <div class="col-md-5">
-                                        <input name="add_to_card" type="submit" value="ADD TO CARD" class="btn btn-primary" style="margin-top: 8%;">
+                                        <input name="add_to_card" type="submit" value="ADD TO CART" class="btn btn-primary" style="margin-top: 8%;">
                                         <!-- <button type="button" class="btn btn-primary" id="btn_add" name="add_to_card">ADD TO CARD</button> -->
                                     </div>
                                     <div class="col-md-2"></div>
@@ -498,7 +498,7 @@
             <div class="line"></div>
 
             <?php
-                $sql = "SELECT c.category cate, COUNT(b.id) amount FROM categories c, book b WHERE c.category LIKE b.category
+                $sql = "SELECT b.category cate, COUNT(b.id) amount FROM categories c, book b WHERE c.category LIKE b.category
                         GROUP BY b.category";
                 $res = $mysql_db -> query($sql);  
                 while ($row = $res ->fetch_assoc()){
