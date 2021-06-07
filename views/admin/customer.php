@@ -264,10 +264,6 @@ while ($item = mysqli_fetch_assoc($result)) {
                                 </h3>
                             </div>
                             <div class="card-content">
-                                <div class="col d-flex justify-content-end">
-                                    <button class="btn btn-outline-primary mx-3" data-toggle="modal"
-                                        data-target="#customerAddModal">Add New Customer</button>
-                                </div>
                                 <table class="table-stripped">
                                     <tr>
                                         <th>ID</th>
@@ -291,7 +287,6 @@ while ($item = mysqli_fetch_assoc($result)) {
                                         <td><?php echo $customer['birthdate']; ?></td>
                                         <td><?php echo $customer['registered_at']; ?></td>
                                         <td><?php echo $customer['active']; ?></td>
-                                        <td><?php echo $customer['password']; ?></td>
                                         <td><button class="btn btn-primary" data-toggle="modal"
                                                 data-target="#customerEditModal<?php echo $customer['id']; ?>">Edit</button>
                                         </td>
@@ -304,80 +299,6 @@ while ($item = mysqli_fetch_assoc($result)) {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal add customer-->
-    <div class="modal fade" id="customerAddModal" tabindex="-1" role="dialog" aria-labelledby="customerModal"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Add New Customer</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="name" class="col-2 col-form-label"><strong>Name</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="" id="name" placeholder="Name">
-                            </div>
-                            <span class="text-danger" id="nameErr"></span>
-                        </div>
-                        <div class="form-group row align-items-center">
-                            <label for="email" class="col-2 col-form-label"><strong>Email</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="email" value="" id="email" placeholder="Email">
-                            </div>
-                            <span class="text-danger" id="emailErr"></span>
-                        </div>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="phone" class="col-2 col-form-label"><strong>Phone</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="" id="phone" placeholder="Phone number">
-                            </div>
-                            <span class="text-danger" id="phoneErr"></span>
-                        </div>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="birthday" class="col-2 col-form-label"><strong>Birthday</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="" id="birthday" placeholder="YYYY-MM-DD">
-                            </div>
-                            <span class="text-danger" id="birthdayErr"></span>
-                        </div>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="register_at" class="col-2 col-form-label"><strong>Register At</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="" id="register_at"
-                                    placeholder="YYYY-MM-DD hh:mm:ss">
-                            </div>
-                            <span class="text-danger" id="register_atErr"></span>
-                        </div>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="active" class="col-2 col-form-label"><strong>Active</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="number" value="" id="active" placeholder="Integer">
-                            </div>
-                            <span class="text-danger" id="activeErr"></span>
-                        </div>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="password" class="col-2 col-form-label"><strong>Password</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="password" value="" id="password"
-                                    placeholder="Password">
-                            </div>
-                            <span class="text-danger" id="passwordErr"></span>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="addCustomer()">Add</button>
                 </div>
             </div>
         </div>
@@ -461,15 +382,6 @@ while ($item = mysqli_fetch_assoc($result)) {
                             </div>
                             <span class="text-danger" id="activeErr"></span>
                         </div>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="password-edit-<?php echo $customer['id']; ?>"
-                                class="col-2 col-form-label"><strong>Password</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="<?php echo $customer['password']; ?>"
-                                    id="password-edit-<?php echo $customer['id']; ?>">
-                            </div>
-                            <span class="text-danger" id="passwordErr"></span>
-                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -501,34 +413,6 @@ while ($item = mysqli_fetch_assoc($result)) {
         }
     }
 
-    // Add new customer
-    function addCustomer() {
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var phone = $("#phone").val();
-        var birthday = $("#birthday").val();
-        var register_at = $("#register_at").val();
-        var active = $("#active").val();
-        var password = $("#password").val();
-        $.post(
-            "post/customer_func.php", {
-                action: "add_customer",
-                name: name,
-                email: email,
-                phone: phone,
-                birthday: birthday,
-                register_at: register_at,
-                active: active,
-                password: password
-            },
-            function(data, status) {
-                alert(data);
-                if (data == "Add New Customer Successfully!")
-                    window.location.href = "customer.php";
-            }
-        );
-    }
-
     function editCustomer(customer_id) {
         var id = $("#id-edit-" + customer_id).val();
         var name = $("#name-edit-" + customer_id).val();
@@ -537,8 +421,6 @@ while ($item = mysqli_fetch_assoc($result)) {
         var birthday = $("#birthday-edit-" + customer_id).val();
         var register_at = $("#register_at-edit-" + customer_id).val();
         var active = $("#active-edit-" + customer_id).val();
-        var password = $("#password-edit-" + customer_id).val();
-        var confirm_password = $("#confirm-password-edit-" + customer_id).val();
         $.post(
             "post/customer_func.php", {
                 action: "edit_customer",
@@ -549,7 +431,6 @@ while ($item = mysqli_fetch_assoc($result)) {
                 birthday: birthday,
                 register_at: register_at,
                 active: active,
-                password: password
             },
             function(data, status) {
                 alert(data);

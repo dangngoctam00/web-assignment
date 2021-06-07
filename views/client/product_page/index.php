@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require("../../../data/Product.php");
     // Get categories data
     $categoriesDetail = $product->getCategoriesDetail();
