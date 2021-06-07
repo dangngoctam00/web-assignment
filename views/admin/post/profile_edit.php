@@ -11,7 +11,7 @@ function validUserName($data)
         return "Username contains only letters, number and longer than 5 chars";
     }
     global $mysql_db;
-    $query = "select id from admin where user_name = '" . $data . "' and id != '" . $_SESSION['id'] . "'";
+    $query = "select id from admin where user_name = '" . $data . "' and id != '" . $_SESSION['id_admin'] . "'";
     $result = $mysql_db->query($query);
     if ($result) {
         if ($result->num_rows > 0) {
@@ -54,7 +54,7 @@ function validEmail($data)
         }
     }
     global $mysql_db;
-    $query = "select id from admin where email = '" . $data . "' and id != '" . $_SESSION['id'] . "'";
+    $query = "select id from admin where email = '" . $data . "' and id != '" . $_SESSION['id_admin'] . "'";
     $result = $mysql_db->query($query);
     if ($result) {
         if ($result->num_rows > 0) {
@@ -128,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         email = '" . $_POST['email'] . "' ,
         phone = '" . $_POST['phone'] . "' ,
         birthdate = '" . $_POST['birthday'] . "' 
-        where id='" . $_SESSION['id'] . "'  
+        where id='" . $_SESSION['id_admin'] . "'  
         ";
         $result = $mysql_db->query($query);
         if (!$result) {

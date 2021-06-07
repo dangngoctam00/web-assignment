@@ -1,7 +1,7 @@
 <?php
 require "../../data/config.php";
 session_start();
-if (!$_SESSION['id']) {
+if (!$_SESSION['id_admin']) {
     header("Location: login.php");
 }
 // Get all customer information
@@ -264,6 +264,7 @@ while ($item = mysqli_fetch_assoc($result)) {
                                 </h3>
                             </div>
                             <div class="card-content">
+
                                 <table class="table-stripped">
                                     <tr>
                                         <th>ID</th>
@@ -279,6 +280,7 @@ while ($item = mysqli_fetch_assoc($result)) {
                                     </tr>
 
                                     <?php foreach ($customers as $customer) { ?>
+
                                     <tr>
                                         <td><?php echo $customer['id']; ?></td>
                                         <td><?php echo $customer['name']; ?></td>
@@ -294,6 +296,7 @@ while ($item = mysqli_fetch_assoc($result)) {
                                                 onclick="deleteCustomer(<?php echo $customer['id']; ?>)">Delete</button>
                                         </td>
                                     </tr>
+
                                     <?php } ?>
                                 </table>
                             </div>
@@ -303,6 +306,8 @@ while ($item = mysqli_fetch_assoc($result)) {
             </div>
         </div>
     </div>
+
+
 
     <!-- Edit Customer -->
     <?php foreach ($customers as $customer) { ?>
@@ -382,13 +387,16 @@ while ($item = mysqli_fetch_assoc($result)) {
                             </div>
                             <span class="text-danger" id="activeErr"></span>
                         </div>
-                    </form>
+
+                        <span class="text-danger" id="activeErr"></span>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary"
-                        onclick="editCustomer(<?php echo $customer['id']; ?>)">Save changes</button>
-                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary"
+                    onclick="editCustomer(<?php echo $customer['id']; ?>)">Save changes</button>
+
             </div>
         </div>
     </div>
@@ -412,6 +420,36 @@ while ($item = mysqli_fetch_assoc($result)) {
             );
         }
     }
+
+    // Add new customer
+    function addCustomer() {
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var phone = $("#phone").val();
+        var birthday = $("#birthday").val();
+        var register_at = $("#register_at").val();
+        var active = $("#active").val();
+        var password = $("#password").val();
+        $.post(
+            "post/customer_func.php", {
+                action: "add_customer",
+                name: name,
+                email: email,
+                phone: phone,
+                birthday: birthday,
+                register_at: register_at,
+                active: active,
+                password: password
+            },
+            function(data, status) {
+                alert(data);
+                if (data == "Add New Customer Successfully!")
+                    window.location.href = "customer.php";
+            }
+        );
+    }
+
+
 
     function editCustomer(customer_id) {
         var id = $("#id-edit-" + customer_id).val();

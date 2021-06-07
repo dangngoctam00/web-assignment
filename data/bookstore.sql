@@ -93,8 +93,10 @@ create table shopping_log_entry(
     book_id int,
     quantity int,
     PRIMARY key(log_id, book_id),
-    FOREIGN key (log_id) REFERENCES shopping_log(id),
+
+    FOREIGN key (log_id) REFERENCES shopping_log(id) ON DELETE CASCADE,
     FOREIGN key (book_id) REFERENCES book(id) on delete cascade on update cascade
+
 );
 create table send_email_log(
     id int AUTO_INCREMENT,
