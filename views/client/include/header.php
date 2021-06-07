@@ -23,7 +23,7 @@
                         <a href="#"><i class="far fa-heart"></i></a>
                     </li>
                     <li class="shop_cart">
-                        <a href="#"><i class="fas fa-cart-plus"></i></a>
+                        <a href="../cart/"><i class="fas fa-cart-plus"></i></a>
                     </li>
                     <?php 
                         // print "<script>alert('ac')</script>";

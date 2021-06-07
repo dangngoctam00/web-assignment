@@ -68,14 +68,14 @@ button:focus {
     }
 }
 
-/* .new_books {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+[class^="btn-add-cart-"] {
+    background-color: transparent;
+    border: none;
+    width: 35px;
+    height: 35px;
 }
 
-.book .book_image {
-    display: block;
-    width: 100%;
-    max-width: 270px;
-} */
+[class^="btn-add-cart-"]:hover {
+    background-color: #ce7852;
+    border-radius: 50%;
+}
