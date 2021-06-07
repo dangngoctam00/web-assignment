@@ -1,0 +1,120 @@
+.fullscreen {
+    min-height: 85vh;
+    width: 100%;
+}
+
+.bg-img {
+    background-image: url('../../images/home_page/bg_subscribe.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.shopbtn:hover {
+    text-decoration: none;
+}
+
+/* #home {
+    height: 1000px;
+} */
+
+/* .carousel-item {
+    height: 80vh;
+}
+
+.carousel .item-1 {
+    background-image: url(/assets/images/bg_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel .item-2 {
+    background-image: url(/assets/images/bg_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel .item-3 {
+    background-image: url(/assets/images/bg_3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+
+#carouselExampleSlidesOnly {
+    position: relative !important;
+}
+
+.content_box {   
+    position: absolute;
+    top: 350px;
+    left: 250px;
+}
+
+.content_box h2 {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.content_box h2 span {
+    color: #ce7852;
+}
+
+.content_box a {
+    text-transform: uppercase;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.content_box a.shopbtn::after {
+    background: rgba(0, 0, 0, 0) url('../../images/home_page/arrow.png') repeat scroll 100% 50%;
+    content: "";
+    display: inline-block;
+    height: 11px;
+    margin-bottom: 0px;
+    margin-left: 25px;
+    vertical-align: middle;
+    width: 44px;
+}
+
+@media screen and (max-width: 1200px) {
+    .content_box {
+        top: 250px;
+        left: 150px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .content_box h2 {
+        font-size: 40px;    
+    }
+    .content_box {
+        top: 150px;
+        left: 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .content_box h2 {
+        font-size: 30px;        
+    }
+    .content_box {
+        top: 100px;
+        left: 80px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .content_box h2 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .content_box {
+        top: 80px;
+        left: 50px;
+    }
+}

@@ -1,0 +1,130 @@
+.item {
+    padding: 20px 0;
+}
+
+.product_content {
+    text-align: center;
+    /* padding-top: 10px; */
+}
+
+.product_content h4 a {
+    color: #333;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 0;
+    text-transform: capitalize
+}
+
+.product_content .price {
+    justify-content: center;
+}
+
+.product_content ul li {
+    display: inline-block;    
+    color: #ce7852;
+    font-size: 14px;
+    /* margin-right: 15px; */
+    font-weight: 700;
+}
+
+.product_content .old_price {
+    color: #7d7d7d;
+    text-decoration: line-through;
+}
+
+
+.action .actions_inner ul li {
+    display: inline-block;
+}
+
+.action .actions_inner ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+
+
+.book {
+    margin: 0 10px 20px 10px;
+    position: relative;
+}
+
+.book .book_content .action {
+    bottom: 10px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    transform: translateY(-50%);
+    visibility: hidden;
+    z-index: 1;
+    transition: .4s;
+    margin-bottom: 8px;
+}
+
+.book .book_content .action ul {
+    list-style: none;
+    text-align: center;
+}
+
+.book .book_content .action ul li a {
+    border-radius: 100%;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 8px;
+    border: 0 none;
+    background: #f5f5f5;
+    color: #333;
+    width: 36px;
+    display: inline-block;
+    line-height: 36px;
+    padding: 0;
+}
+
+.book .book_content .action ul li:hover a {
+    background-color: #ce7852;
+} 
+
+.book .book_content .book_rate {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.book:hover {
+    transition: all ease 2s;
+}
+
+.book:hover .book_content .action {
+    opacity: 1;
+    visibility: visible;
+    transition: all 2s ease 0s;
+}
+
+.book:hover .book_content .book_rate {
+    opacity: 1;
+    visibility: visible;
+    display: block;   
+}
+
+.book:hover .book_content .book_rate .rating {
+    justify-content: center;
+}
+
+.book:hover .book_content .product_content {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease 0s;
+} 
+
+.book_rate ul li {
+    margin-right: 5px;
+}
+
+.book_rate ul li.on {
+    color: #ce7852;
+}

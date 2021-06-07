@@ -1,0 +1,7 @@
+.left_bar_link {
+    display: flex;
+    align-items: center;
+}
+.left_bar_link i{
+    position: absolute;
+}

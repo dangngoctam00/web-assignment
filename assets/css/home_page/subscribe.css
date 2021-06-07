@@ -1,0 +1,78 @@
+.subscribe {
+    background-image: url('../../images/home_page/bg_subscribe.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 150px 0;
+}
+
+.subscribe .newsletter_box {
+    display: inline-block;
+    max-width: 470px;
+    position: relative;
+    width: 100%;
+}
+
+.subscribe .newsletter_box input {
+    background: transparent none repeat scroll 0 0;
+    border-color: currentcolor currentcolor #aaa;
+    border-radius: 0;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    padding: 10px 5px 10px 10px;
+    outline: medium none;
+    width: 100%;
+    display: inline-block;
+    height: 50px;
+}
+
+.subscribe .newsletter_box button {
+    background: transparent none repeat scroll 0 0;
+    border: medium none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    line-height: 50px;
+    text-transform: uppercase;
+    padding: 0 15px 0 35px;
+}
+
+
+
+.subscribe .text_center {
+    text-align: center;
+}
+
+.subscribe .section_title {
+    padding-top: 10px;
+}
+
+.subscribe .newsletter_block p {
+    padding: 10px 30px 50px 30px;
+}
+
+@media screen and (max-width: 992px) {
+    .subscribe {
+        padding: 80px 0;
+    }
+
+    .no-bg-img {
+        background: #f6f6f6;
+    }
+}
+
+.error-mesg {
+    color: #cc0000;
+    margin-top: 10px;
+}
+
+.success-mesg {
+    margin-top: 10px;
+    color: #619664;
+}

@@ -1,0 +1,23 @@
+#introSlide .carousel-item {
+  transition-duration: 2s;
+}
+
+#introSlide .carousel-item > img {
+  width: 100%;
+  height: 64vh;
+  object-fit: fill;
+}
+
+#linkWeb {
+  text-decoration: none;
+  word-break: break-all;
+}
+
+
+.margin-top {
+  margin-top: 80px;
+}
+
+#contactForm small{
+  color: red;
+}

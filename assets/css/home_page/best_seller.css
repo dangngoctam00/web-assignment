@@ -1,0 +1,104 @@
+.all_products {
+    padding-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title_all_product .color_theme {
+    color: #ce7852;
+}
+
+.title_all_product {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+.all_products .container .product_text {
+    text-align: center;    
+}
+
+.text {
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+.text h2  {
+    margin-bottom: 1.5rem !important;
+}
+
+
+/* Book tag */
+
+.book_tag {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.book_tag .product_nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 300ms ease-in 0s;
+}
+
+.book_tag .product_nav a + a {
+    border-left: 1px solid #ebebeb;
+}
+
+.book_tag .product_nav a.active,
+.book_tag .product_nav a:hover {
+    color: #ce7852;
+}
+
+.book_tag .product_nav .nav-link {
+    padding: 0 1rem;
+}
+
+
+.best-seller .owl-prev, .best-seller .owl-next {
+    width: 15px;
+    height: 100px;
+    position: absolute;
+    top: 43%;
+    transform: translateY(-50%);
+    display: block !important;
+    border:0px solid black;
+}
+.best-seller .owl-prev { 
+    left: -1rem; 
+}
+
+.best-seller .owl-next { 
+    right: -1rem; 
+}
+
+.best-seller .owl-prev i,
+.best-seller .owl-next i {
+    transform : scale(3,5);
+    color: #ccc;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+
+@media screen and (max-width: 576px) {
+    .book {        
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 300px;
+    }
+    .best-seller .owl-prev { 
+        left: 0rem; 
+    }
+    
+    .best-seller .owl-next { 
+        right: 0rem; 
+    }
+}
