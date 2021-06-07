@@ -1,7 +1,7 @@
 <?php
 require "../../data/config.php";
 session_start();
-if (!$_SESSION['id']) {
+if (!$_SESSION['id_admin']) {
     header("Location: login.php");
 }
 ?>
@@ -25,29 +25,24 @@ if (!$_SESSION['id']) {
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom sticky-top">
         <a class="navbar-brand" href="index.php">
-            <img src="../../assets/images/admin/book_brand.png" width="30" height="30" class="d-inline-block align-top"
-                alt="">
+            <img src="../../assets/images/admin/book_brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
             Bookstore4T
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <div class="navbar-nav mx-auto">
                 <form class="nav-item form-inline">
-                    <input class="form-control mr-2" style="width:40vw;" type="search"
-                        placeholder="Looking for a product?" aria-label="Search">
+                    <input class="form-control mr-2" style="width:40vw;" type="search" placeholder="Looking for a product?" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
             <div class="navbar-nav ml-auto">
                 <div class="nav-item dropdown mr-auto">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle" alt="Image placeholder" src="../../assets/images/admin/avatar.jpg"
-                            width="30" height="30">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="rounded-circle" alt="Image placeholder" src="../../assets/images/admin/avatar.jpg" width="30" height="30">
                         <span class="mb-0" style="color: aliceblue;">
                             <?php
                             echo $_SESSION["first_name"];
@@ -87,6 +82,12 @@ if (!$_SESSION['id']) {
 
                                 <i class="fas fa-book"></i>
                                 <span class="nav-link-text ml-4">Product</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="left_bar_link nav-link" href="transaction.php">
+                                <i class="fas fa-money-check-alt"></i>
+                                <span class="nav-link-text ml-4">Transaction</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -270,43 +271,39 @@ if (!$_SESSION['id']) {
                                         if ($result) {
                                             while ($row = $result->fetch_assoc()) {
                                         ?>
-                                        <tr id=<?php echo $row['id']; ?>>
-                                            <td><?php echo $row['id']; ?></td>
-                                            <td><?php echo $row['first_name']; ?></td>
-                                            <td><?php echo $row['last_name']; ?></td>
-                                            <td><?php echo $row['email']; ?></td>
-                                            <td><?php echo $row['website']; ?></td>
-                                            <td><?php echo $row['subject']; ?></td>
-                                            <th><button class="btn btn-success" data-toggle="collapse"
-                                                    data-target=<?php echo "#msg" . $row['id']; ?> aria-expanded="false"
-                                                    aria-controls=<?php echo "msg" . $row['id']; ?>>View
-                                                    message</button>
-                                            </th>
-                                            <td><button class="btn_delete btn btn-danger" data-toggle="modal"
-                                                    data-rowid=<?php echo $row['id']; ?>
-                                                    data-target="#deleteConfirm">Delete</button></td>
-                                        </tr>
+                                                <tr id=<?php echo $row['id']; ?>>
+                                                    <td><?php echo $row['id']; ?></td>
+                                                    <td><?php echo $row['first_name']; ?></td>
+                                                    <td><?php echo $row['last_name']; ?></td>
+                                                    <td><?php echo $row['email']; ?></td>
+                                                    <td><?php echo $row['website']; ?></td>
+                                                    <td><?php echo $row['subject']; ?></td>
+                                                    <th><button class="btn btn-success" data-toggle="collapse" data-target=<?php echo "#msg" . $row['id']; ?> aria-expanded="false" aria-controls=<?php echo "msg" . $row['id']; ?>>View
+                                                            message</button>
+                                                    </th>
+                                                    <td><button class="btn_delete btn btn-danger" data-toggle="modal" data-rowid=<?php echo $row['id']; ?> data-target="#deleteConfirm">Delete</button></td>
+                                                </tr>
 
-                                        <tr id=<?php echo $row['id'] . "collapse"; ?>>
-                                            <th colspan="9">
-                                                <div class="card collapse" id=<?php echo "msg" . $row['id']; ?>>
-                                                    <div class="card-header">
-                                                        <h6 id="titleTable">
-                                                            <?php
+                                                <tr id=<?php echo $row['id'] . "collapse"; ?>>
+                                                    <th colspan="9">
+                                                        <div class="card collapse" id=<?php echo "msg" . $row['id']; ?>>
+                                                            <div class="card-header">
+                                                                <h6 id="titleTable">
+                                                                    <?php
                                                                     echo $row['first_name'] . " " . $row["last_name"] . "'s message";
                                                                     ?>
-                                                        </h6>
-                                                    </div>
-                                                    <div class="card-content p-3">
-                                                        <p>
-                                                            <?php
+                                                                </h6>
+                                                            </div>
+                                                            <div class="card-content p-3">
+                                                                <p>
+                                                                    <?php
                                                                     echo $row['message'];
                                                                     ?>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </th>
-                                        </tr>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                </tr>
                                         <?php
                                             }
                                         }
@@ -328,8 +325,7 @@ if (!$_SESSION['id']) {
         </div>
     </div>
     <!-- Modal delete confirm-->
-    <div class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
-        id="deleteConfirm">
+    <div class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="deleteConfirm">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">

@@ -1,7 +1,7 @@
 <?php
 require "../../data/config.php";
 session_start();
-if (!$_SESSION['id']) {
+if (!$_SESSION['id_admin']) {
     header("Location: login.php");
 }
 ?>
@@ -25,29 +25,24 @@ if (!$_SESSION['id']) {
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom sticky-top">
         <a class="navbar-brand" href="index.php">
-            <img src="../../assets/images/admin/book_brand.png" width="30" height="30" class="d-inline-block align-top"
-                alt="">
+            <img src="../../assets/images/admin/book_brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
             Bookstore4T
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <div class="navbar-nav mx-auto">
                 <form class="nav-item form-inline">
-                    <input class="form-control mr-2" style="width:40vw;" type="search"
-                        placeholder="Looking for a product?" aria-label="Search">
+                    <input class="form-control mr-2" style="width:40vw;" type="search" placeholder="Looking for a product?" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
             <div class="navbar-nav ml-auto">
                 <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle" alt="Image placeholder" src="../../assets/images/admin/avatar.jpg"
-                            width="30" height="30">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="rounded-circle" alt="Image placeholder" src="../../assets/images/admin/avatar.jpg" width="30" height="30">
                         <span class="mb-0" style="color: aliceblue;" id="topLeftName">
                             <?php
                             echo $_SESSION["first_name"];
@@ -87,6 +82,12 @@ if (!$_SESSION['id']) {
 
                                 <i class="fas fa-book"></i>
                                 <span class="nav-link-text ml-4">Product</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="left_bar_link nav-link" href="transaction.php">
+                                <i class="fas fa-money-check-alt"></i>
+                                <span class="nav-link-text ml-4">Transaction</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -250,14 +251,15 @@ if (!$_SESSION['id']) {
                                 </h3>
                             </div>
                             <div class="card-content">
-                                <?php
-                                $sql = "select email, first_name, last_name, 
-                                user_name , phone, birthdate from admin WHERE id= '" . $_SESSION['id'] . "'";
-                                $result = $mysql_db->query($sql);
-                                $row = $result->fetch_assoc();
-                                ?>
 
-                                <table class="table" id='tableProfile'>
+                                <table class="table table-hover table-responsive-lg" id='tableProfile'>
+                                    <?php
+                                    $sql = "select email, first_name, last_name, 
+                                    user_name , phone, birthdate from admin WHERE id= '" . $_SESSION['id_admin'] . "'";
+                                    $result = $mysql_db->query($sql);
+                                    $row = $result->fetch_assoc();
+                                    ?>
+
                                     <tr>
                                         <th>Username</th>
                                         <td><?php echo $row['user_name']; ?></td>
@@ -288,10 +290,8 @@ if (!$_SESSION['id']) {
 
                         </div>
                         <div class="col d-flex justify-content-center my-3">
-                            <button class="btn btn-outline-primary mx-3" data-toggle="modal"
-                                data-target="#profileModal">Edit Profile</button>
-                            <button class="btn btn-outline-success mr-2" data-toggle="modal"
-                                data-target="#passwordModal" ?>Change
+                            <button class="btn btn-outline-primary mx-3" data-toggle="modal" data-target="#profileModal">Edit Profile</button>
+                            <button class="btn btn-outline-success mr-2" data-toggle="modal" data-target="#passwordModal" ?>Change
                                 Password</button>
                         </div>
                     </div>
@@ -301,8 +301,7 @@ if (!$_SESSION['id']) {
     </div>
     <!-- Modal section -->
     <!-- Edit profile -->
-    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
-        id="profileModal">
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="profileModal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -316,45 +315,39 @@ if (!$_SESSION['id']) {
                         <div class="form-group row">
                             <label for="inputUserName" class="col-sm-2 col-form-label font-weight-bold">Username</label>
                             <div class="col-sm-10" id="formUserName">
-                                <input type="text" class="form-control" id="inputUserName"
-                                    value="<?php echo $row['user_name']; ?>">
+                                <input type="text" class="form-control" id="inputUserName" value="<?php echo $row['user_name']; ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputFirstName" class="col-sm-2 col-form-label font-weight-bold">First
                                 Name</label>
                             <div class="col-sm-10" id="formFirstName">
-                                <input type="text" class="form-control" id="inputFirstName"
-                                    value="<?php echo $row['first_name']; ?>">
+                                <input type="text" class="form-control" id="inputFirstName" value="<?php echo $row['first_name']; ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputLastName" class="col-sm-2 col-form-label font-weight-bold">Last
                                 Name</label>
                             <div class="col-sm-10" id="formLastName">
-                                <input type="text" class="form-control" id="inputLastName"
-                                    value="<?php echo $row['last_name']; ?>">
+                                <input type="text" class="form-control" id="inputLastName" value="<?php echo $row['last_name']; ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail" class="col-sm-2 col-form-label font-weight-bold">Email</label>
                             <div class="col-sm-10" id="formEmail">
-                                <input type="email" class="form-control" id="inputEmail"
-                                    value="<?php echo $row['email'];  ?>">
+                                <input type="email" class="form-control" id="inputEmail" value="<?php echo $row['email'];  ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputPhone" class="col-sm-2 col-form-label font-weight-bold">Telephone</label>
                             <div class="col-sm-10" id="formPhone">
-                                <input type="text" class="form-control" id="inputPhone"
-                                    value="<?php echo $row['phone']; ?>">
+                                <input type="text" class="form-control" id="inputPhone" value="<?php echo $row['phone']; ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputBirthday" class="col-sm-2 col-form-label font-weight-bold">Birthday</label>
                             <div class="col-sm-10" id="formBirthday">
-                                <input type="date" class="form-control" id="inputBirthday"
-                                    value="<?php echo $row['birthdate']; ?>">
+                                <input type="date" class="form-control" id="inputBirthday" value="<?php echo $row['birthdate']; ?>">
                             </div>
                         </div>
                     </form>
@@ -368,8 +361,7 @@ if (!$_SESSION['id']) {
         </div>
     </div>
     <!-- Change password -->
-    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
-        id="passwordModal">
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="passwordModal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -410,6 +402,32 @@ if (!$_SESSION['id']) {
             </div>
         </div>
     </div>
+    <!-- End modal section -->
+    <!-- Toast section -->
+
+
+
+    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+        <div class="" style="position: absolute; top: 0; right:0;">
+
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toastPassword" data-delay="5000" data-autohide='false'>
+                <div class="toast-header">
+                    <strong class="mr-auto">System</strong>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    Your password has been changed.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- End toast section -->
     <script src="../../assets/js/admin/edit_profile.js"></script>
     <script src="../../assets/js/admin/change_password.js"></script>
 </body>

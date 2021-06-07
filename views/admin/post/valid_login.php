@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $mysql_db->query($query);
     $row = $result->fetch_assoc();
     if (!empty($row)) {
-        $_SESSION["id"] = $row['id'];
+        $_SESSION['id_admin'] = $row['id'];
         $_SESSION["first_name"] = $row['first_name'];
     } else {
         $message = "Invalid Username or Password!";

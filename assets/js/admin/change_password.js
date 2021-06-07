@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    var modal = $('#passwordModal')
+
+    var modal = $('#passwordModal');
     var confirmChangePassword = modal.find('.modal-footer #confirmChangePassword')
     confirmChangePassword.click(function () {
         modal.find('.warning_error').remove();
@@ -15,7 +16,9 @@ $(document).ready(function () {
                 if (data.success) {
                     console.log("Password has been changed.");
                     modal.find('form').trigger('reset');
-                    modal.modal('hide')
+                    modal.modal('hide');
+
+
                 }
                 else {
                     if (data.oldPassword) {
