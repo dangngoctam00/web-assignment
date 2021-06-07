@@ -1,7 +1,7 @@
 <?php
 require "../../data/config.php";
 session_start();
-if (!$_SESSION['id']) {
+if (!$_SESSION['id_admin']) {
     header("Location: login.php");
 }
 ?>
@@ -24,29 +24,24 @@ if (!$_SESSION['id']) {
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom sticky-top">
         <a class="navbar-brand" href="index.php">
-            <img src="../../assets/images/admin/book_brand.png" width="30" height="30" class="d-inline-block align-top"
-                alt="">
+            <img src="../../assets/images/admin/book_brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
             Bookstore4T
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <div class="navbar-nav mx-auto">
                 <form class="nav-item form-inline">
-                    <input class="form-control mr-2" style="width:40vw;" type="search"
-                        placeholder="Looking for a product?" aria-label="Search">
+                    <input class="form-control mr-2" style="width:40vw;" type="search" placeholder="Looking for a product?" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
             <div class="navbar-nav ml-auto">
                 <div class="nav-item dropdown mr-auto">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle" alt="Image placeholder" src="../../assets/images/admin/avatar.jpg"
-                            width="30" height="30">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="rounded-circle" alt="Image placeholder" src="../../assets/images/admin/avatar.jpg" width="30" height="30">
                         <span class="mb-0" style="color: aliceblue;">
                             <?php
                             echo $_SESSION["first_name"];
