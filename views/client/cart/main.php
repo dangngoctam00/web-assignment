@@ -3,7 +3,7 @@
 <?php 
     
     // echo $_SERVER["REQUEST_METHOD"];
-    if ($_GET['action']  == 'delete') {
+    if (!empty($_GET['action']) && $_GET['action']  == 'delete') {
         $id = $_GET['id'];
         $cookie_data = stripslashes($_COOKIE['shopping_cart']);
 
@@ -13,11 +13,13 @@
         // echo var_dump($cart_data);
         // echo json_encode($cart_data);        
         if (count($cart_data) == 0) {
-            setcookie('shopping_cart', time() - 3600, '/');
+            setcookie('shopping_cart', '' , time() - 3600, '/');
+            header("location: index.php");
         }
-        $item_data = json_encode($cart_data, JSON_UNESCAPED_UNICODE);
-        setcookie('shopping_cart', $item_data, time() + (86400 * 30), '/');
-        header("location: index.php");
+        else {
+            $item_data = json_encode($cart_data, JSON_UNESCAPED_UNICODE);
+            setcookie('shopping_cart', $item_data, time() + (86400 * 30), '/');
+        }
     }
 
     // if (empty($_COOKIE['shopping_cart']) || count($_COOKIE['shopping_cart']) == 0) {
@@ -29,7 +31,7 @@
 <div class="cart-main-area">
     <div class="container">
     <?php
-        if(isset($_COOKIE["shopping_cart"])) {
+        if(!empty($_COOKIE["shopping_cart"])) {
     ?>
     
         <div class="row cart-info">
