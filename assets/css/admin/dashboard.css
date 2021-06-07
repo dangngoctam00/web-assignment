@@ -7,3 +7,6 @@
 .warning_error{
     color: red;
 }
+.toast {
+    z-index: 7000;
+}

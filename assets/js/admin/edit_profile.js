@@ -20,6 +20,7 @@ $(document).ready(function () {
                     $("#topLeftName").text($('#inputFirstName').val());
                     $("#tableProfile").load(window.location.href + " #tableProfile > *");
                     modal.modal('hide');
+
                 }
                 else {
                     if (data.systemError) {
