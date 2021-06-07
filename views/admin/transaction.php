@@ -17,7 +17,7 @@ if (!$_SESSION['id']) {
     <?php include('./include/stylesheet.php'); ?>
     <?php include('./include/script.php'); ?>
     <link rel="stylesheet" href="../../assets/css/admin/navbar.css">
-    <link rel="stylesheet" href="../../assets/css/admin/contact.css">
+    <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
 </head>
 
 <body style="overflow: unset;">
@@ -43,12 +43,12 @@ if (!$_SESSION['id']) {
                 </form>
             </div>
             <div class="navbar-nav ml-auto">
-                <div class="nav-item dropdown mr-auto">
+                <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <img class="rounded-circle" alt="Image placeholder" src="../../assets/images/admin/avatar.jpg"
                             width="30" height="30">
-                        <span class="mb-0" style="color: aliceblue;">
+                        <span class="mb-0" style="color: aliceblue;" id="topLeftName">
                             <?php
                             echo $_SESSION["first_name"];
                             ?>
@@ -90,7 +90,7 @@ if (!$_SESSION['id']) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="left_bar_link nav-link" href="transaction.php">
+                            <a class="left_bar_link nav-link active" href="transaction.php">
                                 <i class="fas fa-money-check-alt"></i>
                                 <span class="nav-link-text ml-4">Transaction</span>
                             </a>
@@ -110,7 +110,7 @@ if (!$_SESSION['id']) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="left_bar_link nav-link active" href="contact.php">
+                            <a class="left_bar_link nav-link" href="contact.php">
                                 <i class="fas fa-comment"></i>
                                 <span class="nav-link-text ml-4">Contact</span>
                             </a>
@@ -252,10 +252,11 @@ if (!$_SESSION['id']) {
                         <div class="card">
                             <div class="card-header">
                                 <h3 id="titleTable">
-                                    All Contacts
+                                    My Profile
                                 </h3>
                             </div>
                             <div class="card-content">
+
                                 <table class="table table-striped table-hover table-responsive-lg">
                                     <thead>
                                         <tr>
@@ -327,34 +328,17 @@ if (!$_SESSION['id']) {
                                 </table>
 
                             </div>
+
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Modal delete confirm-->
-    <div class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
-        id="deleteConfirm">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Delete Contact</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    This operation will remove the contact permanently.
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" id="confirmDeleteBtn" class="btn btn-primary">Confirm</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="../../assets/js/admin/contact.js"></script>
+
+    <script src="../../assets/js/admin/edit_profile.js"></script>
+    <script src="../../assets/js/admin/change_password.js"></script>
 </body>
 
 </html>

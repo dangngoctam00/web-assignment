@@ -98,6 +98,12 @@ while ($item = mysqli_fetch_assoc($result)) {
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="left_bar_link nav-link" href="transaction.php">
+                                <i class="fas fa-money-check-alt"></i>
+                                <span class="nav-link-text ml-4">Transaction</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="left_bar_link nav-link active" href="customer.php">
 
                                 <i class="fas fa-user-alt"></i>
@@ -259,7 +265,8 @@ while ($item = mysqli_fetch_assoc($result)) {
                             </div>
                             <div class="card-content">
                                 <div class="col d-flex justify-content-end">
-                                    <button class="btn btn-outline-primary mx-3" data-toggle="modal" data-target="#customerAddModal">Add New Customer</button>
+                                    <button class="btn btn-outline-primary mx-3" data-toggle="modal"
+                                        data-target="#customerAddModal">Add New Customer</button>
                                 </div>
                                 <table class="table-stripped">
                                     <tr>
@@ -275,8 +282,8 @@ while ($item = mysqli_fetch_assoc($result)) {
                                         <th></th>
                                     </tr>
 
-                                    <?php foreach($customers as $customer) { ?>
-                                        <tr>
+                                    <?php foreach ($customers as $customer) { ?>
+                                    <tr>
                                         <td><?php echo $customer['id']; ?></td>
                                         <td><?php echo $customer['name']; ?></td>
                                         <td><?php echo $customer['email']; ?></td>
@@ -285,8 +292,12 @@ while ($item = mysqli_fetch_assoc($result)) {
                                         <td><?php echo $customer['registered_at']; ?></td>
                                         <td><?php echo $customer['active']; ?></td>
                                         <td><?php echo $customer['password']; ?></td>
-                                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#customerEditModal<?php echo $customer['id']; ?>">Edit</button></td>
-                                        <td><button class="btn btn-danger" onclick="deleteCustomer(<?php echo $customer['id']; ?>)">Delete</button></td>
+                                        <td><button class="btn btn-primary" data-toggle="modal"
+                                                data-target="#customerEditModal<?php echo $customer['id']; ?>">Edit</button>
+                                        </td>
+                                        <td><button class="btn btn-danger"
+                                                onclick="deleteCustomer(<?php echo $customer['id']; ?>)">Delete</button>
+                                        </td>
                                     </tr>
                                     <?php } ?>
                                 </table>
@@ -299,7 +310,8 @@ while ($item = mysqli_fetch_assoc($result)) {
     </div>
 
     <!-- Modal add customer-->
-    <div class="modal fade" id="customerAddModal" tabindex="-1" role="dialog" aria-labelledby="customerModal" aria-hidden="true">
+    <div class="modal fade" id="customerAddModal" tabindex="-1" role="dialog" aria-labelledby="customerModal"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -341,7 +353,8 @@ while ($item = mysqli_fetch_assoc($result)) {
                         <div class="form-group row align-items-center justify-content-center">
                             <label for="register_at" class="col-2 col-form-label"><strong>Register At</strong></label>
                             <div class="col-10">
-                                <input class="form-control" type="text" value="" id="register_at" placeholder="YYYY-MM-DD hh:mm:ss">
+                                <input class="form-control" type="text" value="" id="register_at"
+                                    placeholder="YYYY-MM-DD hh:mm:ss">
                             </div>
                             <span class="text-danger" id="register_atErr"></span>
                         </div>
@@ -355,7 +368,8 @@ while ($item = mysqli_fetch_assoc($result)) {
                         <div class="form-group row align-items-center justify-content-center">
                             <label for="password" class="col-2 col-form-label"><strong>Password</strong></label>
                             <div class="col-10">
-                                <input class="form-control" type="password" value="" id="password" placeholder="Password">
+                                <input class="form-control" type="password" value="" id="password"
+                                    placeholder="Password">
                             </div>
                             <span class="text-danger" id="passwordErr"></span>
                         </div>
@@ -370,161 +384,181 @@ while ($item = mysqli_fetch_assoc($result)) {
     </div>
 
     <!-- Edit Customer -->
-    <?php foreach($customers as $customer) { ?>
-        <div class="modal fade" id="customerEditModal<?php echo $customer['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="customerModal" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel">Edit Customer Information</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group row align-items-center justify-content-center">
-                                <label for="id-edit-<?php echo $customer['id']; ?>" class="col-2 col-form-label"><strong>ID</strong></label>
-                                <div class="col-10">
-                                    <input class="form-control" type="text" value="<?php echo $customer['id']; ?>" id="id-edit-<?php echo $customer['id']; ?>" disabled>
-                                </div>
-                                <span class="text-danger" id="idErr"></span>
+    <?php foreach ($customers as $customer) { ?>
+    <div class="modal fade" id="customerEditModal<?php echo $customer['id']; ?>" tabindex="-1" role="dialog"
+        aria-labelledby="customerModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Edit Customer Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row align-items-center justify-content-center">
+                            <label for="id-edit-<?php echo $customer['id']; ?>"
+                                class="col-2 col-form-label"><strong>ID</strong></label>
+                            <div class="col-10">
+                                <input class="form-control" type="text" value="<?php echo $customer['id']; ?>"
+                                    id="id-edit-<?php echo $customer['id']; ?>" disabled>
                             </div>
-                            <div class="form-group row align-items-center justify-content-center">
-                                <label for="name-edit-<?php echo $customer['id']; ?>" class="col-2 col-form-label"><strong>Name</strong></label>
-                                <div class="col-10">
-                                    <input class="form-control" type="text" value="<?php echo $customer['name']; ?>" id="name-edit-<?php echo $customer['id']; ?>">
-                                </div>
-                                <span class="text-danger" id="nameErr"></span>
+                            <span class="text-danger" id="idErr"></span>
+                        </div>
+                        <div class="form-group row align-items-center justify-content-center">
+                            <label for="name-edit-<?php echo $customer['id']; ?>"
+                                class="col-2 col-form-label"><strong>Name</strong></label>
+                            <div class="col-10">
+                                <input class="form-control" type="text" value="<?php echo $customer['name']; ?>"
+                                    id="name-edit-<?php echo $customer['id']; ?>">
                             </div>
-                            <div class="form-group row align-items-center">
-                                <label for="email-edit-<?php echo $customer['id']; ?>" class="col-2 col-form-label"><strong>Email</strong></label>
-                                <div class="col-10">
-                                    <input class="form-control" type="email" value="<?php echo $customer['email']; ?>" id="email-edit-<?php echo $customer['id']; ?>">
-                                </div>
-                                <span class="text-danger" id="emailErr"></span>
+                            <span class="text-danger" id="nameErr"></span>
+                        </div>
+                        <div class="form-group row align-items-center">
+                            <label for="email-edit-<?php echo $customer['id']; ?>"
+                                class="col-2 col-form-label"><strong>Email</strong></label>
+                            <div class="col-10">
+                                <input class="form-control" type="email" value="<?php echo $customer['email']; ?>"
+                                    id="email-edit-<?php echo $customer['id']; ?>">
                             </div>
-                            <div class="form-group row align-items-center justify-content-center">
-                                <label for="phone-edit-<?php echo $customer['id']; ?>" class="col-2 col-form-label"><strong>Phone</strong></label>
-                                <div class="col-10">
-                                    <input class="form-control" type="text" value="<?php echo $customer['phone']; ?>" id="phone-edit-<?php echo $customer['id']; ?>">
-                                </div>
-                                <span class="text-danger" id="phoneErr"></span>
+                            <span class="text-danger" id="emailErr"></span>
+                        </div>
+                        <div class="form-group row align-items-center justify-content-center">
+                            <label for="phone-edit-<?php echo $customer['id']; ?>"
+                                class="col-2 col-form-label"><strong>Phone</strong></label>
+                            <div class="col-10">
+                                <input class="form-control" type="text" value="<?php echo $customer['phone']; ?>"
+                                    id="phone-edit-<?php echo $customer['id']; ?>">
                             </div>
-                            <div class="form-group row align-items-center justify-content-center">
-                                <label for="birthday-edit-<?php echo $customer['id']; ?>" class="col-2 col-form-label"><strong>Birthday</strong></label>
-                                <div class="col-10">
-                                    <input class="form-control" type="text" value="<?php echo $customer['birthdate']; ?>" id="birthday-edit-<?php echo $customer['id']; ?>">
-                                </div>
-                                <span class="text-danger" id="birthdayErr"></span>
+                            <span class="text-danger" id="phoneErr"></span>
+                        </div>
+                        <div class="form-group row align-items-center justify-content-center">
+                            <label for="birthday-edit-<?php echo $customer['id']; ?>"
+                                class="col-2 col-form-label"><strong>Birthday</strong></label>
+                            <div class="col-10">
+                                <input class="form-control" type="text" value="<?php echo $customer['birthdate']; ?>"
+                                    id="birthday-edit-<?php echo $customer['id']; ?>">
                             </div>
-                            <div class="form-group row align-items-center justify-content-center">
-                                <label for="register_at-edit-<?php echo $customer['id']; ?>" class="col-2 col-form-label"><strong>Register At</strong></label>
-                                <div class="col-10">
-                                    <input class="form-control" type="text" value="<?php echo $customer['registered_at']; ?>" id="register_at-edit-<?php echo $customer['id']; ?>">
-                                </div>
-                                <span class="text-danger" id="register_atErr"></span>
+                            <span class="text-danger" id="birthdayErr"></span>
+                        </div>
+                        <div class="form-group row align-items-center justify-content-center">
+                            <label for="register_at-edit-<?php echo $customer['id']; ?>"
+                                class="col-2 col-form-label"><strong>Register At</strong></label>
+                            <div class="col-10">
+                                <input class="form-control" type="text"
+                                    value="<?php echo $customer['registered_at']; ?>"
+                                    id="register_at-edit-<?php echo $customer['id']; ?>">
                             </div>
-                            <div class="form-group row align-items-center justify-content-center">
-                                <label for="active-edit-<?php echo $customer['id']; ?>" class="col-2 col-form-label"><strong>Active</strong></label>
-                                <div class="col-10">
-                                    <input class="form-control" type="number" value="<?php echo $customer['active']; ?>" id="active-edit-<?php echo $customer['id']; ?>">
-                                </div>
-                                <span class="text-danger" id="activeErr"></span>
+                            <span class="text-danger" id="register_atErr"></span>
+                        </div>
+                        <div class="form-group row align-items-center justify-content-center">
+                            <label for="active-edit-<?php echo $customer['id']; ?>"
+                                class="col-2 col-form-label"><strong>Active</strong></label>
+                            <div class="col-10">
+                                <input class="form-control" type="number" value="<?php echo $customer['active']; ?>"
+                                    id="active-edit-<?php echo $customer['id']; ?>">
                             </div>
-                            <div class="form-group row align-items-center justify-content-center">
-                                <label for="password-edit-<?php echo $customer['id']; ?>" class="col-2 col-form-label"><strong>Password</strong></label>
-                                <div class="col-10">
-                                    <input class="form-control" type="text" value="<?php echo $customer['password']; ?>" id="password-edit-<?php echo $customer['id']; ?>">
-                                </div>
-                                <span class="text-danger" id="passwordErr"></span>
+                            <span class="text-danger" id="activeErr"></span>
+                        </div>
+                        <div class="form-group row align-items-center justify-content-center">
+                            <label for="password-edit-<?php echo $customer['id']; ?>"
+                                class="col-2 col-form-label"><strong>Password</strong></label>
+                            <div class="col-10">
+                                <input class="form-control" type="text" value="<?php echo $customer['password']; ?>"
+                                    id="password-edit-<?php echo $customer['id']; ?>">
                             </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" onclick="editCustomer(<?php echo $customer['id']; ?>)">Save changes</button>
-                    </div>
+                            <span class="text-danger" id="passwordErr"></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary"
+                        onclick="editCustomer(<?php echo $customer['id']; ?>)">Save changes</button>
                 </div>
             </div>
         </div>
+    </div>
     <?php } ?>
 
     <script>
-        // Delete Customer
-        function deleteCustomer(customer_id) {
-            if (confirm("Delete this Customer?")) {
-                $.post(
-                    // "../../../views/admin/post/customer_func.php",
-                    "post/customer_func.php",
-                    { action: "delete_customer", id: customer_id },
-                    function (data, status) {
-                        alert(data);
-                        if (data == "Delete Customer Successfully!")
-                            window.location.href = "customer.php";
-                    }
-                );
+    // Delete Customer
+    function deleteCustomer(customer_id) {
+        if (confirm("Delete this Customer?")) {
+            $.post(
+                // "../../../views/admin/post/customer_func.php",
+                "post/customer_func.php", {
+                    action: "delete_customer",
+                    id: customer_id
+                },
+                function(data, status) {
+                    alert(data);
+                    if (data == "Delete Customer Successfully!")
+                        window.location.href = "customer.php";
+                }
+            );
+        }
+    }
+
+    // Add new customer
+    function addCustomer() {
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var phone = $("#phone").val();
+        var birthday = $("#birthday").val();
+        var register_at = $("#register_at").val();
+        var active = $("#active").val();
+        var password = $("#password").val();
+        $.post(
+            "post/customer_func.php", {
+                action: "add_customer",
+                name: name,
+                email: email,
+                phone: phone,
+                birthday: birthday,
+                register_at: register_at,
+                active: active,
+                password: password
+            },
+            function(data, status) {
+                alert(data);
+                if (data == "Add New Customer Successfully!")
+                    window.location.href = "customer.php";
             }
-        }
+        );
+    }
 
-        // Add new customer
-        function addCustomer() {
-            var name = $("#name").val();
-            var email = $("#email").val();
-            var phone = $("#phone").val();
-            var birthday = $("#birthday").val();
-            var register_at = $("#register_at").val();
-            var active = $("#active").val();
-            var password = $("#password").val();
-            $.post(
-                "post/customer_func.php",
-                {
-                    action: "add_customer", 
-                    name: name,
-                    email: email,
-                    phone: phone,
-                    birthday: birthday,
-                    register_at: register_at,
-                    active: active,
-                    password: password
-                },
-                function (data, status) {
-                        alert(data);
-                        if (data == "Add New Customer Successfully!")
-                            window.location.href = "customer.php";
-                    }
-            );
-        }
-
-        function editCustomer(customer_id) {
-            var id = $("#id-edit-"+customer_id).val();
-            var name = $("#name-edit-"+customer_id).val();
-            var email = $("#email-edit-"+customer_id).val();
-            var phone = $("#phone-edit-"+customer_id).val();
-            var birthday = $("#birthday-edit-"+customer_id).val();
-            var register_at = $("#register_at-edit-"+customer_id).val();
-            var active = $("#active-edit-"+customer_id).val();
-            var password = $("#password-edit-"+customer_id).val();
-            var confirm_password = $("#confirm-password-edit-"+customer_id).val();
-            $.post(
-                "post/customer_func.php",
-                {
-                    action: "edit_customer",
-                    id: id,
-                    name: name,
-                    email: email,
-                    phone: phone,
-                    birthday: birthday,
-                    register_at: register_at,
-                    active: active,
-                    password: password
-                },
-                function (data, status) {
-                        alert(data);
-                        if (data == "Update Customer Information Successfully!")
-                            window.location.href = "customer.php";
-                    }
-            );
-        }
+    function editCustomer(customer_id) {
+        var id = $("#id-edit-" + customer_id).val();
+        var name = $("#name-edit-" + customer_id).val();
+        var email = $("#email-edit-" + customer_id).val();
+        var phone = $("#phone-edit-" + customer_id).val();
+        var birthday = $("#birthday-edit-" + customer_id).val();
+        var register_at = $("#register_at-edit-" + customer_id).val();
+        var active = $("#active-edit-" + customer_id).val();
+        var password = $("#password-edit-" + customer_id).val();
+        var confirm_password = $("#confirm-password-edit-" + customer_id).val();
+        $.post(
+            "post/customer_func.php", {
+                action: "edit_customer",
+                id: id,
+                name: name,
+                email: email,
+                phone: phone,
+                birthday: birthday,
+                register_at: register_at,
+                active: active,
+                password: password
+            },
+            function(data, status) {
+                alert(data);
+                if (data == "Update Customer Information Successfully!")
+                    window.location.href = "customer.php";
+            }
+        );
+    }
     </script>
 </body>
+
 </html>
