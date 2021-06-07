@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <link rel="stylesheet" href="../../../assets/css/shared/header.css">
 
 <header class="header">
