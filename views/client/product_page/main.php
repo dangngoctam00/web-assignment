@@ -4,7 +4,7 @@
     <div class="content" style="margin-top: 10.5%; padding-bottom: 12.5%;">
         <h1 class="title">4T STORE</h1>
         <div class="route">
-            <a href="../home_page/index.php" style="color: #CE7852; font-style: italic;">Home</a> / <p class="d-inline">Books</p>
+            <a href="../home_page/index.php" style="color: #FFFFFF; font-style: italic;">Home</a> / <p class="d-inline" style="color: #CE7852; font-style: italic;">Books</p>
         </div>
     </div>
 </div>

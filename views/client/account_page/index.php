@@ -38,7 +38,6 @@
             var originalEmail = $("#originalEmail").val();
             var phone = $("#phone").val();
             var birthday = $("#birthday").val();
-            console.log(customer_id + ' - ' + name + ' - ' + email + ' - ' + originalEmail + ' - ' + phone + ' - ' + birthday);
             $.post(
                 "account_func.php",
                 {
@@ -52,7 +51,7 @@
                 },
                 function(data, status) {
                     alert(data);
-                    if (data == "Update Information Successfully!")
+                    if (data == "Update Information SUCCESSFULLY!")
                         window.location.href = "index.php";
                 }
             );
