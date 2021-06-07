@@ -11,8 +11,8 @@
     function deleteCustomer($mysqli, $id) {
         $query = "DELETE FROM customer WHERE id=$id";
         $result = $mysqli->query($query);
-        if ($result) return "Delete Customer Successfully!";
-        else return "Delete Customer Unsuccessfully!";
+        if ($result) return "Delete Customer SUCCESSFULLY!";
+        else return "Delete Customer UNSUCCESSFULLY!";
     }
 
     // Edit Customer Information
@@ -33,8 +33,8 @@
                         birthdate='$birthday', registered_at='$register_at', active='$active'
                     WHERE id=$id";
         $result = $mysqli->query($query);
-        if ($result) return "Update Customer Information Successfully!";
-        else return "Update Customer Information Unsuccessfully!";
+        if ($result) return "Update Customer Information SUCCESSFULLY!";
+        else return "Update Customer Information UNSUCCESSFULLY!";
     }
 
 ?>
