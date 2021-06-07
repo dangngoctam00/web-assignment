@@ -90,6 +90,12 @@ if (!$_SESSION['id']) {
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="left_bar_link nav-link" href="transaction.php">
+                                <i class="fas fa-money-check-alt"></i>
+                                <span class="nav-link-text ml-4">Transaction</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="left_bar_link nav-link" href="customer.php">
 
                                 <i class="fas fa-user-alt"></i>
@@ -250,14 +256,15 @@ if (!$_SESSION['id']) {
                                 </h3>
                             </div>
                             <div class="card-content">
-                                <?php
-                                $sql = "select email, first_name, last_name, 
-                                user_name , phone, birthdate from admin WHERE id= '" . $_SESSION['id'] . "'";
-                                $result = $mysql_db->query($sql);
-                                $row = $result->fetch_assoc();
-                                ?>
 
-                                <table class="table" id='tableProfile'>
+                                <table class="table table-hover table-responsive-lg" id='tableProfile'>
+                                    <?php
+                                    $sql = "select email, first_name, last_name, 
+                                    user_name , phone, birthdate from admin WHERE id= '" . $_SESSION['id'] . "'";
+                                    $result = $mysql_db->query($sql);
+                                    $row = $result->fetch_assoc();
+                                    ?>
+
                                     <tr>
                                         <th>Username</th>
                                         <td><?php echo $row['user_name']; ?></td>
@@ -410,6 +417,33 @@ if (!$_SESSION['id']) {
             </div>
         </div>
     </div>
+    <!-- End modal section -->
+    <!-- Toast section -->
+
+
+
+    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+        <div class="" style="position: absolute; top: 0; right:0;">
+
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toastPassword"
+                data-delay="5000" data-autohide='false'>
+                <div class="toast-header">
+                    <strong class="mr-auto">System</strong>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    Your password has been changed.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- End toast section -->
     <script src="../../assets/js/admin/edit_profile.js"></script>
     <script src="../../assets/js/admin/change_password.js"></script>
 </body>
