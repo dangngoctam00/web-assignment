@@ -288,7 +288,7 @@ if (!$_SESSION['id']) {
                                             <th class="font-weight-bold table-primary">Category</th>
                                             <th class="font-weight-bold table-primary">Price</th>
                                             <th class="font-weight-bold table-primary">Description</th>
-                                            <th class="font-weight-bold table-primary">Image URL</th>
+                                            <th class="font-weight-bold table-primary">Image</th>
                                             <th class="font-weight-bold table-primary"></th>
                                             <th class="font-weight-bold table-primary"></th>
                                             <th class="font-weight-bold table-primary"></th>
@@ -337,7 +337,10 @@ if (!$_SESSION['id']) {
                                         
                                         
                                             </td>
-                                            <td> <?php echo $row['link_image'] ?> </td>                                            
+                                            
+                                            <td>
+                                                <img src="<?php echo str_replace('../../../', '../../', $row['link_image']); ?>" alt="" style="width: 120px; background-color: transparent;">
+                                            </td>                                            
 
                                             <td><button class="btn btn-info" data-toggle="collapse" 
                                                 data-target="#comment<?php echo $row['id'] ?>" aria-expanded="false"
