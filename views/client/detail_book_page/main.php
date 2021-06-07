@@ -253,6 +253,7 @@
                                     </div>
                                     <div class="col-md-5">
                                         <input name="add_to_card" type="submit" value="ADD TO CARD" class="btn btn-primary btn-add-to-cart" style="margin-top: 8%;">
+
                                         <!-- <button type="button" class="btn btn-primary" id="btn_add" name="add_to_card">ADD TO CARD</button> -->
                                         <input type='hidden' class='hidden-name' name='hidden_img' value='<?php echo $name_book ?>'/>
                                         <input type='hidden' class='hidden-id' name='hidden_id' value='<?php echo $book_id ?>'/>
