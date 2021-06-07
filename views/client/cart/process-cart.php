@@ -3,7 +3,7 @@
     if(isset($_COOKIE["shopping_cart"])) {
         $cookie_data = stripslashes($_COOKIE['shopping_cart']);
         $cart_data = json_decode($cookie_data, true, JSON_UNESCAPED_UNICODE);
-        $arr = array_column($cart_data, 'item_city');
+        $arr = array_column($cart_data, 'item_id');
         foreach($arr as $a) {
             echo "<p>$a</p>";
         }
@@ -18,7 +18,17 @@
 
     $item_id_list = array_column($cart_data, 'item_id');
     if(in_array($_POST["id"], $item_id_list)){
-		exit();
+        foreach($cart_data as $keys => $values)
+		{
+			if($cart_data[$keys]["item_id"] == $_POST["id"])
+			{
+                $quantity = 1;
+                if (!empty($_POST['quantity'])) {
+                    $quantity =  $_POST['quantity'];
+                }
+				$cart_data[$keys]["item_quantity"] = $cart_data[$keys]["item_quantity"] + $quantity;
+			}
+		}		
 	}
     else {
         $item_array = array(
@@ -29,9 +39,9 @@
             'item_image'        =>  $_POST['image'],
             'item_quantity'     =>  !empty($_POST['quantity']) ? $_POST['quantity'] : '1'
         );
-        $cart_data[] = $item_array;
-        $item_data = json_encode($cart_data, JSON_UNESCAPED_UNICODE);
-        setcookie('shopping_cart', $item_data, time() + (86400 * 30), '/');
+        $cart_data[] = $item_array;    
     }
-    // print "<script>alert('$name')</script>"    
+    
+    $item_data = json_encode($cart_data, JSON_UNESCAPED_UNICODE);
+    setcookie('shopping_cart', $item_data, time() + (86400 * 30), '/');
 ?>
