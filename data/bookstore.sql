@@ -125,7 +125,7 @@ create table subscribes(
     email varchar(50),
     primary key (email)
 );
-
+INSERT INTO `admin` (`id`, `email`, `first_name`, `last_name`, `user_name`, `phone`, `birthdate`, `registered_at`, `password`) VALUES (NULL, 'bathongkt123@gmail.com', 'Thong', 'Le Ba', 'bathongkt123', '091-135-7191', '2000-03-08', '2021-06-06 11:47:03.000000', 'bookstore4t');
 INSERT INTO employee (full_name, work_as, link_image,link_facebook, link_instagram,link_twitter) VALUES
 ("Lê Bá Thông", "Co-founder", "/assets/images/about_page/avatar1.gif","https://www.facebook.com/thong.leba.3", "https://www.instagram.com/thongleb/", "https://twitter.com/thong94584917");
 INSERT INTO employee (full_name, work_as, link_image,link_facebook,link_instagram,link_twitter) VALUES
@@ -303,3 +303,7 @@ INSERT INTO written_by (book_id,author) VALUES (17,'Nhiều tác giả');
 INSERT INTO written_by (book_id,author) VALUES (18,'Huỳnh Vĩnh Sơn');
 INSERT INTO written_by (book_id,author) VALUES (19,'Dịch giả Bùi Thị Quỳnh Chi');
 INSERT INTO written_by (book_id,author) VALUES (20,'Nhiều tác giả');
+
+
+INSERT INTO `customer` (`id`, `name`, `email`, `phone`, `birthdate`, `registered_at`, `active`, `password`) VALUES
+(1, 'Đặng Ngọc Tâm', 'dangngoctam00@gmail.com', '0123456523', '2021-06-08', '2021-06-07 00:00:00', 1, '$2y$10$anlJffJw8XWZNrx97mgMBeJ7VfRNDhKdweeoUzWKm1mIDgvZ5eKs2');

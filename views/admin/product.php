@@ -53,10 +53,10 @@ if (!$_SESSION['id']) {
                             ?>
                         </span>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">
                             <i class="fas fa-cog"></i>
-                            <span class="nav-link-text">Settings</span>
+                            <span class="nav-link-text">Change avatar</span>
                         </a>
                         <a class="dropdown-item" href="./logout.php">
                             <i class="fas fa-sign-out-alt"></i>

@@ -1,3 +1,5 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 <?php
     session_start();
     $book_id = $_GET["id"];
@@ -212,9 +214,9 @@
                             </div> -->
 
                             <!-- <div class="form-group"> -->
-                            <form action="" method="post">
+                            <form action="#" method="post">
                                 <label for="addr">Address delivery</label>
-                                <select class="form-control" id="addr" name="address">
+                                <select class="form-control hidden-city" id="addr" name="address">
                                     <option>An Giang</option>
                                     <option>Bac Ninh</option>
                                     <option>Ben Tre</option>
@@ -247,11 +249,17 @@
                                 <div class=row>
                                     <div class="col-md-5">
                                         <span>Quantity</span>
-                                        <input id="qty" class="input-text qty" name="qty" min="1" value="1" title="Qty" type="number">
+                                        <input id="qty" class="input-text qty hidden-quantity" name="qty" min="1" value="1" title="Qty" type="number">
                                     </div>
                                     <div class="col-md-5">
-                                        <input name="add_to_card" type="submit" value="ADD TO CART" class="btn btn-primary" style="margin-top: 8%;">
+                                        <input name="add_to_card" type="submit" value="ADD TO CARD" class="btn btn-primary btn-add-to-cart" style="margin-top: 8%;">
+
                                         <!-- <button type="button" class="btn btn-primary" id="btn_add" name="add_to_card">ADD TO CARD</button> -->
+                                        <input type='hidden' class='hidden-name' name='hidden_img' value='<?php echo $name_book ?>'/>
+                                        <input type='hidden' class='hidden-id' name='hidden_id' value='<?php echo $book_id ?>'/>
+                                        <input type='hidden' class='hidden-image' name='hidden_image' value='<?php echo $link ?>'/>
+                                        <input type='hidden' class='hidden-price' name='hidden_price' value='<?php echo $price ?>'/>
+                                        <!-- <input type='hidden' class='$hidden_img' name='hidden_img' value='$img'/> -->
                                     </div>
                                     <div class="col-md-2"></div>
                                 </div>
@@ -607,3 +615,42 @@
             </div> -->
     </div>
 </div>
+
+<script>
+       
+        $(".btn-add-to-cart").click(function(event) {                                           
+            // let id = this.className.split('-');
+            // id = id[id.length - 1];
+            let id = $('.hidden-id').val();
+            let name = $('.hidden-name').val();
+            let price = $('.hidden-price').val();
+            let image = $('.hidden-image').val();
+            let quantity = $('.hidden-quantity').val();
+            let city = $('.hidden-city').val();
+            // alert(image);
+            // alert(city);
+            $.ajax({
+                type: 'POST',
+                url: "../cart/process-cart.php",
+                data: { id, name, price, image, quantity, city },
+                success: function(mesg){
+                    if (mesg == 'error') {                      
+                        return;
+                    }            
+                    toastr.options = {
+                        "debug": false,
+                        "positionClass": "toast-top-full-width",
+                        "onclick": null,
+                        "fadeIn": 300,
+                        "fadeOut": 600,
+                        "timeOut": 2000,
+                        "extendedTimeOut": 1000
+                    }
+                toastr.success('Add product to cart successfully');             
+                }  
+            })                   
+
+            event.preventDefault();
+            return false;
+        });                      
+</script>
