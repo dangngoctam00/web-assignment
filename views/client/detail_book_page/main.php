@@ -243,7 +243,7 @@
                                     <option>Yen Bai</option>
                                 </select>
                                 <br>
-                                <p>Delivery charges: <span>$2</span></p>
+                                <p>Ship charges: <span>$2</span></p>
                                 <div class="line_1"></div>
 
                                 <div class=row>
@@ -252,7 +252,7 @@
                                         <input id="qty" class="input-text qty hidden-quantity" name="qty" min="1" value="1" title="Qty" type="number">
                                     </div>
                                     <div class="col-md-5">
-                                        <input name="add_to_card" type="submit" value="ADD TO CARD" class="btn btn-primary btn-add-to-cart" style="margin-top: 8%;">
+                                        <input name="add_to_card" type="submit" value="ADD TO CART" class="btn btn-primary btn-add-to-cart" style="margin-top: 8%;">
 
                                         <!-- <button type="button" class="btn btn-primary" id="btn_add" name="add_to_card">ADD TO CARD</button> -->
                                         <input type='hidden' class='hidden-name' name='hidden_img' value='<?php echo $name_book ?>'/>
