@@ -90,6 +90,12 @@ if (!$_SESSION['id']) {
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="left_bar_link nav-link" href="transaction.php">
+                                <i class="fas fa-money-check-alt"></i>
+                                <span class="nav-link-text ml-4">Transaction</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="left_bar_link nav-link" href="customer.php">
 
                                 <i class="fas fa-user-alt"></i>

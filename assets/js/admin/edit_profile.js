@@ -17,33 +17,8 @@ $(document).ready(function () {
                 data = JSON.parse(data);
                 if (data.success) {
                     console.log("Profile has been changed.");
-                    $('#topLeftName').text($('#inputFirstName').val());
-                    $('#tableProfile').find('td').each(function (i, obj) {
-                        switch (i) {
-                            case 0:
-                                $(this).text($('#inputUserName').val());
-                                break;
-                            case 1:
-                                $(this).text($('#inputFirstName').val());
-                                break;
-                            case 2:
-                                $(this).text($('#inputLastName').val());
-                                break;
-                            case 3:
-                                $(this).text($('#inputEmail').val());
-                                break;
-                            case 4:
-                                $(this).text($('#inputPhone').val());
-                                break;
-                            case 5:
-                                $(this).text($('#inputBirthday').val());
-                                break;
-
-                            default:
-                                break;
-                        }
-
-                    });;
+                    $("#topLeftName").text($('#inputFirstName').val());
+                    $("#tableProfile").load(window.location.href + " #tableProfile > *");
                     modal.modal('hide');
                 }
                 else {

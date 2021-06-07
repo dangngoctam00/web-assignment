@@ -90,6 +90,12 @@ if (!$_SESSION['id']) {
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="left_bar_link nav-link" href="transaction.php">
+                                <i class="fas fa-money-check-alt"></i>
+                                <span class="nav-link-text ml-4">Transaction</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="left_bar_link nav-link" href="customer.php">
 
                                 <i class="fas fa-user-alt"></i>
@@ -250,14 +256,15 @@ if (!$_SESSION['id']) {
                                 </h3>
                             </div>
                             <div class="card-content">
-                                <?php
-                                $sql = "select email, first_name, last_name, 
-                                user_name , phone, birthdate from admin WHERE id= '" . $_SESSION['id'] . "'";
-                                $result = $mysql_db->query($sql);
-                                $row = $result->fetch_assoc();
-                                ?>
 
                                 <table class="table" id='tableProfile'>
+                                    <?php
+                                    $sql = "select email, first_name, last_name, 
+                                    user_name , phone, birthdate from admin WHERE id= '" . $_SESSION['id'] . "'";
+                                    $result = $mysql_db->query($sql);
+                                    $row = $result->fetch_assoc();
+                                    ?>
+
                                     <tr>
                                         <th>Username</th>
                                         <td><?php echo $row['user_name']; ?></td>

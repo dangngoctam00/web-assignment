@@ -17,7 +17,7 @@ if (!$_SESSION['id']) {
     <?php include('./include/stylesheet.php'); ?>
     <?php include('./include/script.php'); ?>
     <link rel="stylesheet" href="../../assets/css/admin/navbar.css">
-
+    <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
 </head>
 
 <body style="overflow: unset;">
@@ -43,12 +43,12 @@ if (!$_SESSION['id']) {
                 </form>
             </div>
             <div class="navbar-nav ml-auto">
-                <div class="nav-item dropdown mr-auto">
+                <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <img class="rounded-circle" alt="Image placeholder" src="../../assets/images/admin/avatar.jpg"
                             width="30" height="30">
-                        <span class="mb-0" style="color: aliceblue;">
+                        <span class="mb-0" style="color: aliceblue;" id="topLeftName">
                             <?php
                             echo $_SESSION["first_name"];
                             ?>
@@ -90,7 +90,7 @@ if (!$_SESSION['id']) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="left_bar_link nav-link" href="transaction.php">
+                            <a class="left_bar_link nav-link active" href="transaction.php">
                                 <i class="fas fa-money-check-alt"></i>
                                 <span class="nav-link-text ml-4">Transaction</span>
                             </a>
@@ -104,7 +104,7 @@ if (!$_SESSION['id']) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="left_bar_link nav-link active" href="employee.php">
+                            <a class="left_bar_link nav-link" href="employee.php">
                                 <i class="fas fa-user-friends" aria-hidden="true"></i>
                                 <span class="nav-link-text ml-4">Employee</span>
                             </a>
@@ -247,316 +247,178 @@ if (!$_SESSION['id']) {
                         </div>
                     </div>
                 </div>
-
-                <!-- start code     -->
                 <div class="row">
                     <div class="col-12">
-                        <div class="col d-flex justify-content-end">
-                            <button class="btn btn-outline-primary mx-3" data-toggle="modal"
-                                data-target="#staffModal">Add new employee</button>
-                        </div>
-                        <br>
                         <div class="card">
                             <div class="card-header">
                                 <h3 id="titleTable">
-                                    All Employees
+                                    My Profile
                                 </h3>
                             </div>
                             <div class="card-content">
-                                <table class="table table-striped table-hover table-responsive-lg"
-                                    style="table-layout:fixed;">
-                                    <thead>
-                                        <tr>
-                                            <th class="font-weight-bold table-primary">ID</th>
-                                            <th class="font-weight-bold table-primary">Full name</th>
-                                            <th class="font-weight-bold table-primary">Work as</th>
-                                            <th class="font-weight-bold table-primary">Link avatar</th>
-                                            <th class="font-weight-bold table-primary">Link facebook</th>
-                                            <th class="font-weight-bold table-primary">Link twitter</th>
-                                            <th class="font-weight-bold table-primary">Link instagram</th>
-                                            <th class="font-weight-bold table-primary"></th>
-                                            <th class="font-weight-bold table-primary"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
 
+                                <table class="table" id='tableProfile'>
+                                    <?php
+                                    $sql = "select email, first_name, last_name, 
+                                    user_name , phone, birthdate from admin WHERE id= '" . $_SESSION['id'] . "'";
+                                    $result = $mysql_db->query($sql);
+                                    $row = $result->fetch_assoc();
+                                    ?>
 
-
-                                        $sql = "SELECT * from employee";
-                                        $res = $mysql_db->query($sql);
-                                        $employ = array();
-                                        while ($row = $res->fetch_assoc()) {
-                                            array_push($employ, array($row['id'], $row['full_name'], $row['work_as'], $row['link_image'], $row['link_facebook'], $row['link_twitter'], $row['link_instagram']));
-
-                                        ?>
-                                        <tr>
-                                            <td> <?php echo $row['id'] ?> </td>
-                                            <td> <?php echo $row['full_name'] ?> </td>
-                                            <td> <?php echo $row['work_as'] ?> </td>
-                                            <td> <?php echo $row['link_image'] ?> </td>
-                                            <td> <?php echo $row['link_facebook'] ?> </td>
-                                            <td> <?php echo $row['link_twitter'] ?> </td>
-                                            <td> <?php echo $row['link_instagram'] ?> </td>
-
-
-                                            <td> <button class="btn btn-primary" data-toggle="modal"
-                                                    data-target="#staffEditModal<?php echo $row['id'] ?>">Edit</button>
-                                            </td>
-                                            <td> <button class="btn btn-danger"
-                                                    onclick="deleteEmployee(<?php echo $row['id'] ?>)">Delete</button>
-                                            </td>
-                                            </td>
-
-                                        </tr>
-
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
+                                    <tr>
+                                        <th>Username</th>
+                                        <td><?php echo $row['user_name']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <td><?php echo $row['first_name']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Last Name</th>
+                                        <td><?php echo $row['last_name']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Email</th>
+                                        <td><?php echo $row['email']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Telephone</th>
+                                        <td><?php echo $row['phone']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Birthday</th>
+                                        <td><?php echo $row['birthdate']; ?></td>
+                                    </tr>
                                 </table>
+
                             </div>
+
+                        </div>
+                        <div class="col d-flex justify-content-center my-3">
+                            <button class="btn btn-outline-primary mx-3" data-toggle="modal"
+                                data-target="#profileModal">Edit Profile</button>
+                            <button class="btn btn-outline-success mr-2" data-toggle="modal"
+                                data-target="#passwordModal" ?>Change
+                                Password</button>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-
-
-    <!-- modal add new employee -->
-    <div class="modal fade" id="staffModal" tabindex="-1" role="dialog" aria-labelledby="staffModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+    <!-- Modal section -->
+    <!-- Edit profile -->
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
+        id="profileModal">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Add new employee</h5>
+                    <h5 class="modal-title">Edit Your Profile</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="name" class="col-2 col-form-label"><strong>Full name</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="" id="name">
+                        <div class="form-group row">
+                            <label for="inputUserName" class="col-sm-2 col-form-label font-weight-bold">Username</label>
+                            <div class="col-sm-10" id="formUserName">
+                                <input type="text" class="form-control" id="inputUserName"
+                                    value="<?php echo $row['user_name']; ?>">
                             </div>
-                            <span class="text-danger" id="nameErr"></span>
                         </div>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="profile" class="col-2 col-form-label"><strong>Work as</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="" id="work">
+                        <div class="form-group row">
+                            <label for="inputFirstName" class="col-sm-2 col-form-label font-weight-bold">First
+                                Name</label>
+                            <div class="col-sm-10" id="formFirstName">
+                                <input type="text" class="form-control" id="inputFirstName"
+                                    value="<?php echo $row['first_name']; ?>">
                             </div>
-                            <span class="text-danger" id="workErr"></span>
                         </div>
-                        <div class="form-group row align-items-center">
-                            <label for="email" class="col-2 col-form-label"><strong>Link avatar</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="email" value="" id="avatar">
+                        <div class="form-group row">
+                            <label for="inputLastName" class="col-sm-2 col-form-label font-weight-bold">Last
+                                Name</label>
+                            <div class="col-sm-10" id="formLastName">
+                                <input type="text" class="form-control" id="inputLastName"
+                                    value="<?php echo $row['last_name']; ?>">
                             </div>
-                            <span class="text-danger" id="avatarErr"></span>
                         </div>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="phone" class="col-2 col-form-label"><strong>Link facebook</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="" id="face">
+                        <div class="form-group row">
+                            <label for="inputEmail" class="col-sm-2 col-form-label font-weight-bold">Email</label>
+                            <div class="col-sm-10" id="formEmail">
+                                <input type="email" class="form-control" id="inputEmail"
+                                    value="<?php echo $row['email'];  ?>">
                             </div>
-                            <span class="text-danger" id="faceErr"></span>
                         </div>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="html" class="col-2 col-form-label"><strong>Link twitter</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="" id="twitter">
+                        <div class="form-group row">
+                            <label for="inputPhone" class="col-sm-2 col-form-label font-weight-bold">Telephone</label>
+                            <div class="col-sm-10" id="formPhone">
+                                <input type="text" class="form-control" id="inputPhone"
+                                    value="<?php echo $row['phone']; ?>">
                             </div>
-                            <span class="text-danger" id="twitterErr"></span>
                         </div>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="html" class="col-2 col-form-label"><strong>Link instagram</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="" id="insta">
+                        <div class="form-group row">
+                            <label for="inputBirthday" class="col-sm-2 col-form-label font-weight-bold">Birthday</label>
+                            <div class="col-sm-10" id="formBirthday">
+                                <input type="date" class="form-control" id="inputBirthday"
+                                    value="<?php echo $row['birthdate']; ?>">
                             </div>
-                            <span class="text-danger" id="instaErr"></span>
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer">
+                <div class=" modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary" id="confirmProfileBtn">Save
+                        changes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="addEmployee()">Add</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- edit employee -->
-    <?php
-    for ($index = 0; $index < count($employ); $index++) {
-    ?>
-
-    <div class="modal fade" id="staffEditModal<?php echo $employ[$index][0]; ?>" tabindex="-1" role="dialog"
-        aria-labelledby="staffEditModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+    <!-- Change password -->
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
+        id="passwordModal">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Edit employee</h5>
+                    <h5 class="modal-title">Change your password</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="form-group row align-items-center">
-                            <label for="id-edit-<?php echo $employ[$index][0]; ?>"
-                                class="col-2 col-form-label"><strong>ID</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="<?php echo $employ[$index][0]; ?>"
-                                    id="id-edit-<?php echo $employ[$index][0]; ?>" disabled>
+                        <div class="form-group row">
+                            <label for="inputOldPassword" class="col-sm-3 col-form-label font-weight-bold">Old
+                                Password</label>
+                            <div class="col-sm-9" id="formOldPassword">
+                                <input type="password" class="form-control" id="inputOldPassword">
                             </div>
-                            <span class="text-danger" id="idErr"></span>
                         </div>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="name-edit-<?php echo $employ[$index][0]; ?>"
-                                class="col-2 col-form-label"><strong>Full name</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="<?php echo $employ[$index][1]; ?>"
-                                    id="name-edit-<?php echo $employ[$index][0]; ?>">
+                        <div class="form-group row">
+                            <label for="inputNewPassWord1" class="col-sm-3 col-form-label font-weight-bold">New
+                                Password</label>
+                            <div class="col-sm-9" id="formNewPassword">
+                                <input type="password" class="form-control" id="inputNewPassword">
                             </div>
-                            <span class="text-danger" id="nameErr"></span>
                         </div>
-                        <div class="form-group row align-items-center justify-content-center">
-                            <label for="work-edit-<?php echo $employ[$index][0]; ?>"
-                                class="col-2 col-form-label"><strong>Work as</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="<?php echo $employ[$index][2]; ?>"
-                                    id="work-edit-<?php echo $employ[$index][0]; ?>">
+                        <div class="form-group row">
+                            <label for="inputNewPassWord2" class="col-sm-3 col-form-label font-weight-bold">Retype New
+                                Password</label>
+                            <div class="col-sm-9" id="formConfirmNewPassword">
+                                <input type="password" class="form-control" id="inputConfirmNewPassword">
                             </div>
-                            <span class="text-danger" id="workErr"></span>
-                        </div>
-                        <div class="form-group row align-items-center">
-                            <label for="avatar-edit-<?php echo $employ[$index][0]; ?>"
-                                class="col-2 col-form-label"><strong>Link avatar</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="<?php echo $employ[$index][3]; ?>"
-                                    id="avatar-edit-<?php echo $employ[$index][0]; ?>">
-                            </div>
-                            <span class="text-danger" id="avatarErr"></span>
-                        </div>
-                        <div class="form-group row align-items-center">
-                            <label for="face-edit-<?php echo $employ[$index][0]; ?>"
-                                class="col-2 col-form-label"><strong>Link facebook</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="<?php echo $employ[$index][4]; ?>"
-                                    id="face-edit-<?php echo $employ[$index][0]; ?>">
-                            </div>
-                            <span class="text-danger" id="faceErr"></span>
-                        </div>
-                        <div class="form-group row align-items-center">
-                            <label for="twitter-edit-<?php echo $employ[$index][0]; ?>"
-                                class="col-2 col-form-label"><strong>Link twitter</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="<?php echo $employ[$index][5]; ?>"
-                                    id="twitter-edit-<?php echo $employ[$index][0]; ?>">
-                            </div>
-                            <span class="text-danger" id="twitterErr"></span>
-                        </div>
-                        <div class="form-group row align-items-center">
-                            <label for="insta-edit-<?php echo $employ[$index][0]; ?>"
-                                class="col-2 col-form-label"><strong>Link instagram</strong></label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" value="<?php echo $employ[$index][3]; ?>"
-                                    id="insta-edit-<?php echo $employ[$index][0]; ?>">
-                            </div>
-                            <span class="text-danger" id="instaErr"></span>
-                        </div>
 
                     </form>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer d-flex justify-content-center" id="passwordModalFooter">
+                    <button type="button" class="btn btn-primary" id="confirmChangePassword">Confirm</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary"
-                        onclick="editEmployee(<?php echo $employ[$index][0]; ?>)">Edit</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <?php
-    }
-    ?>
-
-
-    <script>
-    // edit employee
-    function editEmployee(employ_id) {
-        var id = document.getElementById("id-edit-" + employ_id).value;
-        var fname = document.getElementById("name-edit-" + employ_id).value;
-        var work = document.getElementById("work-edit-" + employ_id).value;
-        var avatar = document.getElementById("avatar-edit-" + employ_id).value;
-        var face = document.getElementById("face-edit-" + employ_id).value;
-        var twitter = document.getElementById("twitter-edit-" + employ_id).value;
-        var insta = document.getElementById("insta-edit-" + employ_id).value;
-        //console.log(id + " " + fname + " "+work+" "+avatar+" "+face+" "+twitter+" "+insta);
-        $.post(
-            "post/employee_func.php", {
-                action: "edit_employee",
-                id: id,
-                fname: fname,
-                work: work,
-                avatar: avatar,
-                face: face,
-                twitter: twitter,
-                insta: insta
-            },
-            function(data, status) {
-                alert(data);
-                if (data == "Change employee information successfully!") window.location.href = "employee.php";
-            }
-        );
-    }
-
-    // delete employee
-    function deleteEmployee(employ_id) {
-        $.post(
-            "post/employee_func.php", {
-                action: "delete_employee",
-                id: employ_id
-            },
-            function(data, status) {
-                alert(data);
-                if (data == "Delete employee information successfully!") window.location.href = "employee.php";
-            }
-        );
-    }
-
-    // add employee
-    function addEmployee() {
-        var fname = document.getElementById("name").value;
-        var work = document.getElementById("work").value;
-        var avatar = document.getElementById("avatar").value;
-        var face = document.getElementById("face").value;
-        var twitter = document.getElementById("twitter").value;
-        var insta = document.getElementById("insta").value;
-        $.post(
-            "post/employee_func.php", {
-                action: "add_employee",
-                fname: fname,
-                work: work,
-                avatar: avatar,
-                face: face,
-                twitter: twitter,
-                insta: insta
-            },
-            function(data, status) {
-                alert(data);
-                if (data == "Add employee information successfully!") window.location.href = "employee.php";
-            }
-        );
-    }
-    </script>
-
-
-
+    <script src="../../assets/js/admin/edit_profile.js"></script>
+    <script src="../../assets/js/admin/change_password.js"></script>
 </body>
 
 </html>
