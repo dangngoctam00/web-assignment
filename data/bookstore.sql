@@ -94,7 +94,7 @@ create table shopping_log_entry(
     quantity int,
     PRIMARY key(log_id, book_id),
     FOREIGN key (log_id) REFERENCES shopping_log(id),
-    FOREIGN key (book_id) REFERENCES book(id)
+    FOREIGN key (book_id) REFERENCES book(id) on delete cascade on update cascade
 );
 create table send_email_log(
     id int AUTO_INCREMENT,
@@ -305,5 +305,10 @@ INSERT INTO written_by (book_id,author) VALUES (19,'Dịch giả Bùi Thị Qu�
 INSERT INTO written_by (book_id,author) VALUES (20,'Nhiều tác giả');
 
 
+-- review_by --
+INSERT INTO `reviewed_by` (`book_id`, `customer_id`, `quality`, `price`, `date_review`, `content`) VALUES ('6', '1', '4', '12', '2021-06-05', 'Sách đẹp.');
+
+-- customer
 INSERT INTO `customer` (`id`, `name`, `email`, `phone`, `birthdate`, `registered_at`, `active`, `password`) VALUES
 (1, 'Đặng Ngọc Tâm', 'dangngoctam00@gmail.com', '0123456523', '2021-06-08', '2021-06-07 00:00:00', 1, '$2y$10$anlJffJw8XWZNrx97mgMBeJ7VfRNDhKdweeoUzWKm1mIDgvZ5eKs2');
+
