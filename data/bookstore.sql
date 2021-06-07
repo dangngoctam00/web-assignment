@@ -304,11 +304,11 @@ INSERT INTO written_by (book_id,author) VALUES (18,'Huỳnh Vĩnh Sơn');
 INSERT INTO written_by (book_id,author) VALUES (19,'Dịch giả Bùi Thị Quỳnh Chi');
 INSERT INTO written_by (book_id,author) VALUES (20,'Nhiều tác giả');
 
+-- customer
+INSERT INTO `customer` (`id`, `name`, `email`, `phone`, `birthdate`, `registered_at`, `active`, `password`) VALUES
+(1, 'Đặng Ngọc Tâm', 'dangngoctam00@gmail.com', '0123456523', '2021-06-08', '2021-06-07 00:00:00', 1, '$2y$10$anlJffJw8XWZNrx97mgMBeJ7VfRNDhKdweeoUzWKm1mIDgvZ5eKs2');
 
 -- review_by --
 INSERT INTO `reviewed_by` (`book_id`, `customer_id`, `quality`, `price`, `date_review`, `content`) VALUES ('6', '1', '4', '12', '2021-06-05', 'Sách đẹp.');
 
--- customer
-INSERT INTO `customer` (`id`, `name`, `email`, `phone`, `birthdate`, `registered_at`, `active`, `password`) VALUES
-(1, 'Đặng Ngọc Tâm', 'dangngoctam00@gmail.com', '0123456523', '2021-06-08', '2021-06-07 00:00:00', 1, '$2y$10$anlJffJw8XWZNrx97mgMBeJ7VfRNDhKdweeoUzWKm1mIDgvZ5eKs2');
 
