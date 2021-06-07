@@ -507,7 +507,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <a href="../product_page/index.php?category=<?php echo $row['cate'] ?>"> <?php echo $row['cate'] ?> <span>( <?php echo $row['amount'] ?> )</span></a>
+                    <a href="../product_page/index.php?category=<?php echo $row['cate'] ?>"> <?php echo ucwords($row['cate']) ?> <span>( <?php echo $row['amount'] ?> )</span></a>
                 </div>
                 <div class="subline"></div>
             </div>
