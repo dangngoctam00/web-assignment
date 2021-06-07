@@ -49,6 +49,7 @@
         echo editCustomer($mysql_db, $id, $name, $email, $phone, $birthday, $register_at, $active, $password);
     }
     function editCustomer($mysqli, $id, $name, $email, $phone, $birthday, $register_at, $active, $password) {
+        $password = password_hash($password, PASSWORD_DEFAULT);
         $query = "UPDATE customer 
                     SET name='$name', email='$email', phone='$phone', 
                         birthdate='$birthday', registered_at='$register_at', active='$active', password='$password'

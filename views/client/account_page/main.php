@@ -2,8 +2,8 @@
 	<div class="row">
 		<div class="col-md-3 ">
 		     <div class="list-group ">
-              <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
-              <a href="#" class="list-group-item list-group-item-action">User Management</a>
+              <a href="#" class="list-group-item list-group-item-action active">Profile</a>
+              <a href="#" class="list-group-item list-group-item-action">Orders</a>
             </div> 
 		</div>
 		<div class="col-md-9">
@@ -19,53 +19,27 @@
 		                <div class="col-md-12">
 		                    <form>
                               <div class="form-group row">
-                                <label for="username" class="col-4 col-form-label">User Name*</label> 
+                                <label for="name" class="col-4 col-form-label">Name</label> 
                                 <div class="col-8">
-                                  <input id="username" name="username" placeholder="Username" class="form-control here" required="required" type="text">
+                                  <input id="name" name="name" placeholder="Name" class="form-control here" required="required" type="text">
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="name" class="col-4 col-form-label">First Name</label> 
+                                <label for="email" class="col-4 col-form-label">Email</label> 
                                 <div class="col-8">
-                                  <input id="name" name="name" placeholder="First Name" class="form-control here" type="text">
+                                  <input id="email" name="email" placeholder="Email" class="form-control here" type="email">
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="lastname" class="col-4 col-form-label">Last Name</label> 
+                                <label for="phone" class="col-4 col-form-label">Phone</label> 
                                 <div class="col-8">
-                                  <input id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text">
+                                  <input id="phone" name="phone" placeholder="Phone" class="form-control here" type="text">
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="text" class="col-4 col-form-label">Nick Name*</label> 
+                                <label for="birthday" class="col-4 col-form-label">Birthday</label> 
                                 <div class="col-8">
-                                  <input id="text" name="text" placeholder="Nick Name" class="form-control here" required="required" type="text">
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <label for="select" class="col-4 col-form-label">Display Name public as</label> 
-                                <div class="col-8">
-                                  <select id="select" name="select" class="custom-select">
-                                    <option value="admin">Admin</option>
-                                  </select>
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <label for="email" class="col-4 col-form-label">Email*</label> 
-                                <div class="col-8">
-                                  <input id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text">
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <label for="website" class="col-4 col-form-label">Website</label> 
-                                <div class="col-8">
-                                  <input id="website" name="website" placeholder="website" class="form-control here" type="text">
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <label for="publicinfo" class="col-4 col-form-label">Public Info</label> 
-                                <div class="col-8">
-                                  <textarea id="publicinfo" name="publicinfo" cols="40" rows="4" class="form-control"></textarea>
+                                  <input id="birthday" name="birthday" placeholder="Birthday" class="form-control here" required="required" type="text">
                                 </div>
                               </div>
                               <div class="form-group row">
