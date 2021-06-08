@@ -45,8 +45,10 @@
             $query = "SELECT * FROM book WHERE MATCH(name) AGAINST('$keyword')";
             $result = $mysql_db->query($query);
             $arrayResult = array();
-            while ($item = mysqli_fetch_assoc($result)) {
-                $arrayResult[] = $item;
+            if (!empty($result)) {
+                while ($item = mysqli_fetch_assoc($result)) {
+                    $arrayResult[] = $item;
+                }
             }
             return $arrayResult;
         }
