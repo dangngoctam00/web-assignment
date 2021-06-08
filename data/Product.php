@@ -39,6 +39,65 @@
             }
             return $arrayResult;
         }
+
+        public function search($keyword) {            
+            global $mysql_db;
+            $query = "SELECT * FROM book WHERE MATCH(name) AGAINST('$keyword')";
+            $result = $mysql_db->query($query);
+            $arrayResult = array();
+            while ($item = mysqli_fetch_assoc($result)) {
+                $arrayResult[] = $item;
+            }
+            return $arrayResult;
+        }
+
+        public function getBooksOrderByPrice($criteria) {
+            global $mysql_db;
+            if ($criteria == 'asc') {            
+                $query = "SELECT * FROM book ORDER BY price ASC";
+            }
+            else {
+                $query = "SELECT * FROM book ORDER BY price DESC";
+            }
+            $result = $mysql_db->query($query);
+            $arrayResult = array();
+            while ($item = mysqli_fetch_assoc($result)) {
+                $arrayResult[] = $item;
+            }
+            return $arrayResult;
+        }
+
+        public function getBooksByCategoryAndOrderByPrice($category, $criteria) {
+            global $mysql_db;
+            if ($criteria == 'asc') {            
+                $query = "SELECT * FROM book WHERE category = '$category' ORDER BY price ASC";
+            }
+            else {
+                $query = "SELECT * FROM book WHERE category = '$category' ORDER BY price DESC";
+            }
+            $result = $mysql_db->query($query);
+            $arrayResult = array();
+            while ($item = mysqli_fetch_assoc($result)) {
+                $arrayResult[] = $item;
+            }
+            return $arrayResult;
+        }
+
+        public function getBooksByKeywordAndOrderByPrice($keyword, $criteria) {
+            global $mysql_db;
+            if ($criteria == 'asc') {            
+                $query = "SELECT * FROM book WHERE MATCH(name) AGAINST('$keyword') ORDER BY price ASC";
+            }
+            else {
+                $query = "SELECT * FROM book WHERE MATCH(name) AGAINST('$keyword') ORDER BY price DESC";
+            }
+            $result = $mysql_db->query($query);
+            $arrayResult = array();
+            while ($item = mysqli_fetch_assoc($result)) {
+                $arrayResult[] = $item;
+            }
+            return $arrayResult;
+        }
     }
 
     $product = new Product();

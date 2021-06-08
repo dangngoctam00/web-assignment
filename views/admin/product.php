@@ -320,7 +320,7 @@ if (!$_SESSION['id_admin']) {
                                             <td> <?php echo $row['id'] ?> </td>
                                             <td> <?php echo $row['name'] ?> </td>
                                             <td> <?php echo $author ?> </td>
-                                            <td> <?php echo $row['category'] ?> </td>
+                                            <td style="text-transform: capitalize;"> <?php echo $row['category'] ?> </td>
                                             <td> <?php echo $row['price'] ?> </td>                                            
                                             <td> 
                                                 
