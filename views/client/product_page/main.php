@@ -127,16 +127,16 @@
                 <div class="paginationlist text-center">
                     <ul class="pagination justify-content-center align-content-center">
                         <li class="page-item" <?php if ($page_no == 1) echo "hidden"; ?>>
-                            <a href="<?php echo "?page=" . ($page_no - 1); ?>" class="page-link">
+                            <a href="<?php echo "?page=" . ($page_no - 1); ?>" class="number-page-<?php $a = $page_no - 1; echo $a; ?> page-link">
                                 < </a>
                         </li>
                         <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
                             <li class="page-item <?php if ($i == $page_no) echo "active"; ?>">
-                                <a href="<?php echo "?page=" . $i; ?>" class="page-link"><?php echo $i; ?></a>
+                                <a href="<?php echo "?page=" . $i; ?>" class="number-page-<?php echo $i; ?> page-link"><?php echo $i; ?></a>
                             </li>
                         <?php } ?>
                         <li class="page-item" <?php if ($page_no == $total_pages) echo "hidden"; ?>>
-                            <a href="<?php echo "?page=" . ($page_no + 1); ?>" class="page-link"> > </a>
+                            <a href="<?php echo "?page=" . ($page_no + 1); ?>" class="number-page-<?php $a = $page_no - 1; echo $a; ?> page-link"> > </a>
                         </li>
                     </ul>
                 </div>
@@ -146,6 +146,26 @@
 </div>
 
 <script>
+
+    $("*[class^='number-page-']").click(function(event) {
+        let page_number = this.className.split(' ')[0].split('-');
+        page_number = page_number[page_number.length - 1];
+        // alert(page_number);
+        let pathname =  $(location).attr('href');
+        pathname = decodeURIComponent(pathname);
+        if (pathname.indexOf('?') == -1) {
+            $(location).attr('href',  pathname + '?page=' + page_number);               
+        }
+        else if (pathname.indexOf('page=') != -1) {
+            $(location).attr('href',  pathname.substr(0, pathname.length - 1) + page_number);
+        }
+        else {
+            $(location).attr('href',  pathname + '&page=' + page_number);
+        }        
+        event.preventDefault();
+        return false;
+    });                      
+
     $('.result-btn').click(function(event) {
         let pathname =  $(location).attr('href');
         let criteria = $('.select-option').val();
