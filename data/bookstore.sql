@@ -149,6 +149,10 @@ MODIFY COLUMN price float(6);
 
 -- Insert books
 
+-- Indexing --
+
+ALTER TABLE book add FULLTEXT(name);
+
 -- General Knowledge
 INSERT INTO book (name, category, price, description, link_image, published_at, is_bestseller)
 VALUES ("Luật Tâm Thức - Giải Mã Ma Trận Vũ Trụ", "general knowledge", 9.7, "Cuốn sách này sẽ giúp bạn thấy rằng những kiến thức của người xưa không hề cao siêu huyền bí mà vô cùng đơn giản và liên quan chặt chẽ tới khoa học hiện đại.Việc của bạn chỉ là đọc với một tâm trí cởi mở để thức tỉnh, vượt qua những rào cản của tâm trí, những niềm tin cố hữu của mình.Nếu con người cứ đóng khung tư duy của mình trong hai trường phái duy vật và duy tâm, chúng ta sẽ mãi mãi không bao giờ có thể giải đáp được những vấn đề lớn lao của nhân loại. Khi đó, chúng ta cũng sẽ không bao giờ hiểu được bản chất của những câu chuyện về tâm linh, cũng như những vấn đề chưa lý giải được của khoa học.", "../../../assets/images/product_page/1.png", "2021-5-1", 0);

@@ -39,6 +39,17 @@
             }
             return $arrayResult;
         }
+
+        public function search($keyword) {            
+            global $mysql_db;
+            $query = "SELECT * FROM book WHERE MATCH(name) AGAINST('$keyword')";
+            $result = $mysql_db->query($query);
+            $arrayResult = array();
+            while ($item = mysqli_fetch_assoc($result)) {
+                $arrayResult[] = $item;
+            }
+            return $arrayResult;
+        }
     }
 
     $product = new Product();

@@ -8,7 +8,15 @@
     if (isset($_GET['category'])) {
         $category = $_GET['category'];
         $books = $product->getBookCategory($category);
-    } else $books = $product->getData();
+    } elseif (!empty($_GET['keyword'])) {
+        $keyword = $_GET['keyword'];
+        echo $keyword;
+        $books = $product->search($keyword);
+    }
+    else {
+        $books = $product->getData();
+    }
+    
     // shuffle($books);
 
     // For pagination
