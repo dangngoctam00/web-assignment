@@ -64,10 +64,7 @@
                                                     <ul class='add_to_links'>
                                                         <li><a class='cart'
                                                                 href='https://demo.hasthemes.com/boighor-preview/boighor/cart.html'><i
-                                                                    class='fas fa-cart-plus'></i></a></li>
-                                                        <li><a class='compare'
-                                                                href='https://demo.hasthemes.com/boighor-preview/boighor/index.html#'><i
-                                                                    class='far fa-heart'></i></a></li>
+                                                                    class='fas fa-cart-plus'></i></a></li>                                                       
                                                     </ul>
                                                 </div>
                                             </div>
@@ -109,9 +106,6 @@
                                                         <li><a class='cart'
                                                                 href='https://demo.hasthemes.com/boighor-preview/boighor/cart.html'><i
                                                                     class='fas fa-cart-plus'></i></a></li>
-                                                        <li><a class='compare'
-                                                                href='https://demo.hasthemes.com/boighor-preview/boighor/index.html#'><i
-                                                                    class='far fa-heart'></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -193,10 +187,7 @@
                                                         <ul class='add_to_links'>
                                                             <li><a class='cart'
                                                                     href='https://demo.hasthemes.com/boighor-preview/boighor/cart.html'><i
-                                                                        class='fas fa-cart-plus'></i></a></li>
-                                                            <li><a class='compare'
-                                                                    href='https://demo.hasthemes.com/boighor-preview/boighor/index.html#'><i
-                                                                        class='far fa-heart'></i></a></li>
+                                                                        class='fas fa-cart-plus'></i></a></li>                                                            
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -237,10 +228,7 @@
                                                         <ul class='add_to_links'>
                                                             <li><a class='cart'
                                                                     href='https://demo.hasthemes.com/boighor-preview/boighor/cart.html'><i
-                                                                        class='fas fa-cart-plus'></i></a></li>
-                                                            <li><a class='compare'
-                                                                    href='https://demo.hasthemes.com/boighor-preview/boighor/index.html#'><i
-                                                                        class='far fa-heart'></i></a></li>
+                                                                        class='fas fa-cart-plus'></i></a></li>                                                            
                                                         </ul>
                                                     </div>
                                                 </div>
