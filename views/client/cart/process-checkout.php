@@ -9,7 +9,7 @@
         date_default_timezone_set("Asia/Ho_Chi_Minh");
         $created_at = date('Y-m-d H:i:s');
         // bind parameter
-        mysqli_stmt_bind_param($stmt, 'iis', $_POST['user_id'], $_POST['total_cost'] , $created_at);
+        mysqli_stmt_bind_param($stmt, 'ids', $_POST['user_id'], $_POST['total_cost'] , $created_at);
         mysqli_stmt_execute($stmt);
         $log_id = $mysql_db->insert_id;
         $ids = $_POST['ids'];

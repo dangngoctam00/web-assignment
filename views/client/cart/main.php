@@ -195,7 +195,7 @@
                 if (mesg == 'error') {                      
                     return;
                 } 
-                alert("Purchase successfully");  
+                alert("Purchase SUCCESSFULLY");  
                 location.reload();                 
             }                                         
         });    
