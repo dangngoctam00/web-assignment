@@ -52,7 +52,7 @@
         //echo "<script> alert($id_cus) </script>";
 
         if ($_POST['star']==0){
-            $qualityStar =  0;    
+            $qualityStar =  5;    
         } else {
             $qualityStar =  6 - $_POST['star'];
         }
@@ -243,7 +243,7 @@
                                     <option>Yen Bai</option>
                                 </select>
                                 <br>
-                                <p>Delivery charges: <span>$2</span></p>
+                                <p>Ship charges: <span>$2</span></p>
                                 <div class="line_1"></div>
 
                                 <div class=row>
@@ -252,7 +252,7 @@
                                         <input id="qty" class="input-text qty hidden-quantity" name="qty" min="1" value="1" title="Qty" type="number">
                                     </div>
                                     <div class="col-md-5">
-                                        <input name="add_to_card" type="submit" value="ADD TO CARD" class="btn btn-primary btn-add-to-cart" style="margin-top: 8%;">
+                                        <input name="add_to_card" type="submit" value="ADD TO CART" class="btn btn-primary btn-add-to-cart" style="margin-top: 8%;">
 
                                         <!-- <button type="button" class="btn btn-primary" id="btn_add" name="add_to_card">ADD TO CARD</button> -->
                                         <input type='hidden' class='hidden-name' name='hidden_img' value='<?php echo $name_book ?>'/>
@@ -315,7 +315,7 @@
                                                 <div class="row">
                                                     <div class = "col-md-3">
                                                         <h6>Quality</h6>
-                                                        <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
+                                                        <input class="star star-1" id="star-1" type="radio" name="star" value="1" checked/>
                                                         <label class="star star-1" for="star-1"></label>
                                                         <input class="star star-2" id="star2" type="radio" name="star" value="2"/>
                                                         <label class="star star-2" for="star2"></label>
@@ -515,7 +515,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <a href="../product_page/index.php?category=<?php echo $row['cate'] ?>"> <?php echo $row['cate'] ?> <span>( <?php echo $row['amount'] ?> )</span></a>
+                    <a href="../product_page/index.php?category=<?php echo $row['cate'] ?>"> <?php echo ucwords($row['cate']) ?> <span>( <?php echo $row['amount'] ?> )</span></a>
                 </div>
                 <div class="subline"></div>
             </div>

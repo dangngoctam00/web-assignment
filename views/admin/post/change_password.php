@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "systemError" => false,
         "success" => true
     );
-    $query = "SELECT password FROM admin WHERE id='" . $_SESSION['id'] . "'";
+    $query = "SELECT password FROM admin WHERE id='" . $_SESSION['id_admin'] . "'";
     $result = $mysql_db->query($query);
     if ($result) {
         $row = $result->fetch_assoc();

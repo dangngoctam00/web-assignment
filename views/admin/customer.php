@@ -1,7 +1,7 @@
 <?php
 require "../../data/config.php";
 session_start();
-if (!$_SESSION['id']) {
+if (!$_SESSION['id_admin']) {
     header("Location: login.php");
 }
 // Get all customer information
@@ -264,6 +264,7 @@ while ($item = mysqli_fetch_assoc($result)) {
                                 </h3>
                             </div>
                             <div class="card-content">
+
                                 <table class="table-stripped">
                                     <tr>
                                         <th>ID</th>
@@ -279,6 +280,7 @@ while ($item = mysqli_fetch_assoc($result)) {
                                     </tr>
 
                                     <?php foreach ($customers as $customer) { ?>
+
                                     <tr>
                                         <td><?php echo $customer['id']; ?></td>
                                         <td><?php echo $customer['name']; ?></td>
@@ -294,6 +296,7 @@ while ($item = mysqli_fetch_assoc($result)) {
                                                 onclick="deleteCustomer(<?php echo $customer['id']; ?>)">Delete</button>
                                         </td>
                                     </tr>
+
                                     <?php } ?>
                                 </table>
                             </div>
@@ -303,6 +306,8 @@ while ($item = mysqli_fetch_assoc($result)) {
             </div>
         </div>
     </div>
+
+
 
     <!-- Edit Customer -->
     <?php foreach ($customers as $customer) { ?>
@@ -342,6 +347,8 @@ while ($item = mysqli_fetch_assoc($result)) {
                             <div class="col-10">
                                 <input class="form-control" type="email" value="<?php echo $customer['email']; ?>"
                                     id="email-edit-<?php echo $customer['id']; ?>">
+                                <input class="form-control" type="email" value="<?php echo $customer['email']; ?>"
+                                    id="original-email-edit-<?php echo $customer['id']; ?>" hidden>
                             </div>
                             <span class="text-danger" id="emailErr"></span>
                         </div>
@@ -358,7 +365,7 @@ while ($item = mysqli_fetch_assoc($result)) {
                             <label for="birthday-edit-<?php echo $customer['id']; ?>"
                                 class="col-2 col-form-label"><strong>Birthday</strong></label>
                             <div class="col-10">
-                                <input class="form-control" type="text" value="<?php echo $customer['birthdate']; ?>"
+                                <input class="form-control" type="date" value="<?php echo $customer['birthdate']; ?>"
                                     id="birthday-edit-<?php echo $customer['id']; ?>">
                             </div>
                             <span class="text-danger" id="birthdayErr"></span>
@@ -369,7 +376,7 @@ while ($item = mysqli_fetch_assoc($result)) {
                             <div class="col-10">
                                 <input class="form-control" type="text"
                                     value="<?php echo $customer['registered_at']; ?>"
-                                    id="register_at-edit-<?php echo $customer['id']; ?>">
+                                    id="register_at-edit-<?php echo $customer['id']; ?>" disabled>
                             </div>
                             <span class="text-danger" id="register_atErr"></span>
                         </div>
@@ -382,6 +389,8 @@ while ($item = mysqli_fetch_assoc($result)) {
                             </div>
                             <span class="text-danger" id="activeErr"></span>
                         </div>
+
+                        <!-- <span class="text-danger" id="activeErr"></span> -->
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -389,7 +398,7 @@ while ($item = mysqli_fetch_assoc($result)) {
                     <button type="button" class="btn btn-primary"
                         onclick="editCustomer(<?php echo $customer['id']; ?>)">Save changes</button>
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
     <?php } ?>
@@ -397,7 +406,7 @@ while ($item = mysqli_fetch_assoc($result)) {
     <script>
     // Delete Customer
     function deleteCustomer(customer_id) {
-        if (confirm("Delete this Customer?")) {
+        if (confirm("DELETE this Customer?")) {
             $.post(
                 // "../../../views/admin/post/customer_func.php",
                 "post/customer_func.php", {
@@ -406,17 +415,19 @@ while ($item = mysqli_fetch_assoc($result)) {
                 },
                 function(data, status) {
                     alert(data);
-                    if (data == "Delete Customer Successfully!")
+                    if (data == "Delete Customer SUCCESSFULLY!")
                         window.location.href = "customer.php";
                 }
             );
         }
     }
 
+
     function editCustomer(customer_id) {
         var id = $("#id-edit-" + customer_id).val();
         var name = $("#name-edit-" + customer_id).val();
         var email = $("#email-edit-" + customer_id).val();
+        var originalEmail = $("#original-email-edit-" + customer_id).val();
         var phone = $("#phone-edit-" + customer_id).val();
         var birthday = $("#birthday-edit-" + customer_id).val();
         var register_at = $("#register_at-edit-" + customer_id).val();
@@ -427,6 +438,7 @@ while ($item = mysqli_fetch_assoc($result)) {
                 id: id,
                 name: name,
                 email: email,
+                originalEmail: originalEmail,
                 phone: phone,
                 birthday: birthday,
                 register_at: register_at,
@@ -434,7 +446,7 @@ while ($item = mysqli_fetch_assoc($result)) {
             },
             function(data, status) {
                 alert(data);
-                if (data == "Update Customer Information Successfully!")
+                if (data == "Update Customer Information SUCCESSFULLY!")
                     window.location.href = "customer.php";
             }
         );

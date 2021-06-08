@@ -23,8 +23,13 @@
         $resultUpdateCusTable = $mysqli->query($queryCusTable);
         $resultUpdateVerifyTable = $mysqli->query($queryVerifyTable);
         $mysqli->query($recheck_constraint);
+<<<<<<< HEAD
         if ($resultUpdateCusTable && $resultUpdateVerifyTable) return "Update Information Successfully!";
         else return "Update Information Unsuccessfully!";
+=======
+        if ($resultUpdateCusTable && $resultUpdateVerifyTable) return "Update Information SUCCESSFULLY!";
+        else return "Update Information UNSUCCESSFULLY!";
+>>>>>>> origin/master
     }
 
     

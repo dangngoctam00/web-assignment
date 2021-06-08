@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <link rel="stylesheet" href="../../../assets/css/shared/header.css">
 
 <header class="header">
@@ -17,11 +20,15 @@
 
                 <ul class="header_sidebar_right">
                     <li class="shop_search">
-                        <a href="#"><i class="fas fa-search"></i></a>
+                        <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <form action="../product_page/index.php"><input type="text" name="keyword" class="form-control" placeholder="Search"></form>
+                        </div>
+                    <!-- <a href="#"><i class="fas fa-search"></i></a> -->
                     </li>
-                    <li class="shop_heart">
+                    <!-- <li class="shop_heart">
                         <a href="#"><i class="far fa-heart"></i></a>
-                    </li>
+                    </li> -->
                     <li class="shop_cart">
                         <a href="../cart/"><i class="fas fa-cart-plus"></i></a>
                     </li>
@@ -35,7 +42,7 @@
                         }
                         else {
                             print "<li class='shop_cart'>
-                                        <a href='../authenticate/login.php'><i class='fa fa-user'></i></a>
+                                        <a href='../authenticate/login.php'><i class='fa fa-sign-in'></i></a>
                                     </li>";
                         }
                     ?>

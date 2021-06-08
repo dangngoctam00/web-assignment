@@ -1,15 +1,42 @@
-<link rel="stylesheet" href="../../../assets/css/about_page/main.css">
- <?php
-    require_once "../../../data/config.php";
-    $query = "select * from employee";
-    $result = $mysql_db->query($query);
+<!-- <link rel="stylesheet" href="../../../assets/css/about_page/main.css"> -->
 
-    ?>
- <div class="cart-main-area">
+<?php 
+    
+    // echo $_SERVER["REQUEST_METHOD"];
+    if (!empty($_GET['action']) && $_GET['action']  == 'delete') {
+        $id = $_GET['id'];
+        $cookie_data = stripslashes($_COOKIE['shopping_cart']);
+
+        $cart_data = json_decode($cookie_data, true); 
+        $index = array_search($id,array_column($cart_data,"item_id"));
+        array_splice($cart_data, $index, 1);
+        // echo var_dump($cart_data);
+        // echo json_encode($cart_data);        
+        if (count($cart_data) == 0) {
+            setcookie('shopping_cart', '' , time() - 3600, '/');
+            header("location: index.php");
+        }
+        else {
+            $item_data = json_encode($cart_data, JSON_UNESCAPED_UNICODE);
+            setcookie('shopping_cart', $item_data, time() + (86400 * 30), '/');
+        }
+    }
+
+    // if (empty($_COOKIE['shopping_cart']) || count($_COOKIE['shopping_cart']) == 0) {
+    //     print "<script>$('.cart-info').css('display', 'none')</script>";
+    // }
+
+?>
+
+<div class="cart-main-area">
     <div class="container">
-        <div class="row">
+    <?php
+        if(!empty($_COOKIE["shopping_cart"])) {
+    ?>
+    
+        <div class="row cart-info">
             <div class="col-md-12 col-sm-12 ol-lg-12">
-                <form action="https://demo.hasthemes.com/boighor-preview/boighor/cart.html#">
+                <form action="">
                     <div class="table-content wnro__table table-responsive">
                         <table>
                             <thead>
@@ -53,7 +80,7 @@
                                     </td>
                                     <td class="<?php echo $product_name_class ?>"><?php echo $values["item_name"]; ?></td>
                                     <td class="<?php echo $product_price_class ?>">$ <?php echo $values["item_price"]; ?></td>
-                                    <td ><input id="quantity" class="<?php echo $product_quantity_class ?>" type="number" value="<?php echo $values["item_quantity"]; ?>"></td>
+                                    <td ><input id="quantity" class="<?php echo $product_quantity_class ?> quantity" data-id="<?php echo $values["item_id"]; ?>" type="number" value="<?php echo $values["item_quantity"]; ?>"></td>
                                     <td class="<?php echo $product_total_class ?>">$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
                                     <td class="product-remove"><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>
                                 </tr>
@@ -87,8 +114,11 @@
                             <label class="address-label">Address: </label>
                             <input class="form-control" type="text" value="<?php echo $address ?>">
                             <input class="user-id" type="hidden" value="<?php echo $user_id ?>">
-                        </div>               
-                        <button class="checkout-btn <?php echo $id_arr; ?>">Check Out</button>
+                        </div>    
+                        <div class="action-btn">
+                            <button class="update-btn <?php echo $id_arr; ?>">Update Cart</button>
+                            <button class="checkout-btn <?php echo $id_arr; ?>">Check Out</button>
+                        </div>           
 			        </div>
                 </form>    
             </div>
@@ -99,6 +129,13 @@
                                    
             </div>
         </div>
+
+        <?php
+        }
+        else {
+            print "<p class='no-item'>No item in cart. Please add item to cart to check out.</p>";
+        }
+        ?>
     </div>
 </div>
 
@@ -106,6 +143,28 @@
     $("#quantity").on("change keyup paste", function(){
         
     })
+
+
+    $('.update-btn').click(function(event) {
+        
+        let ids = this.className.split(' ')[1];
+        ids = ids.split('-');
+        ids.shift();
+        let total = 0;
+        
+        ids.forEach((id) => {
+            // alert('price: ' +  $('.product-quantity-' + id).text());
+            let total_each_item = $('.product-price-' + id).text().split(' ')[1] * $('.product-quantity-' + id).val();
+            $('.product-total-' + id).html('$' + total_each_item.toFixed(2))
+            total += total_each_item;
+        }); 
+        let total_order = total + 2;
+        $('.total-cost-product').text('Book cost: $' + total.toFixed(2));
+        $('.total-cost').text('Total: $' + total_order.toFixed(2));
+        event.preventDefault();
+        return false;
+    });
+
 
     $('.checkout-btn').click(function(event) {
         
@@ -119,16 +178,14 @@
         let ids = this.className.split(' ')[1];
         ids = ids.split('-');
         ids.shift();
-        let total_cost = $('.total-cost-product').text();
-        total_cost = total_cost.split(' ')[2];
+        let total_cost = $('.total-cost').text();
+        total_cost = total_cost.split(' ')[1];
         total_cost = total_cost.substring(1, total_cost.length);
         // alert(total_cost);
         let quantities = [];
         for (i = 0; i < ids.length; ++i) {
             quantities.push($('.product-quantity-'+ids[i]).val());
-        } 
-        // alert(quantities + '/' + ids);
-        
+        }         
         
         $.ajax({
             type: 'POST',
@@ -138,7 +195,7 @@
                 if (mesg == 'error') {                      
                     return;
                 } 
-                alert("Purchase successfully");  
+                alert("Purchase SUCCESSFULLY");  
                 location.reload();                 
             }                                         
         });    
@@ -147,4 +204,22 @@
         event.preventDefault();
         return false;
     });
+
+    $('.quantity').change((e)=>{
+        let quantity = e.currentTarget.value;
+        let itemID = e.currentTarget.dataset.id;
+        $.ajax({
+            type: 'POST',
+            url: "process-change-quantity.php",
+            data: { itemID, quantity},
+            success: function(mesg){
+                if (mesg == 'error') {                      
+                    return;
+                } 
+                console.log(mesg)
+                // alert("Purchase successfully");  
+                // location.reload();                 
+            }                                         
+        });  
+    })
 </script>
