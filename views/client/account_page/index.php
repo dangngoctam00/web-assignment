@@ -31,6 +31,29 @@
     <?php include('../include/script.php'); ?>
     
     <script>
+        $(document).ready(function() {
+            $("#order_link").toggleClass("active");
+            $("#orders").hide();
+            
+            $("#order_link").click(function() {
+                // Hide profile
+                $("#profile_link").toggleClass("active");
+                $("#profile").hide();
+                // Show orders
+                $("#order_link").toggleClass("active");
+                $("#orders").show();
+            });
+
+            $("#profile_link").click(function() {
+                // Show profile
+                $("#profile_link").toggleClass("active");
+                $("#profile").show();
+                // Hide orders
+                $("#order_link").toggleClass("active");
+                $("#orders").hide();
+            });
+        });
+        
         // Update information
         function updateInfor(customer_id) {
             var name = $("#name").val();
