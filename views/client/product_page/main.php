@@ -58,8 +58,8 @@
                     // }
                 ?>
                 <form method="GET" action="" class="sort-bar">
-                    <span class="sort-bar__label">Order by</span>
-                    <div class="sort-by-options">
+                    <span class="sort-bar__label mb-2">Order by</span>
+                    <div class="sort-by-options mb-1">
                         <!-- <div class="sort-by-options__option sort-by-options__option--selected">New</div> -->
                         <!-- <div class="sort-by-options__option">Bán chạy</div> -->
                         <div>
@@ -83,7 +83,7 @@
                     </div>
                     <button type="submit" class="result-btn sort-by-options__option sort-by-options__option--selected">Result</button>                   
                 </form>
-                <div class="product-list row">
+                <div class="product-list row mt-5">
                     <?php foreach ($books as $book) { ?>
                         <div class="product text-center col-lg-4 col-md-4 col-sm-6 col-6 mb-5">
                             <div class="product-thumbnail">
@@ -100,12 +100,26 @@
                                     <li class="fw-bold text-decoration-line-through"><del>$<?php echo $book['price'] + 1.0; ?></del></li>
                                 </ul>
                             </div>
+                            <?php 
+                                $query = "SELECT quality FROM reviewed_by WHERE book_id= {$book['id']}";
+                                $result = $mysql_db->query($query);
+                                $arrayResult = array();
+                                while ($item = mysqli_fetch_assoc($result)) {
+                                    $arrayResult[] = $item;
+                                }
+                                $quality  = 0;
+                                foreach ($arrayResult as $item) {
+                                    $quality += $item['quality'];
+                                }
+                                $numberOfReview = count($arrayResult) ? count($arrayResult) : 1;
+                                $quality = ceil($quality/$numberOfReview);
+                            ?>
                             <ul class="rating d-flex justify-content-center">
-                                <li class="me-1 color-orange fa fa-star"></li>
-                                <li class="me-1 color-orange fa fa-star"></li>
-                                <li class="me-1 color-orange fa fa-star"></li>
-                                <li class="me-1 color-orange fa fa-star"></li>
-                                <li class="fa fa-star"></li>
+                                <li class="<?php echo $quality >= 1? "me-1 color-orange ": '' ?>fa fa-star"></li>
+                                <li class="<?php echo $quality >= 2? "me-1 color-orange ": '' ?>fa fa-star"></li>
+                                <li class="<?php echo $quality >= 3? "me-1 color-orange ": '' ?>fa fa-star"></li>
+                                <li class="<?php echo $quality >= 4? "me-1 color-orange ": '' ?>fa fa-star"></li>
+                                <li class="<?php echo $quality >= 5? "me-1 color-orange ": '' ?>fa fa-star"></li>
                             </ul>
                         </div>
                     <?php } ?>

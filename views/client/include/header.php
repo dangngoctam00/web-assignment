@@ -42,7 +42,7 @@
                         }
                         else {
                             print "<li class='shop_cart'>
-                                        <a href='../authenticate/login.php'><i class='fa fa-user'></i></a>
+                                        <a href='../authenticate/login.php'><i class='fa fa-sign-in'></i></a>
                                     </li>";
                         }
                     ?>

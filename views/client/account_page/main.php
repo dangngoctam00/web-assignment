@@ -84,7 +84,7 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sql = "select * from shopping_log";
+                                    $sql = "select * from shopping_log where customer_id={$customer['id']}";
                                     $result = $mysql_db->query($sql);
                                     if ($result) {
                                         while ($row = $result->fetch_assoc()) {
