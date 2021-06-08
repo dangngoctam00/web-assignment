@@ -25,7 +25,8 @@
 
 <script>
         $('#subscribe-btn').click(function() {
-        if ($('#email').val() == '') {
+            let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if ($('#email').val() == '' || emailPattern.test($('#email').val()) == false) {            
             $('#mesg').html('Please enter a valid mail address.');
             $('#mesg').removeClass('success-mesg');
             $('#mesg').addClass('error-mesg');
