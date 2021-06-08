@@ -151,8 +151,10 @@
                                                                         }
                                                                     }
                                                                     ?>
+                                                                    
                                                                 </tbody>
                                                             </table>
+                                                            <p class="ml-3"><strong>Shipping Cost:</strong> $2</p>
                                                         </div>
                                                     </div>
                                                 </th>

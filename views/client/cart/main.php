@@ -178,16 +178,14 @@
         let ids = this.className.split(' ')[1];
         ids = ids.split('-');
         ids.shift();
-        let total_cost = $('.total-cost-product').text();
-        total_cost = total_cost.split(' ')[2];
+        let total_cost = $('.total-cost').text();
+        total_cost = total_cost.split(' ')[1];
         total_cost = total_cost.substring(1, total_cost.length);
         // alert(total_cost);
         let quantities = [];
         for (i = 0; i < ids.length; ++i) {
             quantities.push($('.product-quantity-'+ids[i]).val());
-        } 
-        // alert(quantities + '/' + ids);
-        
+        }         
         
         $.ajax({
             type: 'POST',
