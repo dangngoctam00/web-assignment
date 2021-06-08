@@ -32,24 +32,23 @@
     
     <script>
         $(document).ready(function() {
-            $("#order_link").toggleClass("active");
             $("#orders").hide();
             
             $("#order_link").click(function() {
                 // Hide profile
-                $("#profile_link").toggleClass("active");
+                $("#profile_link").removeClass("active");
                 $("#profile").hide();
                 // Show orders
-                $("#order_link").toggleClass("active");
+                $("#order_link").addClass("active");
                 $("#orders").show();
             });
 
             $("#profile_link").click(function() {
                 // Show profile
-                $("#profile_link").toggleClass("active");
+                $("#profile_link").addClass("active");
                 $("#profile").show();
                 // Hide orders
-                $("#order_link").toggleClass("active");
+                $("#order_link").removeClass("active");
                 $("#orders").hide();
             });
         });

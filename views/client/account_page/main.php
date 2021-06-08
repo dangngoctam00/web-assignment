@@ -3,7 +3,7 @@
 		<div class="col-md-3 ">
 		     <div class="list-group ">
               <a href="#" class="list-group-item list-group-item-action active" id="profile_link">Profile</a>
-              <a href="#" class="list-group-item list-group-item-action active" id="order_link">Orders</a>
+              <a href="#" class="list-group-item list-group-item-action" id="order_link">Orders</a>
             </div> 
 		</div>
 		<div class="col-md-9">
@@ -138,7 +138,7 @@
                                                                                     echo $row3['name'];
                                                                                     ?>
                                                                                 </td>
-                                                                                <td><?php echo $row3['category'] ?></td>
+                                                                                <td><?php echo ucwords($row3['category']) ?></td>
                                                                                 <td>
                                                                                     <img src="<?php echo $row3['link_image']; ?>" alt="" width="50" height="50">
                                                                                 </td>
