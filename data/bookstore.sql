@@ -20,7 +20,7 @@ create TABLE admin(
     user_name varchar(30) UNIQUE,
     phone varchar(20),
     birthdate date,
-    registered_at datetime,
+    registered_at datetime
     password text,
     PRIMARY KEY (id)
 );

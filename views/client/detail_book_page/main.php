@@ -52,7 +52,7 @@
         //echo "<script> alert($id_cus) </script>";
 
         if ($_POST['star']==0){
-            $qualityStar =  0;    
+            $qualityStar =  5;    
         } else {
             $qualityStar =  6 - $_POST['star'];
         }
@@ -315,7 +315,7 @@
                                                 <div class="row">
                                                     <div class = "col-md-3">
                                                         <h6>Quality</h6>
-                                                        <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
+                                                        <input class="star star-1" id="star-1" type="radio" name="star" value="1" checked/>
                                                         <label class="star star-1" for="star-1"></label>
                                                         <input class="star star-2" id="star2" type="radio" name="star" value="2"/>
                                                         <label class="star star-2" for="star2"></label>
