@@ -320,7 +320,7 @@ if (!$_SESSION['id_admin']) {
                                             <td> <?php echo $row['id'] ?> </td>
                                             <td> <?php echo $row['name'] ?> </td>
                                             <td> <?php echo $author ?> </td>
-                                            <td> <?php echo $row['category'] ?> </td>
+                                            <td style="text-transform: capitalize;"> <?php echo $row['category'] ?> </td>
                                             <td> <?php echo $row['price'] ?> </td>                                            
                                             <td> 
                                                 
@@ -494,7 +494,7 @@ if (!$_SESSION['id_admin']) {
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Edit employee</h5>
+                    <h5 class="modal-title" id="modalLabel">Edit book</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
