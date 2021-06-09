@@ -293,7 +293,7 @@ while ($item = mysqli_fetch_assoc($result)) {
                                                 data-target="#customerEditModal<?php echo $customer['id']; ?>">Edit</button>
                                         </td>
                                         <td><button class="btn btn-danger"
-                                                onclick="deleteCustomer(<?php echo $customer['id']; ?>)">Delete</button>
+                                                onclick="deleteCustomer(<?php echo $customer['id']; ?> , '<?php echo $customer['email']; ?>')">Delete</button>
                                         </td>
                                     </tr>
 
@@ -405,13 +405,13 @@ while ($item = mysqli_fetch_assoc($result)) {
 
     <script>
     // Delete Customer
-    function deleteCustomer(customer_id) {
+    function deleteCustomer(customer_id, customer_email) {
         if (confirm("DELETE this Customer?")) {
             $.post(
-                // "../../../views/admin/post/customer_func.php",
                 "post/customer_func.php", {
                     action: "delete_customer",
-                    id: customer_id
+                    id: customer_id,
+                    email: customer_email
                 },
                 function(data, status) {
                     alert(data);

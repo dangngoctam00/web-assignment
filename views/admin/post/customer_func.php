@@ -5,12 +5,16 @@
     // Delete Customer
     if ($action == "delete_customer") {
         $id = $_POST['id'];
-        echo deleteCustomer($mysql_db, $id);
+        $email = $_POST['email'];
+        echo deleteCustomer($mysql_db, $id, $email);
     }
 
-    function deleteCustomer($mysqli, $id) {
-        $query = "DELETE FROM customer WHERE id=$id";
-        $result = $mysqli->query($query);
+    function deleteCustomer($mysqli, $id, $email) {
+        $uncheck_constraint = "SET FOREIGN_KEY_CHECKS=0;";
+        $query1 = "DELETE FROM customer WHERE id=$id;";
+        $query2 = "DELETE FROM verification_account WHERE email='$email';";
+        $recheck_constraint = "SET FOREIGN_KEY_CHECKS=1;";
+        $result = $mysqli->multi_query($uncheck_constraint.$query1.$query2.$recheck_constraint);
         if ($result) return "Delete Customer SUCCESSFULLY!";
         else return "Delete Customer UNSUCCESSFULLY!";
     }
