@@ -90,7 +90,7 @@
                                 <a href="../detail_book_page/index.php?id=<?php echo $book['id']; ?>"><img style="max-height: 210px;" src="<?php echo $book['link_image'] ?>" alt="product<?php echo $book['id']; ?>" class="img-fluid">
                                 </a>
                                 <div class="hot-box" <?php if ($book['is_bestseller'] == 0) echo "hidden"; ?>>
-                                    <span class="hot-label">BEST SALLER</span>
+                                    <span class="hot-label">BEST SELLER</span>
                                 </div>
                             </div>
                             <div class="product-content text-center pt-3 pb-1 px-2">
